@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Runtime.Business.Singleton;
+using QFramework;
 
 namespace Runtime.Business.Event
 {

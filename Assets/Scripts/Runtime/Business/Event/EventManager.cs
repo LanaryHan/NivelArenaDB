@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
-using Runtime.Business.Singleton;
+using QFramework;
 using UnityEngine;
 
 namespace Runtime.Business.Event
 {
     public class EventManager : MonoSingleton<EventManager>
     {
+        protected EventManager() { }
         private Dictionary<Type, EventDispatcher> _dispatchers = new();
 
         public EventListenerBase Listen<T>(EventListener<T>.EventDelegate callback, GameObject attached) where T : GameEvent
@@ -15,6 +16,8 @@ namespace Runtime.Business.Event
             {
                 return null;
             }
+
+            long d;
 
             EventListenerBase listener = new EventListener<T>(callback, attached);
             if (!_dispatchers.TryGetValue(listener.EventType, out var dispatcher))
