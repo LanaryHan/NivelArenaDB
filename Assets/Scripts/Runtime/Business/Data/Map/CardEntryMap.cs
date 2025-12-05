@@ -25,7 +25,11 @@ namespace Runtime.Business.Data.Map
                     : text.Split(",").Select(int.Parse).ToArray();
             });
             Map(m => m.Affiliation).Index(10);
-            Map(m => m.Special).Index(11);
+            Map(m => m.HasSpecial).Convert(row =>
+            {
+                var text = row.Row.GetField("HasSpecial");
+                return !string.IsNullOrEmpty(text) && int.Parse(text) == 1;
+            });
         }
     }
 }

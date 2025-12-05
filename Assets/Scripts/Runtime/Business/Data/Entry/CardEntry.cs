@@ -63,9 +63,9 @@ namespace Runtime.Business.Data.Entry
         public Affiliation Affiliation { get; set; }
         
         /// <summary>
-        /// 签名卡对应的id
+        /// 是否有签名卡
         /// </summary>
-        [CanBeNull] public string Special { get; set; }
+        public bool HasSpecial { get; set; }
         
         #endregion
 
