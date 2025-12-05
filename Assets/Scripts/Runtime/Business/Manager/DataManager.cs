@@ -9,21 +9,6 @@ using Runtime.Business.Data.Entry;
 using Runtime.Business.Data.Map;
 using UnityEngine;
 
-namespace GameEvents
-{
-    public class ClickCard : GameEventBaseNoDefaultCreate<ClickCard>
-    {
-        public string CardId;
-
-        public static ClickCard Create(string cardId)
-        {
-            var self = Create();
-            self.CardId = cardId;
-            return self;
-        }
-    }
-}
-
 namespace Runtime.Business.Manager
 {
     public class DataManager : Singleton<DataManager>
@@ -50,7 +35,7 @@ namespace Runtime.Business.Manager
                     Cards = records.ToDictionary(entry => entry.Id, entry => entry);
                 }
             }
-            
+
             #endregion
 
             #region Pack
@@ -65,6 +50,8 @@ namespace Runtime.Business.Manager
                 }
             }
 
+            #endregion
+
             #region Skill
 
             csv = Resources.Load<TextAsset>("skills");
@@ -76,8 +63,6 @@ namespace Runtime.Business.Manager
                     Skills = records.ToDictionary(entry => entry.Id, entry => entry);
                 }
             }
-
-            #endregion
 
             #endregion
         }
