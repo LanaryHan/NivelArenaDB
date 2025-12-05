@@ -4,6 +4,7 @@ namespace QFramework
 {
     public class EventObjectPool : Singleton<EventObjectPool>
     {
+        protected EventObjectPool(){ }
         private Dictionary<Type, GameEvent> _pool = new();
 
         public T GetNew<T>() where T : GameEvent, new()
