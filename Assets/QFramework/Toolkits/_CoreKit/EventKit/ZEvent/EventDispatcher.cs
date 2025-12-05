@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
 
-namespace Runtime.Business.Event
+namespace QFramework
 {
     public abstract class EventDispatcher
     {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Runtime.Business.Event
+namespace QFramework
 {
     public abstract class EventListenerBase
     {

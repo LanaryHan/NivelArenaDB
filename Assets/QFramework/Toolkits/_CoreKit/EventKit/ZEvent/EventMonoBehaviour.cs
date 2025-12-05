@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Runtime.Business.Event
+namespace QFramework
 {
     public class EventMonoBehaviour : MonoBehaviour
     {

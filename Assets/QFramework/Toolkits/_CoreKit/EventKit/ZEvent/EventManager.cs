@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using QFramework;
 using UnityEngine;
 
-namespace Runtime.Business.Event
+namespace QFramework
 {
     public class EventManager : MonoSingleton<EventManager>
     {

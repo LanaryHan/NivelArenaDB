@@ -1,4 +1,4 @@
-namespace Runtime.Business.Event
+namespace QFramework
 {
     public class GameEvent
     {

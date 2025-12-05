@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using QFramework;
-
-namespace Runtime.Business.Event
+namespace QFramework
 {
     public class EventObjectPool : Singleton<EventObjectPool>
     {
