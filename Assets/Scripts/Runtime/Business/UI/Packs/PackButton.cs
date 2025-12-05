@@ -1,12 +1,11 @@
 using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Manager;
-using Runtime.Business.UI.Card;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Runtime.Business.UI.Pack
+namespace UI
 {
     public class PackButton : MonoBehaviour
     {
@@ -25,14 +24,12 @@ namespace Runtime.Business.UI.Pack
             image.sprite = sprite;
             packName.text = packEntry.DisplayName;
             button.onClick.AddListener(OnClick);
+            gameObject.SetActive(packEntry.IsActive);
         }
 
         private void OnClick()
         {
-            UIKit.OpenPanel<CardsUI>(new CardsUIData
-            {
-                Pack = _pack,
-            });
+            UIKit.OpenPanel<CardsUI>(new CardsUIData(_pack));
         }
     }
 }

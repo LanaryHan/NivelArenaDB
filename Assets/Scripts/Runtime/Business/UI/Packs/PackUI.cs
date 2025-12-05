@@ -3,7 +3,7 @@ using Runtime.Business.Manager;
 using Runtime.Business.Util;
 using UnityEngine;
 
-namespace Runtime.Business.UI.Pack
+namespace UI
 {
     public class PackUI : UIPanel
     {
@@ -25,7 +25,6 @@ namespace Runtime.Business.UI.Pack
             {
                 var packButton = Instantiate(tempBtn, content);
                 packButton.Init(pack);
-                packButton.gameObject.SetActive(true);
             }
         }
 
