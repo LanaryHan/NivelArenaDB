@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 1055528742
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 92844714cddf786b5a3b646d2bb02504
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5527383dc91eba37123fc67ad6efaa19
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 1dd304efbee4285ba43c31c351296893
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/ST01/ST01-012.png
+Dependencies: []

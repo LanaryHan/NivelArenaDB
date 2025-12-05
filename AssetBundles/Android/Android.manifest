@@ -1,0 +1,60 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 383075790
+HashAppended: 0
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: st01-001_png
+      Dependencies: {}
+    Info_1:
+      Name: st01-002_png
+      Dependencies: {}
+    Info_2:
+      Name: st01-003_png
+      Dependencies: {}
+    Info_3:
+      Name: st01-004_png
+      Dependencies: {}
+    Info_4:
+      Name: st01-005_png
+      Dependencies: {}
+    Info_5:
+      Name: st01-006_png
+      Dependencies: {}
+    Info_6:
+      Name: st01-007_png
+      Dependencies: {}
+    Info_7:
+      Name: st01-008_png
+      Dependencies: {}
+    Info_8:
+      Name: st01-009_png
+      Dependencies: {}
+    Info_9:
+      Name: st01-0010_png
+      Dependencies: {}
+    Info_10:
+      Name: st01-011_png
+      Dependencies: {}
+    Info_11:
+      Name: st01-012_png
+      Dependencies: {}
+    Info_12:
+      Name: st01-013_png
+      Dependencies: {}
+    Info_13:
+      Name: st01-014_png
+      Dependencies: {}
+    Info_14:
+      Name: st01-015_png
+      Dependencies: {}
+    Info_15:
+      Name: st01-016_png
+      Dependencies: {}
+    Info_16:
+      Name: st01-017_png
+      Dependencies: {}
+    Info_17:
+      Name: mainui_prefab
+      Dependencies: {}
