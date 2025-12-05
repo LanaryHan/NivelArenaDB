@@ -1,4 +1,7 @@
+using System;
+using Runtime.Business.Data;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Runtime.Business.Util
 {
@@ -29,6 +32,18 @@ namespace Runtime.Business.Util
                     continue;
                 }
             }
+        }
+
+        public static string ToChinese(this CardType cardType)
+        {
+            return cardType switch
+            {
+                CardType.Leader => "领袖",
+                CardType.Unit => "单位",
+                CardType.Skill => "技能",
+                CardType.Item => "装备",
+                _ => throw new ArgumentOutOfRangeException(nameof(cardType), cardType, null)
+            };
         }
     }
 }

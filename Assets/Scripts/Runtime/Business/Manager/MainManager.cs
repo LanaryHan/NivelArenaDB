@@ -1,5 +1,6 @@
 using QFramework;
 using Runtime.Business.UI;
+using UI;
 using UnityEngine;
 
 namespace Runtime.Business.Manager
@@ -16,6 +17,8 @@ namespace Runtime.Business.Manager
         private void Start()
         {
             _resLoader = ResLoader.Allocate();
+
+            UIKit.OpenPanel<PackUI>();
         }
     }
 }
