@@ -1,2 +1,3 @@
-Name,DisplayName,BundleRes
-ST01,起始套牌ST01:《反击》,pack_ST01
+Name,DisplayName,BundleRes,IsActive
+ST01,起始套牌ST01：《反击》,pack_ST01,1
+ST02,起始套牌ST02：《真正的仁慈》,pack_ST02,0

@@ -5,5 +5,6 @@ namespace Runtime.Business.Data.Entry
         public Deck Name { get; set; }
         public string DisplayName { get; set; }
         public string BundleRes { get; set; }
+        public bool IsActive { get; set; }
     }
 }
