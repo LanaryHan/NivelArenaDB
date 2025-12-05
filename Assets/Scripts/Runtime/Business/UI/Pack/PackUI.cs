@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Runtime.Business.UI.Pack
 {
-    public class BoosterPackUI : UIPanel
+    public class PackUI : UIPanel
     {
         [SerializeField] private PackButton tempBtn;
         [SerializeField] private Transform content;
