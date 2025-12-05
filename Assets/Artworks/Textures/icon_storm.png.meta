@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2a5303386944343b7838c49763f70436
+guid: e003f8c5f211849219eb40ef0e59828e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,7 +127,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -139,5 +139,5 @@ TextureImporter:
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
-  assetBundleName: pack_bt03_png
+  assetBundleName: 
   assetBundleVariant: 
