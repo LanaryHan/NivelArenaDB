@@ -45,5 +45,18 @@ namespace Runtime.Business.Util
                 _ => throw new ArgumentOutOfRangeException(nameof(cardType), cardType, null)
             };
         }
+
+        public static string ToChinese(this ElementAttribute attribute)
+        {
+            return attribute switch
+            {
+                ElementAttribute.Flame => "火焰",
+                ElementAttribute.Earth => "大地",
+                ElementAttribute.Storm => "风暴",
+                ElementAttribute.Wave => "波涛",
+                ElementAttribute.Lightning => "闪电",
+                _ => throw new ArgumentOutOfRangeException(nameof(attribute), attribute, null)
+            };
+        }
     }
 }

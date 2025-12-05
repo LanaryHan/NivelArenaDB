@@ -44,7 +44,6 @@ namespace UI
                 var attributeIcon = attributeIcons[i];
                 attributeIcon.gameObject.SetActive(i == (int)attribute);
             }
-            
         }
 
         private void UpdateFrame(ElementAttribute attribute)

@@ -73,9 +73,15 @@ namespace Runtime.Business.Manager
             return cards;
         }
 
-        public Sprite LoadCardSprite(string res)
+        public Sprite LoadCardSprite(string id)
         {
-            var sprite = _resLoader.LoadSync<Sprite>(res);
+            var sprite = _resLoader.LoadSync<Sprite>(id);
+            return sprite;
+        }
+
+        public Sprite LoadSpecialCardSprite(string id)
+        {
+            var sprite = _resLoader.LoadSync<Sprite>($"{id}Sign");
             return sprite;
         }
 
@@ -94,6 +100,11 @@ namespace Runtime.Business.Manager
         public PackEntry GetPack(Deck pack)
         {
             return Packs.GetValueOrDefault(pack);
+        }
+
+        public SkillEntry GetSkill(int id)
+        {
+            return Skills.GetValueOrDefault(id);
         }
     }
 }
