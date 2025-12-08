@@ -58,5 +58,42 @@ namespace Runtime.Business.Util
                 _ => throw new ArgumentOutOfRangeException(nameof(attribute), attribute, null)
             };
         }
+
+        public static string ToChinese(this Affiliation affiliation)
+        {
+            return affiliation switch
+            {
+                Affiliation.Missilis => "米西利斯",
+                Affiliation.Tetra => "泰特拉",
+                Affiliation.Elysion => "极乐净土",
+                Affiliation.Pilgrim => "朝圣者",
+                Affiliation.Abnormal => "反常",
+                _ => throw new ArgumentOutOfRangeException(nameof(affiliation), affiliation, null)
+            };
+        }
+
+        public static string ToChinese(this KeyType keyType)
+        {
+            return keyType switch
+            {
+                KeyType.None => "-",
+                KeyType.Entry => "入场",
+                KeyType.Attacker => "攻击者",
+                KeyType.Defender => "防御者",
+                KeyType.Exit => "离场",
+                KeyType.Passive => "被动",
+                KeyType.Active => "主动",
+                KeyType.Guardian => "守护者",
+                KeyType.Armed => "武装",
+                KeyType.LevelLink => "等级链接",
+                KeyType.FrontConstruction => "战线构筑",
+                KeyType.Mix => "混合",
+                KeyType.Credits => "借贷",
+                KeyType.Escape => "逃脱",
+                KeyType.Oath => "誓约",
+                KeyType.Awakening => "觉醒",
+                _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
+            };
+        }
     }
 }

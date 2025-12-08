@@ -7,8 +7,8 @@ namespace UI
 {
     public class PackUI : UIPanel
     {
-        [SerializeField] private PackButton tempBtn;
-        [SerializeField] private Transform content;
+        public PackButton tempBtn;
+        public Transform content;
 
         protected override void OnInit(IUIData uiData = null)
         {

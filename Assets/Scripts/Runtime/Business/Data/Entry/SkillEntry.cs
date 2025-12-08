@@ -5,5 +5,6 @@ namespace Runtime.Business.Data.Entry
         public int Id { get; set; }
         public KeyType Key { get; set; }
         public string Description { get; set; }
+        public string Param { get; set; }
     }
 }

@@ -13,6 +13,9 @@ namespace Runtime.Business.Data
         Armed,              //武装
         LevelLink,          //等级链接
         FrontConstruction,  //战线构筑
+        Mix,                //混合
+        Credits,            //借贷
+        Escape,             //逃脱
         
         
         Oath,               //誓约

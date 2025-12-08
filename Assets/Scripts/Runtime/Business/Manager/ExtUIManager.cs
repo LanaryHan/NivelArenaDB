@@ -6,6 +6,7 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace GameEvents
 {
+    public class ClickBackKey : GameEventBase<ClickBackKey>{}
     public class ReverseCard : GameEventBase<ReverseCard>
     {
     }
@@ -25,6 +26,18 @@ namespace GameEvents
     public class HideCard : GameEventBase<HideCard>
     {
         
+    }
+
+    public class CardFollowReady : GameEventBaseNoDefaultCreate<CardFollowReady>
+    {
+        public RectTransform Target;
+
+        public static CardFollowReady Create(RectTransform target)
+        {
+            var self = Create();
+            self.Target = target;
+            return self;
+        }
     }
 }
 
