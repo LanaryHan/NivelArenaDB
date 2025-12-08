@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 4256270262
+CRC: 1508767355
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7acd38df7842a9ba4645aa18dab34bae
+    Hash: 83d54d56b53fc0879952a2ccdc37f1c8
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 2486b4391dc57951917443743e39efa9
+    Hash: 3f1e28af3f690d1ea929dc721bcb685a
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 2197f2dfb879cb0f126f3bab1c5b36b6
+    Hash: 07287c83a40c73b3054ec9a5db06e35f
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -33,8 +33,6 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 608cfd61f5684a869ae587a2d37f19fe, type: 3}
 - Class: 114
@@ -90,8 +88,6 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.Navigation
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.ScrollRect/ScrollRectEvent
-- AssemblyName: UnityEngine.UI
-  ClassName: UnityEngine.UI.Scrollbar/ScrollEvent
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
 Assets:
