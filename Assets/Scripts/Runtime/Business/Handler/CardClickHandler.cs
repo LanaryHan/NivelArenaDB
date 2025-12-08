@@ -1,17 +1,33 @@
 using QFramework;
 using UnityEngine;
 
-namespace Runtime.Business.ClickHandler
+namespace Runtime.Business.Handler
 {
-    public class CardClickHandler : MonoBehaviour
+    public class CardClickHandler : EventMonoBehaviour
     {
         public Camera cardCamera;
+
+        private bool _enable;
+
+        private void Start()
+        {
+            var ec = GetEventComponent();
+            ec.Listen<GameEvents.ShowCard>(_ =>
+            {
+                _enable = true;
+            });
+            ec.Listen<GameEvents.HideCard>(_ =>
+            {
+                _enable = false;
+            });
+        }
+
         private void Update()
         {
-            // if (!UIKit.GetPanel<CardDetailUI>())
-            // {
-            //     return;
-            // }
+            if (!_enable)
+            {
+                return;
+            }
 
             if (Input.GetMouseButtonDown(0))
             {
