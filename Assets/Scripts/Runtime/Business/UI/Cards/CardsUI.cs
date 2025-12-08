@@ -4,6 +4,7 @@ using Runtime.Business.Data;
 using Runtime.Business.Manager;
 using Runtime.Business.Util;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -19,13 +20,15 @@ namespace UI
 
     public class CardsUI : UIPanel
     {
-        [SerializeField] private CardGroup tempCardGroup;
-        [SerializeField] private Transform content;
+        public CardGroup tempCardGroup;
+        public Transform content;
+        public Button closeBtn;
 
         protected override void OnInit(IUIData uiData = null)
         {
             base.OnInit(uiData);
             tempCardGroup.gameObject.SetActive(false);
+            closeBtn.onClick.AddListener(CloseSelf);
         }
 
         protected override void OnOpen(IUIData uiData = null)
@@ -36,7 +39,7 @@ namespace UI
                 return;
             }
 
-            content.RemoveAllChildren(tempCardGroup.transform);
+            content.RemoveAllChildren(tempCardGroup.transform, closeBtn.transform);
             var cards = DataManager.Instance.GetCardFromPack(mainUIData.Pack);
             var cardGroupBy = cards.OrderBy(card => card.CardType).GroupBy(card => card.CardType);
             using var enumerator = cardGroupBy.GetEnumerator();
