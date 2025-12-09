@@ -91,6 +91,10 @@ namespace Runtime.Business.UI.CardDetail
                 var keywordTxt = Instantiate(tempKeyword, keywordsContent);
                 keywordTxt.text = "-";
                 keywordTxt.gameObject.SetActive(true);
+                if (cardType is not CardType.Skill)
+                {
+                    skillBg.gameObject.SetActive(false);
+                }
             }
 
             for (var i = 0; i < skillIds?.Length; i++)
@@ -118,7 +122,7 @@ namespace Runtime.Business.UI.CardDetail
             
             var triggerId = _cardEntry.Trigger.Value;
             var triggerEntry = DataManager.Instance.GetTrigger(triggerId);
-            triggerTxt.text = $"\t\t{triggerEntry.Description}";
+            triggerTxt.text = $"\t\t{triggerEntry.Description.ToDescription(_cardEntry.TriggerParam)}";
         }
         
         protected override void OnClose()
