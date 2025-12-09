@@ -28,6 +28,7 @@ namespace Runtime.Business.UI.CardDetail
         public RectTransform cardTarget;
         public Button closeBtn;
         [Header("Skill")] 
+        public Transform skillBg;
         public SkillGroup tempSkillGroup;
         public Transform skillContent;
         [Header("CardInfo")] 
@@ -36,7 +37,7 @@ namespace Runtime.Business.UI.CardDetail
         public TMP_Text powerTxt;
         public TMP_Text hitTxt;
         public TMP_Text affiliationTxt;
-        [Header("Skill")]
+        [Header("Keywords")] 
         public Transform keywordsContent;
         public TMP_Text tempKeyword;
         [Header("Trigger")] 
@@ -56,7 +57,7 @@ namespace Runtime.Business.UI.CardDetail
         protected override void OnOpen(IUIData uiData = null)
         {
             base.OnOpen(uiData);
-            skillContent.RemoveAllChildren(tempSkillGroup.transform);
+            skillContent.RemoveAllChildren(tempSkillGroup.transform, skillBg);
             keywordsContent.RemoveAllChildren(tempKeyword.transform);
             if (uiData is not CardDetailData cardData)
             {
