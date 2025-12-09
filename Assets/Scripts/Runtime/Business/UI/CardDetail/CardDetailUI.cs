@@ -1,5 +1,5 @@
-using System.Text;
 using QFramework;
+using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
 using Runtime.Business.Manager;
 using Runtime.Business.Util;
@@ -36,9 +36,15 @@ namespace Runtime.Business.UI.CardDetail
         public TMP_Text powerTxt;
         public TMP_Text hitTxt;
         public TMP_Text affiliationTxt;
+        [Header("Skill")]
         public Transform keywordsContent;
         public TMP_Text tempKeyword;
+        [Header("Trigger")] 
+        public GameObject triggerRoot;
+        public TMP_Text triggerTxt;
         
+        
+        private CardEntry _cardEntry;
         protected override void OnInit(IUIData uiData = null)
         {
             base.OnInit(uiData);
@@ -59,56 +65,59 @@ namespace Runtime.Business.UI.CardDetail
 
             var ec = GetEventComponent();
             var cardId = cardData.CardId;
-            var cardEntry = DataManager.Instance.GetCard(cardId);
-            cardNameTxt.text = cardEntry.Name;
-            cardIdTxt.text = cardEntry.Id;
-            cardTypeTxt.text = cardEntry.CardType.ToChinese();
-            cardAttributeTxt.text = cardEntry.Attribute.ToChinese();
-            costTxt.text = cardEntry.Cost == null ? "-" : cardEntry.Cost.Value.ToString();
-            rareTxt.text = cardEntry.Rarity.ToString();
-            powerTxt.text = cardEntry.Power == null ? "-" : cardEntry.Power.Value.ToString();
-            hitTxt.text = cardEntry.Hit == null ? "-" : cardEntry.Hit.Value.ToString();
-            affiliationTxt.text = cardEntry.Affiliation.ToChinese();
-            UpdateSkills(cardEntry.Skills);
+            _cardEntry = DataManager.Instance.GetCard(cardId);
+            cardNameTxt.text = _cardEntry.Name;
+            cardIdTxt.text = _cardEntry.Id;
+            cardTypeTxt.text = _cardEntry.CardType.ToChinese();
+            cardAttributeTxt.text = _cardEntry.Attribute.ToChinese();
+            costTxt.text = _cardEntry.Cost == null ? "-" : _cardEntry.Cost.Value.ToString();
+            rareTxt.text = _cardEntry.Rarity.ToString();
+            powerTxt.text = _cardEntry.Power == null ? "-" : _cardEntry.Power.Value.ToString();
+            hitTxt.text = _cardEntry.Hit == null ? "-" : _cardEntry.Hit.Value.ToString();
+            affiliationTxt.text = _cardEntry.Affiliation.ToChinese();
+            UpdateSkills();
+            UpdateTrigger();
             ec.Send(GameEvents.CardFollowReady.Create(cardTarget));
             ec.Send(GameEvents.ShowCard.Create(cardId));
         }
 
-        private void UpdateSkills(int[] skillIds)
+        private void UpdateSkills()
         {
-            if (skillIds == null || skillIds.Length == 0)
+            var skillIds = _cardEntry.Skills;
+            var cardType = _cardEntry.CardType;
+            if (skillIds == null || skillIds.Length == 0 || cardType is CardType.Skill)
             {
                 var keywordTxt = Instantiate(tempKeyword, keywordsContent);
                 keywordTxt.text = "-";
                 keywordTxt.gameObject.SetActive(true);
-                return;
             }
 
-            for (var i = 0; i < skillIds.Length; i++)
+            for (var i = 0; i < skillIds?.Length; i++)
             {
                 var skillId = skillIds[i];
                 var skillGroup = Instantiate(tempSkillGroup, skillContent);
                 var skillEntry = DataManager.Instance.GetSkill(skillId);
-                skillGroup.Init(skillEntry);
+                skillGroup.Init(skillEntry, _cardEntry.SkillParams[i], _cardEntry.IconTextParams[i]);
                 skillGroup.gameObject.SetActive(true);
 
                 var keywordTxt = Instantiate(tempKeyword, keywordsContent);
-                var keyText = GetKeyText(skillEntry);
+                var keyText = skillEntry.Key.ToChinese();
                 keywordTxt.text = keyText + (i == skillIds.Length - 1 ? "" : ",");
                 keywordTxt.gameObject.SetActive(true);
             }
         }
 
-        private string GetKeyText(SkillEntry entry)
+        private void UpdateTrigger()
         {
-            var builder = new StringBuilder();
-            builder.Append($"{entry.Key.ToChinese()}");
-            if (!string.IsNullOrEmpty(entry.Param))
+            if (_cardEntry.Trigger == null)
             {
-                builder.Append($":{entry.Param}");
+                triggerRoot.gameObject.SetActive(false);
+                return;
             }
             
-            return builder.ToString();
+            var triggerId = _cardEntry.Trigger.Value;
+            var triggerEntry = DataManager.Instance.GetTrigger(triggerId);
+            triggerTxt.text = $"\t\t{triggerEntry.Description}";
         }
         
         protected override void OnClose()

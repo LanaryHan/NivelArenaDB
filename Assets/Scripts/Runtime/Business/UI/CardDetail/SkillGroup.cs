@@ -1,11 +1,12 @@
 using System;
+using System.Linq;
 using Coffee.UISoftMask;
+using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
 using Runtime.Business.Util;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Util;
 
@@ -13,33 +14,37 @@ namespace Runtime.Business.UI.CardDetail
 {
     public class SkillGroup : MonoBehaviour
     {
-        public Image skillNormalIcon;
-        public TMP_Text skillNormalTxt;
-        public Image skillLeaderIcon;
-        public TMP_Text skillLeaderTxt;
-        public GameObject specialFront;
-        public SoftMask softMask;
-        public TMP_Text skillDescription;
-
-        public void Init(SkillEntry skillEntry)
+        [Serializable]
+        public class IconGroup
         {
-            skillDescription.text = skillEntry.Description;
-            UpdateIcon(skillEntry.Key);
-        }
+            public KeyType[] effectType;
+            public GameObject root;
+            public Image iconImage;
+            public TMP_Text iconText;
+            public SoftMask softMask;
+            public GameObject specialFront;
+            public TMP_Text descriptionText;
 
-        private void UpdateIcon(KeyType key)
-        {
-            var showNormal = key is not KeyType.Oath and not KeyType.Awakening;
-            skillNormalIcon.gameObject.SetActive(showNormal);
-            skillNormalTxt.gameObject.SetActive(showNormal);
-            skillLeaderIcon.gameObject.SetActive(!showNormal);
-            skillLeaderTxt.gameObject.SetActive(!showNormal);
-            
-            if (showNormal)
+            public void SetActive(bool active)
             {
-                skillNormalIcon.color = key switch
+                root.SetActive(active);
+            }
+
+            public void SetIcon(KeyType keyType, string iconParam)
+            {
+                if (keyType is KeyType.None)
                 {
-                    KeyType.None => Color.white,
+                    return;
+                }
+
+                iconText.text = keyType.ToChinese(iconParam);
+                if (keyType is KeyType.ArmedCondition)
+                {
+                    return;
+                }
+
+                iconImage.color = keyType switch
+                {
                     KeyType.Entry => "#EE7325".ToRGB(),
                     KeyType.Attacker => "#C30D23".ToRGB(),
                     KeyType.Defender => "#028554".ToRGB(),
@@ -53,29 +58,49 @@ namespace Runtime.Business.UI.CardDetail
                     KeyType.Mix => Color.white,
                     KeyType.Credits => "#C78800".ToRGB(),
                     KeyType.Escape => "#12A1DE".ToRGB(),
-                    _ => throw new ArgumentOutOfRangeException(nameof(key), key, null)
+                    KeyType.Oath => Color.white,
+                    KeyType.Awakening => Color.black,
+                    _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
                 };
-                skillNormalTxt.text = key.ToChinese();
-                if (key is KeyType.Mix)
+                iconText.color = keyType is KeyType.Oath ? Color.black : Color.white;
+                if (softMask && keyType == KeyType.Mix)
                 {
                     softMask.enabled = true;
                     specialFront.SetActive(true);
                 }
                 else
                 {
-                    softMask.enabled = false;
-                    specialFront.SetActive(false);
+                    if (specialFront)
+                    {
+                        specialFront.SetActive(false);
+                    }
+
+                    if (softMask)
+                    {
+                        softMask.enabled = false;
+                    }
                 }
             }
-            else
+
+            public void SetDescription(string pattern, string param)
             {
-                (skillLeaderIcon.color, skillLeaderTxt.color) = key switch
-                {
-                    KeyType.Oath => (Color.white, Color.black),
-                    KeyType.Awakening => (Color.black, Color.white),
-                    _ => throw new ArgumentOutOfRangeException(nameof(key), key, null)
-                };
-                skillLeaderTxt.text = key.ToChinese();
+                descriptionText.text = pattern.ToDescription(param);
+            }
+        }
+        
+        public IconGroup[] iconGroups;
+
+        private SkillEntry _skillEntry;
+
+        public void Init(SkillEntry skillEntry, string descParam, string iconParam)
+        {
+            _skillEntry = skillEntry;
+            iconGroups.ForEach(ig => ig.SetActive(ig.effectType.Contains(skillEntry.Key)));
+            var activeGroup = iconGroups.First(ig => ig.effectType.Contains(skillEntry.Key));
+            activeGroup.SetIcon(_skillEntry.Key, iconParam);
+            if (skillEntry.Key is not KeyType.ArmedCondition)
+            {
+                activeGroup.SetDescription(skillEntry.Description, descParam);
             }
         }
     }

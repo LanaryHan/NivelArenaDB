@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Runtime.Business.Data;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -63,6 +64,7 @@ namespace Runtime.Business.Util
         {
             return affiliation switch
             {
+                Affiliation.None => "-",
                 Affiliation.Missilis => "米西利斯",
                 Affiliation.Tetra => "泰特拉",
                 Affiliation.Elysion => "极乐净土",
@@ -72,11 +74,11 @@ namespace Runtime.Business.Util
             };
         }
 
-        public static string ToChinese(this KeyType keyType)
+        public static string ToChinese(this KeyType keyType, string param = null)
         {
-            return keyType switch
+            var key = keyType switch
             {
-                KeyType.None => "-",
+                KeyType.None => string.Empty,
                 KeyType.Entry => "入场",
                 KeyType.Attacker => "攻击者",
                 KeyType.Defender => "防御者",
@@ -90,10 +92,30 @@ namespace Runtime.Business.Util
                 KeyType.Mix => "混合",
                 KeyType.Credits => "借贷",
                 KeyType.Escape => "逃脱",
+                KeyType.ArmedCondition => "武装条件",
                 KeyType.Oath => "誓约",
                 KeyType.Awakening => "觉醒",
                 _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
             };
+            if (string.IsNullOrEmpty(param))
+            {
+                return key;
+            }
+
+            return $"{key}:{param}";
+        }
+
+        public static string ToDescription(this string pattern, string param)
+        {
+            if (string.IsNullOrEmpty(param))
+            {
+                return pattern;
+            }
+
+            var @params = param.Split(",");
+            var args = @params.Select(p => (object) p).ToArray();
+            var result = string.Format(pattern, args);
+            return result;
         }
     }
 }
