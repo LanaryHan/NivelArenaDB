@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Linq;
 using UnityEditor;
@@ -15,9 +14,9 @@ namespace Runtime.Editor
         }
 
         private string fileType = "*.png";
-        private string searchPath ="";
-        private string prefix = "new";
-        private string separator = "_";
+        private string searchPath = "";
+        private string prefix = "";
+        private string separator = "-";
 
         void OnGUI()
         {
@@ -35,7 +34,7 @@ namespace Runtime.Editor
         private void RenameTextures()
         {
             
-            var path = Path.Combine(Application.dataPath, "Textures", searchPath);
+            var path = Path.Combine(Application.dataPath, "Artworks/Textures", searchPath);
             if (!Directory.Exists(path))
             {
                 EditorUtility.DisplayDialog("错误", "路径不存在", "确定");
@@ -54,7 +53,7 @@ namespace Runtime.Editor
                 {
                     var file = files[i];
                     var assetPath = "Assets" + file.Replace(Application.dataPath, "").Replace('\\', '/');
-                    var insertZero = i >= 10 ? "0" : "00";
+                    var insertZero = i >= 9 ? "0" : "00";
                     var newName = $"{prefix}{separator}{insertZero}{i + 1}";
                     var result = AssetDatabase.RenameAsset(assetPath, newName);
                     if (string.IsNullOrEmpty(result))

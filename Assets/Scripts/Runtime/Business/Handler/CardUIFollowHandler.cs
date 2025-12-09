@@ -42,7 +42,6 @@ namespace Runtime.Business.Handler
             var worldPos = cardCamera.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 0));
             worldPos.z = 200f;
             card.transform.position = worldPos;
-            Debug.Log(worldPos);
         }
     }
 }
