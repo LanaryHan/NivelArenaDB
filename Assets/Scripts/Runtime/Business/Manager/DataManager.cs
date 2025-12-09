@@ -18,6 +18,7 @@ namespace Runtime.Business.Manager
         public Dictionary<string, CardEntry> Cards;
         public Dictionary<Deck, PackEntry> Packs;
         public Dictionary<int, SkillEntry> Skills;
+        public Dictionary<int, TriggerEntry> Triggers;
 
         private readonly ResLoader _resLoader = ResLoader.Allocate();
 
@@ -65,6 +66,20 @@ namespace Runtime.Business.Manager
             }
 
             #endregion
+
+            #region Trigger
+
+            csv = Resources.Load<TextAsset>("triggers");
+            using (var stringReader = new StringReader(csv.text))
+            {
+                using (var csvReader = new CsvReader(stringReader, CultureInfo.InvariantCulture))
+                {
+                    var records = csvReader.GetRecords<TriggerEntry>();
+                    Triggers = records.ToDictionary(entry => entry.Id, entry => entry);
+                }
+            }
+
+            #endregion
         }
 
         public List<CardEntry> GetCardFromPack(Deck pack)
@@ -105,6 +120,11 @@ namespace Runtime.Business.Manager
         public SkillEntry GetSkill(int id)
         {
             return Skills.GetValueOrDefault(id);
+        }
+
+        public TriggerEntry GetTrigger(int id)
+        {
+            return Triggers.GetValueOrDefault(id);
         }
     }
 }
