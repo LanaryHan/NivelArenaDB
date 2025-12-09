@@ -1,0 +1,37 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 689664967
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b91013b0c07232d7dfda9351c44163bb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 691aa35667c645754a3dd9e29e3305b1
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/ST02/ST02-017.png
+- Assets/Artworks/Textures/ST02/ST02-016.png
+- Assets/Artworks/Textures/ST02/ST02-012.png
+- Assets/Artworks/Textures/ST02/ST02-009.png
+- Assets/Artworks/Textures/ST02/ST02-005.png
+- Assets/Artworks/Textures/ST02/ST02-006.png
+- Assets/Artworks/Textures/ST02/ST02-008.png
+- Assets/Artworks/Textures/ST02/ST02-015.png
+- Assets/Artworks/Textures/ST02/ST02-010.png
+- Assets/Artworks/Textures/ST02/ST02-013.png
+- Assets/Artworks/Textures/ST02/ST02-004.png
+- Assets/Artworks/Textures/ST02/ST02-014.png
+- Assets/Artworks/Textures/ST02/ST02-007.png
+- Assets/Artworks/Textures/ST02/ST02-011.png
+- Assets/Artworks/Textures/ST02/ST02-003.png
+Dependencies: []

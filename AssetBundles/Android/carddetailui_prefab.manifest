@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 3379192955
+CRC: 1010434433
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: be311314da668a83a2d77120c7b7223a
+    Hash: 0a139d0da71667685d16358dfda0ef46
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 66999157900f60fed9d4b95a34e124ff
+    Hash: 406dda488879e4cc65466994d31609ff
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 3bead7e545ff811c221faf7ddff1afa1
+    Hash: b1ac523a22a4dc06888d09ae2c679809
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -22,6 +22,8 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: f36ecf610fcd493da4e2036c1d05e4e7, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: f9b1349ef0b244e098edd10b7b2438a0, type: 3}
@@ -29,6 +31,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 385b7d1277b6c4007a84c065696e0f8c, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
 - Class: 114
@@ -40,17 +44,13 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: f36ecf610fcd493da4e2036c1d05e4e7, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 97bc2ebab6563400c95b036136d26ea6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 385b7d1277b6c4007a84c065696e0f8c, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 97bc2ebab6563400c95b036136d26ea6, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -62,6 +62,8 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: Business
+  ClassName: Runtime.Business.UI.CardDetail.SkillGroup/IconGroup
 - AssemblyName: Coffee.SoftMaskForUGUI
   ClassName: Coffee.UISoftMaskInternal.MinMax01
 - AssemblyName: Unity.TextMeshPro

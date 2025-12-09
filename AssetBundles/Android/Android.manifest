@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 3532439789
+CRC: 3806352393
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -95,4 +95,58 @@ AssetBundleManifest:
       Dependencies: {}
     Info_29:
       Name: st01-010_png
+      Dependencies: {}
+    Info_30:
+      Name: st02-001_png
+      Dependencies: {}
+    Info_31:
+      Name: st02-001sign_png
+      Dependencies: {}
+    Info_32:
+      Name: st02-002_png
+      Dependencies: {}
+    Info_33:
+      Name: st02-003_png
+      Dependencies: {}
+    Info_34:
+      Name: st02-004_png
+      Dependencies: {}
+    Info_35:
+      Name: st02-005_png
+      Dependencies: {}
+    Info_36:
+      Name: st02-006_png
+      Dependencies: {}
+    Info_37:
+      Name: st02-007_png
+      Dependencies: {}
+    Info_38:
+      Name: st02-008_png
+      Dependencies: {}
+    Info_39:
+      Name: st02-009_png
+      Dependencies: {}
+    Info_40:
+      Name: st02-010_png
+      Dependencies: {}
+    Info_41:
+      Name: st02-011_png
+      Dependencies: {}
+    Info_42:
+      Name: st02-012_png
+      Dependencies: {}
+    Info_43:
+      Name: st02-013_png
+      Dependencies: {}
+    Info_44:
+      Name: st02-014_png
+      Dependencies: {}
+    Info_45:
+      Name: st02-015_png
+      Dependencies: {}
+    Info_46:
+      Name: st02-016_png
+      Dependencies: {}
+    Info_47:
+      Name: st02-017_png
       Dependencies: {}
