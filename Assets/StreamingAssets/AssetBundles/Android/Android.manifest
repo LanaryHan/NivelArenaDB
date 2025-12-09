@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 2470480318
+CRC: 3532439789
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -32,67 +32,67 @@ AssetBundleManifest:
       Name: st01-009_png
       Dependencies: {}
     Info_9:
-      Name: st01-0010_png
-      Dependencies: {}
-    Info_10:
       Name: st01-011_png
       Dependencies: {}
-    Info_11:
+    Info_10:
       Name: st01-012_png
       Dependencies: {}
-    Info_12:
+    Info_11:
       Name: st01-013_png
       Dependencies: {}
-    Info_13:
+    Info_12:
       Name: st01-014_png
       Dependencies: {}
-    Info_14:
+    Info_13:
       Name: st01-015_png
       Dependencies: {}
-    Info_15:
+    Info_14:
       Name: st01-016_png
       Dependencies: {}
-    Info_16:
+    Info_15:
       Name: st01-017_png
       Dependencies: {}
-    Info_17:
+    Info_16:
       Name: pack_bt01_png
       Dependencies: {}
-    Info_18:
+    Info_17:
       Name: pack_bt02_png
       Dependencies: {}
-    Info_19:
+    Info_18:
       Name: pack_bt03_png
       Dependencies: {}
-    Info_20:
+    Info_19:
       Name: pack_sb01_png
       Dependencies: {}
-    Info_21:
+    Info_20:
       Name: pack_st01_png
       Dependencies: {}
-    Info_22:
+    Info_21:
       Name: pack_st02_png
       Dependencies: {}
-    Info_23:
+    Info_22:
       Name: pack_st03_png
       Dependencies: {}
-    Info_24:
+    Info_23:
       Name: pack_st04_png
       Dependencies: {}
-    Info_25:
+    Info_24:
       Name: pack_st05_png
       Dependencies: {}
-    Info_26:
+    Info_25:
       Name: packui_prefab
       Dependencies:
         Dependency_0: pack_bt01_png
-    Info_27:
+    Info_26:
       Name: cardsui_prefab
       Dependencies:
         Dependency_0: st01-008_png
-    Info_28:
+    Info_27:
       Name: st01-001sign_png
       Dependencies: {}
-    Info_29:
+    Info_28:
       Name: carddetailui_prefab
+      Dependencies: {}
+    Info_29:
+      Name: st01-010_png
       Dependencies: {}
