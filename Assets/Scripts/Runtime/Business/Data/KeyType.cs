@@ -2,7 +2,7 @@ namespace Runtime.Business.Data
 {
     public enum KeyType
     {
-        None,
+        None,               //技能效果
         Entry,              //入场
         Attacker,           //攻击者
         Defender,           //防御者
@@ -16,6 +16,7 @@ namespace Runtime.Business.Data
         Mix,                //混合
         Credits,            //借贷
         Escape,             //逃脱
+        ArmedCondition,     //武装条件
         
         
         Oath,               //誓约

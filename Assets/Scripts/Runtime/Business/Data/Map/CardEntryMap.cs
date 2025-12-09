@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using CsvHelper.Configuration;
 using Runtime.Business.Data.Entry;
@@ -19,12 +20,44 @@ namespace Runtime.Business.Data.Map
             Map(m => m.Hit).Index(8);
             Map(m => m.Skills).Convert(row =>
             {
-                var text = row.Row.GetField("Skills");
-                return string.IsNullOrEmpty(text)
-                    ? null
-                    : text.Split(",").Select(int.Parse).ToArray();
+                var skill1 = row.Row.GetField<int?>("Skill1");
+                var skill2 = row.Row.GetField<int?>("Skill2");
+                var skill3 = row.Row.GetField<int?>("Skill3");
+                var skill4 = row.Row.GetField<int?>("Skill4");
+                var list = new List<int?>
+                {
+                    skill1, skill2, skill3, skill4
+                };
+                list.RemoveAll(skill => skill == null);
+                return list.Select(skill => skill!.Value).ToArray();
             });
-            Map(m => m.Affiliation).Index(10);
+            Map(m => m.SkillParams).Convert(row =>
+            {
+                var param1 = row.Row.GetField<string>("SkillParam1");
+                var param2 = row.Row.GetField<string>("SkillParam2");
+                var param3 = row.Row.GetField<string>("SkillParam3");
+                var param4 = row.Row.GetField<string>("SkillParam4");
+                var list = new List<string>
+                {
+                    param1, param2, param3, param4
+                };
+                return list.ToArray();
+            });
+            Map(m => m.IconTextParams).Convert(row =>
+            {
+                var param1 = row.Row.GetField<string>("IconTextParam1");
+                var param2 = row.Row.GetField<string>("IconTextParam2");
+                var param3 = row.Row.GetField<string>("IconTextParam3");
+                var param4 = row.Row.GetField<string>("IconTextParam4");
+                var list = new List<string>
+                {
+                    param1, param2, param3, param4
+                };
+                return list.ToArray();
+            });
+            Map(m => m.Trigger).Index(21);
+            Map(m => m.TriggerParam).Index(22);
+            Map(m => m.Affiliation).Index(23);
             Map(m => m.HasSpecial).Convert(row =>
             {
                 var text = row.Row.GetField("HasSpecial");

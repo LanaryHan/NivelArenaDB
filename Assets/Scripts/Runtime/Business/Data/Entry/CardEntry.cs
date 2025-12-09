@@ -54,8 +54,27 @@ namespace Runtime.Business.Data.Entry
         /// <summary>
         /// 技能id
         /// </summary>
-        [CanBeNull]
         public int[] Skills { get; set; }
+        
+        /// <summary>
+        /// 技能参数
+        /// </summary>
+        public string[] SkillParams { get; set; }
+        
+        /// <summary>
+        /// 图标参数
+        /// </summary>
+        public string[] IconTextParams { get; set; }
+        
+        /// <summary>
+        /// 触发
+        /// </summary>
+        public int? Trigger { get; set; }
+        
+        /// <summary>
+        /// 触发参数
+        /// </summary>
+        public string TriggerParam { get; set; }
 
         /// <summary>
         /// 所属部队
