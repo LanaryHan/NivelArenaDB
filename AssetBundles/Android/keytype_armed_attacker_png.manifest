@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 3859646847
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 602b8752500512310ebcbac47c7840c4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 8d2744364c737d4ee21cbb6f2a8cd940
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/KeyTypeMask/keyType_armed_attacker.png
+Dependencies: []

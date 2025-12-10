@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 3329668908
+CRC: 4242583789
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: be2bbf342576ee4fb764318c7f2ca0a3
+    Hash: 971e1f8e22f78dd76a4307e4aedab9ec
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 406dda488879e4cc65466994d31609ff
+    Hash: 914b0e2e97826f36f8da4ecd47b64416
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 14ae0614dbbab27fbfa59f94c603b7e4
+    Hash: af7b398f28d4514255fc1cf279206e35
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -21,8 +21,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
-- Class: 114
-  Script: {fileID: 11500000, guid: f36ecf610fcd493da4e2036c1d05e4e7, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
 - Class: 114
@@ -43,6 +41,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f36ecf610fcd493da4e2036c1d05e4e7, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
 - Class: 114
@@ -116,4 +116,5 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.SpriteState
 Assets:
 - Assets/Artworks/UI/CardDetailUI/Dialog/CardDetailUI.prefab
-Dependencies: []
+Dependencies:
+- /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/keytype_mix_png

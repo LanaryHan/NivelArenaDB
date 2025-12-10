@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1228045367
+CRC: 712863300
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -92,7 +92,8 @@ AssetBundleManifest:
       Dependencies: {}
     Info_28:
       Name: carddetailui_prefab
-      Dependencies: {}
+      Dependencies:
+        Dependency_0: keytype_mix_png
     Info_29:
       Name: st01-010_png
       Dependencies: {}
@@ -311,4 +312,10 @@ AssetBundleManifest:
       Dependencies: {}
     Info_101:
       Name: st05-017_png
+      Dependencies: {}
+    Info_102:
+      Name: keytype_armed_attacker_png
+      Dependencies: {}
+    Info_103:
+      Name: keytype_mix_png
       Dependencies: {}
