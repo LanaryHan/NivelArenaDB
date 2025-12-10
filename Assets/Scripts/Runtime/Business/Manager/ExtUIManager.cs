@@ -70,6 +70,14 @@ namespace Runtime.Business.Manager
         private void HideCard(HideCard e)
         {
             card.SetActive(false);
+            if (_isReversing)
+            {
+                card.transform.DOKill();
+                _isReversing = false;
+            }
+
+            card.transform.rotation = Quaternion.identity;
+            _reversed = false;
         }
 
         private void ShowCard(ShowCard evt)
