@@ -12,7 +12,7 @@ namespace Runtime.Business.Data
         Guardian,           //守护者
         Armed,              //武装
         LevelLink,          //等级链接
-        FrontConstruction,  //战线构筑
+        WireBuilding,       //战线构筑
         Mix,                //混合
         Credits,            //借贷
         Escape,             //逃脱

@@ -55,7 +55,7 @@ namespace Runtime.Business.UI.CardDetail
                     KeyType.Guardian => "#0FA0A1".ToRGB(),
                     KeyType.Armed => "#6F3F20".ToRGB(),
                     KeyType.LevelLink => "#5BAB46".ToRGB(),
-                    KeyType.FrontConstruction => "#0F5182".ToRGB(),
+                    KeyType.WireBuilding => "#0F5182".ToRGB(),
                     KeyType.Mix => Color.white,
                     KeyType.Credits => "#C78800".ToRGB(),
                     KeyType.Escape => "#12A1DE".ToRGB(),

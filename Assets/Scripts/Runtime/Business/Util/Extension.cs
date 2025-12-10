@@ -88,7 +88,7 @@ namespace Runtime.Business.Util
                 KeyType.Guardian => "守护者",
                 KeyType.Armed => "武装",
                 KeyType.LevelLink => "等级链接",
-                KeyType.FrontConstruction => "战线构筑",
+                KeyType.WireBuilding => "战线构筑",
                 KeyType.Mix => "混合",
                 KeyType.Credits => "借贷",
                 KeyType.Escape => "逃脱",

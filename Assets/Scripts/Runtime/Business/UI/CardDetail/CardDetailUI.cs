@@ -71,10 +71,10 @@ namespace Runtime.Business.UI.CardDetail
             cardIdTxt.text = _cardEntry.Id;
             cardTypeTxt.text = _cardEntry.CardType.ToChinese();
             cardAttributeTxt.text = _cardEntry.Attribute.ToChinese();
-            costTxt.text = _cardEntry.Cost == null ? "-" : _cardEntry.Cost.Value.ToString();
+            costTxt.text = _cardEntry.Cost == null ? "——" : _cardEntry.Cost.Value.ToString();
             rareTxt.text = _cardEntry.Rarity.ToString();
-            powerTxt.text = _cardEntry.Power == null ? "-" : _cardEntry.Power.Value.ToString();
-            hitTxt.text = _cardEntry.Hit == null ? "-" : _cardEntry.Hit.Value.ToString();
+            powerTxt.text = _cardEntry.Power == null ? "——" : _cardEntry.Power.Value.ToString();
+            hitTxt.text = _cardEntry.Hit == null ? "——" : _cardEntry.Hit.Value.ToString();
             affiliationTxt.text = _cardEntry.Affiliation.ToChinese();
             UpdateSkills();
             UpdateTrigger();
@@ -89,11 +89,11 @@ namespace Runtime.Business.UI.CardDetail
             if (skillIds == null || skillIds.Length == 0 || cardType is CardType.Skill)
             {
                 var keywordTxt = Instantiate(tempKeyword, keywordsContent);
-                keywordTxt.text = "-";
+                keywordTxt.text = "——";
                 keywordTxt.gameObject.SetActive(true);
                 if (cardType is not CardType.Skill)
                 {
-                    skillBg.gameObject.SetActive(false);
+                    skillContent.gameObject.SetActive(false);
                 }
             }
 
