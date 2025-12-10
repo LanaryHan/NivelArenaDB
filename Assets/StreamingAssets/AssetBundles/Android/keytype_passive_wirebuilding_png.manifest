@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 675076895
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c1d39e48ce547cec669f367a1fac2fb7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 3b1396e2f1f77ad9c18518f39cc38441
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/KeyTypeMask/keyType_passive_wirebuilding.png
+Dependencies: []
