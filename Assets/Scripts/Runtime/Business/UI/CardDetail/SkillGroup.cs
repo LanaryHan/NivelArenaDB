@@ -4,6 +4,7 @@ using Coffee.UISoftMask;
 using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
+using Runtime.Business.Manager;
 using Runtime.Business.Util;
 using TMPro;
 using UnityEngine;
@@ -22,12 +23,12 @@ namespace Runtime.Business.UI.CardDetail
             public Image iconImage;
             public TMP_Text iconText;
             public SoftMask softMask;
-            public GameObject specialFront;
+            public Image specialFront;
             public TMP_Text descriptionText;
 
-            public void SetActive(bool active)
+            public void SetActive(KeyType active)
             {
-                root.SetActive(active);
+                root.SetActive(effectType.Contains(active));
             }
 
             public void SetIcon(KeyType keyType, string iconParam)
@@ -42,7 +43,7 @@ namespace Runtime.Business.UI.CardDetail
                 {
                     return;
                 }
-
+                
                 iconImage.color = keyType switch
                 {
                     KeyType.Entry => "#EE7325".ToRGB(),
@@ -66,19 +67,31 @@ namespace Runtime.Business.UI.CardDetail
                 if (softMask && keyType == KeyType.Mix)
                 {
                     softMask.enabled = true;
-                    specialFront.SetActive(true);
+                    specialFront.gameObject.SetActive(true);
                 }
                 else
                 {
                     if (specialFront)
                     {
-                        specialFront.SetActive(false);
+                        specialFront.gameObject.SetActive(false);
                     }
 
                     if (softMask)
                     {
                         softMask.enabled = false;
                     }
+                }
+            }
+
+            public void SetIcon(KeyType key1, KeyType key2, string iconParam1, string iconParam2)
+            {
+                iconText.text = $"{key1.ToChinese(iconParam1)} | {key2.ToChinese(iconParam2)}";
+                var sprite = DataManager.Instance.LoadSkillMaskSprite(key1, key2);
+                if (sprite)
+                {
+                    softMask.enabled = true;
+                    specialFront.overrideSprite = sprite;
+                    specialFront.gameObject.SetActive(true);
                 }
             }
 
@@ -95,10 +108,24 @@ namespace Runtime.Business.UI.CardDetail
         public void Init(SkillEntry skillEntry, string descParam, string iconParam)
         {
             _skillEntry = skillEntry;
-            iconGroups.ForEach(ig => ig.SetActive(ig.effectType.Contains(skillEntry.Key)));
-            var activeGroup = iconGroups.First(ig => ig.effectType.Contains(skillEntry.Key));
-            activeGroup.SetIcon(_skillEntry.Key, iconParam);
-            if (skillEntry.Key is not KeyType.ArmedCondition)
+            iconGroups.ForEach(ig => ig.SetActive(skillEntry.Key1));
+            var activeGroup = iconGroups.First(ig => ig.effectType.Contains(skillEntry.Key1));
+            if (skillEntry.Key2 == null)
+            {
+                activeGroup.SetIcon(_skillEntry.Key1, iconParam);
+            }
+            else
+            {
+                var strings = iconParam.Split(",").ToList();
+                if (strings.Count == 1)
+                {
+                    strings.Add(string.Empty);
+                }
+
+                activeGroup.SetIcon(skillEntry.Key1, skillEntry.Key2.Value, strings[0], strings[1]);
+            }
+            
+            if (skillEntry.Key1 is not KeyType.ArmedCondition)
             {
                 activeGroup.SetDescription(skillEntry.Description, descParam);
             }

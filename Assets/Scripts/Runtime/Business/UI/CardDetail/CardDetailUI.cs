@@ -106,7 +106,7 @@ namespace Runtime.Business.UI.CardDetail
                 skillGroup.gameObject.SetActive(true);
 
                 var keywordTxt = Instantiate(tempKeyword, keywordsContent);
-                var keyText = skillEntry.Key.ToChinese();
+                var keyText = skillEntry.Key1.ToChinese();
                 keywordTxt.text = keyText + (i == skillIds.Length - 1 ? "" : ",");
                 keywordTxt.gameObject.SetActive(true);
             }

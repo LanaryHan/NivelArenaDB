@@ -126,5 +126,14 @@ namespace Runtime.Business.Manager
         {
             return Triggers.GetValueOrDefault(id);
         }
+
+        public Sprite LoadSkillMaskSprite(KeyType key1, KeyType key2)
+        {
+            var bundle = key1 is KeyType.Mix
+                ? "keytype_mix_png"
+                : $"keytype_{key1.ToString().ToLower()}_{key2.ToString().ToLower()}";
+            var sprite = _resLoader.LoadSync<Sprite>(bundle);
+            return sprite;
+        }
     }
 }
