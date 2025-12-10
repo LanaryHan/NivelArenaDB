@@ -16,7 +16,7 @@ namespace Runtime.Editor
         private string fileType = "*.png";
         private string searchPath = "";
         private string prefix = "";
-        private string separator = "-";
+        private int start;
 
         void OnGUI()
         {
@@ -24,7 +24,7 @@ namespace Runtime.Editor
             fileType = EditorGUILayout.TextField("文件类型", fileType);
             searchPath = EditorGUILayout.TextField("文件路径", searchPath);
             prefix = EditorGUILayout.TextField("前缀", prefix);
-            separator = EditorGUILayout.TextField("分隔符", separator);
+            start = EditorGUILayout.IntField("起始", start);
 
             if (GUILayout.Button("批量重命名"))
             {
@@ -49,12 +49,13 @@ namespace Runtime.Editor
             var count = 0;
             try
             {
+                var writeI = start;
                 for (var i = 0; i < files.Length; i++)
                 {
                     var file = files[i];
                     var assetPath = "Assets" + file.Replace(Application.dataPath, "").Replace('\\', '/');
-                    var insertZero = i >= 9 ? "0" : "00";
-                    var newName = $"{prefix}{separator}{insertZero}{i + 1}";
+                    var insertZero = writeI >= 9 ? "0" : "00";
+                    var newName = $"{prefix}-{insertZero}{writeI}";
                     var result = AssetDatabase.RenameAsset(assetPath, newName);
                     if (string.IsNullOrEmpty(result))
                     {
@@ -65,6 +66,8 @@ namespace Runtime.Editor
                     {
                         Debug.LogError($"重命名失败:{result}");
                     }
+
+                    writeI++;
                 }
             }
             finally
