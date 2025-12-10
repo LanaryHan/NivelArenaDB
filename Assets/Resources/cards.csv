@@ -67,3 +67,20 @@ Number,Pack,Rarity,CardType,Attribute,Name,Cost,Power,Hit,Skill1,SkillParam1,Ico
 015,ST04,C,Skill,Wave,失乐园,4,,,10044,"1,守护者",,,,,,,,,,,20009,,None,0
 016,ST04,C,Item,Wave,凯夫拉尔夹克,1,,,10013,,无,10040,2000,,,,,,,,,,None,0
 017,ST04,C,Item,Wave,稀有金属手套,2,,,10013,,具有【防御者】的单位,10045,1,主阶段,,,,,,,20008,1,None,0
+001,ST05,L,Leader,Lightning,普丽瓦蒂:不友善的女仆,,,,10001,雷霆,,10002,5,,10026,"武装,1000",,,,,,,Elysion,1
+002,ST05,C,Unit,Lightning,产品08,1,3000,1,,,,,,,,,,,,,,,Missilis,0
+003,ST05,C,Unit,Lightning,舒格,1,2500,1,10046,"1,1",,,,,,,,,,,,,Tetra,0
+004,ST05,C,Unit,Lightning,普琳玛,2,4000,1,,,,,,,,,,,,,,,Tetra,0
+005,ST05,C,Unit,Lightning,麦斯威尔,2,3500,1,10047,1000,,,,,,,,,,,,,Missilis,0
+006,ST05,SR,Unit,Lightning,皇冠,3,3000,1,10048,"1,2,道具",,,,,,,,,,,20010,"1,1,道具",Pilgrim,0
+007,ST05,R,Unit,Lightning,索达,3,4000,1,10049,1000,,,,,,,,,,,,,Tetra,0
+008,ST05,C,Unit,Lightning,丽塔,4,5500,2,10026,"武装,1000",,,,,,,,,,,,,Missilis,0
+009,ST05,C,Unit,Lightning,德雷克,5,7000,2,,,,,,,,,,,,,,,Missilis,0
+010,ST05,R,Unit,Lightning,桑迪,6,7000,2,10047,2000,,,,,,,,,,,,,Missilis,0
+011,ST05,SR,Unit,Lightning,普丽瓦蒂:不友善的女仆,7,9000,3,10050,1,,,,,,,,,,,20002,,Elysion,0
+012,ST05,C,Skill,Lightning,现场检查,2,,,10051,"1,道具",,,,,,,,,,,20010,"1,1,道具",None,0
+013,ST05,C,Skill,Lightning,丽塔推动,3,,,10052,,,,,,,,,,,,,,None,0
+014,ST05,C,Skill,Lightning,One For All,4,,,10053,"2,1,1",,,,,,,,,,,20011,"2,2",None,0
+015,ST05,C,Item,Lightning,凯夫拉尔护腿,1,,,10013,,无,10024,1500,,,,,,,,,,None,0
+016,ST05,C,Item,Lightning,稀有金属臂铠,2,,,10013,,具有【武装】的单位,10025,1,,,,,,,,,,None,0
+017,ST05,C,Item,Lightning,稀有金属护腿,2,,,10013,,无,10024,2500,,,,,,,,,,None,0
