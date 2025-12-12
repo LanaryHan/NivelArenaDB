@@ -58,10 +58,7 @@ namespace Runtime.Business.Manager
         private bool _canReverse;
         private bool _reversed;
         private bool _isReversing;
-
-
         private readonly List<UIPanel> _uiList = new();
-        private GameEventComponent _eventComponent;
 
         private void Awake()
         {
@@ -70,7 +67,6 @@ namespace Runtime.Business.Manager
 #else
             cardCamera.orthographicSize = 12f;
 #endif
-
         }
 
         private void Start()
