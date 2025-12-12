@@ -892,6 +892,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62e7cd1b72e4920b575944da544df81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardCamera: {fileID: 1018435131}
+  canvas: {fileID: 1986777144}
   normalCard: {fileID: 691676347}
   specialCard: {fileID: 1534070296}
   card: {fileID: 1567156079}
@@ -1150,6 +1152,11 @@ Transform:
   - {fileID: 691676348}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!223 &1986777144 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 223938889282763000, guid: c70aac0028afd42eabc9e0c55824c824, type: 3}
+  m_PrefabInstance: {fileID: 241693467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

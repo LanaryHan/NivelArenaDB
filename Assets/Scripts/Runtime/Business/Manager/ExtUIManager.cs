@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using GameEvents;
 using QFramework;
@@ -49,6 +50,8 @@ namespace Runtime.Business.Manager
         {
         }
 
+        public Camera cardCamera;
+        public Canvas canvas;
         public SpriteRenderer normalCard;
         public SpriteRenderer specialCard;
         public GameObject card;
@@ -56,6 +59,12 @@ namespace Runtime.Business.Manager
         private bool _canReverse;
         private bool _reversed;
         private bool _isReversing;
+
+        private void Awake()
+        {
+            var scale = canvas.scaleFactor;
+            cardCamera.orthographicSize = 10.15f / scale;
+        }
 
         private void Start()
         {
