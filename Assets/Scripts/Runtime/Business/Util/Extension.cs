@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
+using QFramework;
 using Runtime.Business.Data;
+using Runtime.Business.Manager;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -8,6 +10,11 @@ namespace Runtime.Business.Util
 {
     public static class Extension
     {
+        public static void CloseSelfByExt(this UIPanel panel)
+        {
+            ExtUIManager.Instance.CloseDialog(panel);
+        }
+
         public static void RemoveAllChildren(this Transform parent, params Transform[] excepts)
         {
             if (parent.childCount > 0)

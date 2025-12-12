@@ -49,7 +49,7 @@ var gameManager = GameManager.Instance;
 // GameManager:OnDestroy
 ")]
 #endif
-    public abstract class MonoSingleton<T> : MonoBehaviour, ISingleton where T : MonoSingleton<T>
+    public abstract class MonoSingleton<T> : EventMonoBehaviour, ISingleton where T : MonoSingleton<T>
     {
         /// <summary>
         /// 静态实例

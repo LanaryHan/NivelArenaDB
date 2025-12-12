@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using GameEvents;
 using QFramework;
@@ -44,14 +44,13 @@ namespace GameEvents
 
 namespace Runtime.Business.Manager
 {
-    public class ExtUIManager : EventMonoBehaviour
+    public class ExtUIManager : MonoSingleton<ExtUIManager>
     {
         protected ExtUIManager()
         {
         }
 
         public Camera cardCamera;
-        public Canvas canvas;
         public SpriteRenderer normalCard;
         public SpriteRenderer specialCard;
         public GameObject card;
@@ -60,10 +59,18 @@ namespace Runtime.Business.Manager
         private bool _reversed;
         private bool _isReversing;
 
+
+        private readonly List<UIPanel> _uiList = new();
+        private GameEventComponent _eventComponent;
+
         private void Awake()
         {
-            var scale = canvas.scaleFactor;
-            cardCamera.orthographicSize = 10.15f / scale;
+#if UNITY_EDITOR
+            cardCamera.orthographicSize = 10.15f;
+#else
+            cardCamera.orthographicSize = 12f;
+#endif
+
         }
 
         private void Start()
@@ -75,6 +82,48 @@ namespace Runtime.Business.Manager
 
             card.gameObject.SetActive(false);
         }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                OnBackKey();
+            }
+        }
+
+        #region UI
+
+        public void OpenDialog<T>() where T : UIPanel
+        {
+            var openPanel = UIKit.OpenPanel<T>();
+            _uiList.Add(openPanel);
+        }
+
+        public void OpenDialog<T>(IUIData uiData) where T : UIPanel
+        {
+            var openPanel = UIKit.OpenPanel<T>(uiData);
+            _uiList.Add(openPanel);
+        }
+
+        public void CloseDialog<T>(T dialog) where T : UIPanel
+        {
+            UIKit.ClosePanel(dialog);
+            _uiList.Remove(dialog);
+        }
+
+        private void OnBackKey()
+        {
+            var uiPanel = _uiList[^1];
+            if (uiPanel.CanCloseByBackKey)
+            {
+                _uiList.Remove(uiPanel);
+                UIKit.ClosePanel(uiPanel);
+            }
+        }
+
+        #endregion
+
+        #region Event
 
         private void HideCard(HideCard e)
         {
@@ -130,5 +179,7 @@ namespace Runtime.Business.Manager
                 _isReversing = false;
             });
         }
+
+        #endregion
     }
 }

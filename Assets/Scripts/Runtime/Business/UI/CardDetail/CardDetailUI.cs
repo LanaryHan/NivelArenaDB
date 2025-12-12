@@ -46,12 +46,14 @@ namespace Runtime.Business.UI.CardDetail
         
         
         private CardEntry _cardEntry;
+        public override bool CanCloseByBackKey => true;
+
         protected override void OnInit(IUIData uiData = null)
         {
             base.OnInit(uiData);
             tempSkillGroup.gameObject.SetActive(false);
             tempKeyword.gameObject.SetActive(false);
-            closeBtn.onClick.AddListener(CloseSelf);
+            closeBtn.onClick.AddListener(this.CloseSelfByExt);
         }
 
         protected override void OnOpen(IUIData uiData = null)

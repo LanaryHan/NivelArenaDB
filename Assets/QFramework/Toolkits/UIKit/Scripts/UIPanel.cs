@@ -38,6 +38,8 @@ namespace QFramework
 
 		public override IManager Manager => UIManager.Instance;
 
+		public abstract bool CanCloseByBackKey { get; }
+
 		protected override void OnBeforeDestroy()
 		{
 			ClearUIComponents();

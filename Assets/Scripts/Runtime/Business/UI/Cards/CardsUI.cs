@@ -24,11 +24,13 @@ namespace UI
         public Transform content;
         public Button closeBtn;
 
+        public override bool CanCloseByBackKey => true;
+
         protected override void OnInit(IUIData uiData = null)
         {
             base.OnInit(uiData);
             tempCardGroup.gameObject.SetActive(false);
-            closeBtn.onClick.AddListener(CloseSelf);
+            closeBtn.onClick.AddListener(this.CloseSelfByExt);
         }
 
         protected override void OnOpen(IUIData uiData = null)

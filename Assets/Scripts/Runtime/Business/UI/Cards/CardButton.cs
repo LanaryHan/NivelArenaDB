@@ -34,7 +34,8 @@ namespace UI
 
         private void OnClick()
         {
-            UIKit.OpenPanel<CardDetailUI>(new CardDetailData(_cardId));
+            // UIKit.OpenPanel<CardDetailUI>(new CardDetailData(_cardId));
+            ExtUIManager.Instance.OpenDialog<CardDetailUI>(new CardDetailData(_cardId));
         }
 
         private void UpdateIcon(ElementAttribute attribute)

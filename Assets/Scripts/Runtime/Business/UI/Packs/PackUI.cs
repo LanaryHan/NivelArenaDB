@@ -10,6 +10,8 @@ namespace UI
         public PackButton tempBtn;
         public Transform content;
 
+        public override bool CanCloseByBackKey => false;
+
         protected override void OnInit(IUIData uiData = null)
         {
             base.OnInit(uiData);

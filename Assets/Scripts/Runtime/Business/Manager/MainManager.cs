@@ -1,11 +1,10 @@
 using QFramework;
-using Runtime.Business.UI;
 using UI;
 using UnityEngine;
 
 namespace Runtime.Business.Manager
 {
-    public class MainManager : MonoBehaviour
+    public class MainManager : EventMonoBehaviour
     {
         private ResLoader _resLoader;
         private void Awake()
@@ -18,7 +17,16 @@ namespace Runtime.Business.Manager
         {
             _resLoader = ResLoader.Allocate();
 
-            UIKit.OpenPanel<PackUI>();
+            // UIKit.OpenPanel<PackUI>();
+            ExtUIManager.Instance.OpenDialog<PackUI>();
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GetEventComponent().Send(GameEvents.ClickBackKey.Create());
+            }
         }
     }
 }
