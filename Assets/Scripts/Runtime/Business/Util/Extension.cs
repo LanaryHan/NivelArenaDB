@@ -70,6 +70,7 @@ namespace Runtime.Business.Util
                 Affiliation.Elysion => "极乐净土",
                 Affiliation.Pilgrim => "朝圣者",
                 Affiliation.Abnormal => "反常",
+                Affiliation.Unique => "特殊",
                 _ => throw new ArgumentOutOfRangeException(nameof(affiliation), affiliation, null)
             };
         }

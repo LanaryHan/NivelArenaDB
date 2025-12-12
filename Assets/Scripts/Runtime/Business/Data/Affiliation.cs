@@ -8,5 +8,6 @@ namespace Runtime.Business.Data
         Elysion,
         Pilgrim,
         Abnormal,
+        Unique,
     }
 }
