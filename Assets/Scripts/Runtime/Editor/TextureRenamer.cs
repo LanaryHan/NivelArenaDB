@@ -54,7 +54,7 @@ namespace Runtime.Editor
                 {
                     var file = files[i];
                     var assetPath = "Assets" + file.Replace(Application.dataPath, "").Replace('\\', '/');
-                    var insertZero = writeI >= 9 ? "0" : "00";
+                    var insertZero = writeI >= 10 ? "0" : "00";
                     var newName = $"{prefix}-{insertZero}{writeI}";
                     var result = AssetDatabase.RenameAsset(assetPath, newName);
                     if (string.IsNullOrEmpty(result))
