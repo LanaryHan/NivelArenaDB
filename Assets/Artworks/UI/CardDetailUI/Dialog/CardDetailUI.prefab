@@ -32,10 +32,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3703389471591202026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 109.05, y: -50}
-  m_SizeDelta: {x: 218.1, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1892915983594725992
 CanvasRenderer:
@@ -1202,10 +1202,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3703389471591202026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240.08, y: -50}
-  m_SizeDelta: {x: 43.96, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &948339873266469002
 CanvasRenderer:
@@ -1533,10 +1533,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3703389471591202026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 468.81998, y: -50}
-  m_SizeDelta: {x: 43.92, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7360041763283880579
 CanvasRenderer:
@@ -3399,10 +3399,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3703389471591202026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 354.46, y: -50}
-  m_SizeDelta: {x: 184.8, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6733674224320743036
 CanvasRenderer:
@@ -3964,10 +3964,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3703389471591202026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 583.18, y: -50}
-  m_SizeDelta: {x: 184.8, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2305048627049605323
 CanvasRenderer:
@@ -4497,7 +4497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7796064345353700770, guid: 9a6aa8fb2ee194754a8642952d3e90f9, type: 3}
       propertyPath: m_fontSize
-      value: 33.5
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 8264740806261145380, guid: 9a6aa8fb2ee194754a8642952d3e90f9, type: 3}
       propertyPath: m_Pivot.x
@@ -4565,7 +4565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8264740806261145380, guid: 9a6aa8fb2ee194754a8642952d3e90f9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -306.01498
+      value: -294.01
       objectReference: {fileID: 0}
     - target: {fileID: 8264740806261145380, guid: 9a6aa8fb2ee194754a8642952d3e90f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4600,6 +4600,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8442554887168114972, guid: 9a6aa8fb2ee194754a8642952d3e90f9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089884903919526178, guid: 9a6aa8fb2ee194754a8642952d3e90f9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089884903919526178, guid: 9a6aa8fb2ee194754a8642952d3e90f9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089884903919526178, guid: 9a6aa8fb2ee194754a8642952d3e90f9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089884903919526178, guid: 9a6aa8fb2ee194754a8642952d3e90f9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089884903919526178, guid: 9a6aa8fb2ee194754a8642952d3e90f9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
