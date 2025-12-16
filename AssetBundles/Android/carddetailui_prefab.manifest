@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 2411912257
+CRC: 3519599292
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 61d7e29d6afe36fb70d59e3e1579b1c8
+    Hash: 00f5500923a8275ed9e3a120855d21cb
   TypeTreeHash:
     serializedVersion: 2
     Hash: 914b0e2e97826f36f8da4ecd47b64416
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 1c37ca7e75029f1d583175b0cec671ae
+    Hash: 9275c20ce6fa3824b525c2d08798d074
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -71,9 +71,15 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.FontAssetCreationSettings
 - AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.GlyphAnchorPoint
+- AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.KerningTable
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.LigatureSubstitutionRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.MarkPositionAdjustment
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.MarkToBaseAdjustmentRecord
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.TMP_Character
 - AssemblyName: Unity.TextMeshPro

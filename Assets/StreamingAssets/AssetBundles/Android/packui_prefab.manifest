@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1508767355
+CRC: 3328391040
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 83d54d56b53fc0879952a2ccdc37f1c8
+    Hash: 077168eff4562cc9f59b2e4deac0a3d0
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 3f1e28af3f690d1ea929dc721bcb685a
+    Hash: de4d85e98208e7a35d19a45a6868ba7f
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 07287c83a40c73b3054ec9a5db06e35f
+    Hash: f3c67950e786847c6b84dbbfc78322fd
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -21,8 +21,14 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 16f0b0b6d0b7542bfbd20a3e05b04ff1, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: b5af50fed7a644678592c16abbe5a323, type: 3}
 - Class: 114
@@ -34,6 +40,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 938fce054c42f40a3969e27a88d9bdd8, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 608cfd61f5684a869ae587a2d37f19fe, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
@@ -41,7 +49,21 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 059cfbc2f75d460ea97537230ff29666, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f866f2b203534b31b0a97d9fe5be9c2d, type: 3}
 - Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
@@ -50,12 +72,22 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: Coffee.UIEffect
+  ClassName: Coffee.UIEffectInternal.MinMax01
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.FaceInfo_Legacy
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.FontAssetCreationSettings
 - AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.GlyphAnchorPoint
+- AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.KerningTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.LigatureSubstitutionRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.MarkPositionAdjustment
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.MarkToBaseAdjustmentRecord
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.TMP_Character
 - AssemblyName: Unity.TextMeshPro
@@ -67,6 +99,8 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
 - AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent`1
+- AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.RectOffset
 - AssemblyName: UnityEngine.TextCoreFontEngineModule
   ClassName: UnityEngine.TextCore.FaceInfo
@@ -76,6 +110,12 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.TextCore.GlyphMetrics
 - AssemblyName: UnityEngine.TextCoreFontEngineModule
   ClassName: UnityEngine.TextCore.GlyphRect
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.LowLevel.GlyphValueRecord
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.AnimationTriggers
 - AssemblyName: UnityEngine.UI
@@ -90,6 +130,8 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.ScrollRect/ScrollRectEvent
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Toggle/ToggleEvent
 Assets:
 - Assets/Artworks/UI/PackUI/Dialog/PackUI.prefab
 Dependencies:
