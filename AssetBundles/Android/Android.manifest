@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 71563613
+CRC: 1418165788
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -1230,4 +1230,7 @@ AssetBundleManifest:
       Dependencies: {}
     Info_407:
       Name: keytype_levellink_attacker_png
+      Dependencies: {}
+    Info_408:
+      Name: messageui_prefab
       Dependencies: {}
