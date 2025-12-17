@@ -3,7 +3,7 @@ namespace Runtime.Business.Data
     public enum Deck
     {
         ST01,   //起始套牌01《反击》
-        ST02,   //起始套牌02《真正的仁慈》
+        ST02,   //起始套牌02《真善美》
         ST03,   //起始套牌03《赫拉克勒斯》
         ST04,   //起始套牌04《继承》
         ST05,   //起始套牌05《专属于你的女仆》
@@ -11,5 +11,6 @@ namespace Runtime.Business.Data
         BT02,   //补充包02《王国》
         BT03,   //补充包03《坚不可破》
         SB01,   //特别补充包2025
+        ST06,   //起始套牌06《继承者》
     }
 }
