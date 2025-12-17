@@ -94,6 +94,12 @@ namespace Runtime.Business.Manager
             var openPanel = UIKit.OpenPanel<T>();
             _uiList.Add(openPanel);
         }
+        
+        public void OpenDialog<T>(UILevel uiLevel) where T : UIPanel
+        {
+            var openPanel = UIKit.OpenPanel<T>(uiLevel);
+            _uiList.Add(openPanel);
+        }
 
         public void OpenDialog<T>(IUIData uiData) where T : UIPanel
         {
@@ -101,6 +107,12 @@ namespace Runtime.Business.Manager
             _uiList.Add(openPanel);
         }
 
+        public void OpenDialog<T>(IUIData uiData, UILevel uiLevel) where T : UIPanel
+        {
+            var openPanel = UIKit.OpenPanel<T>(uiLevel, uiData);
+            _uiList.Add(openPanel);
+        }
+        
         public void CloseDialog<T>(T dialog) where T : UIPanel
         {
             UIKit.ClosePanel(dialog);

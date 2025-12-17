@@ -10,6 +10,7 @@ namespace Runtime.Business.Data.Map
             Map(m => m.Name).Index(0);
             Map(m => m.DisplayName).Index(1);
             Map(m => m.BundleRes).Index(2);
+            Map(m => m.Group).Index(3);
             Map(m => m.IsActive).Convert(row =>
             {
                 var text = row.Row.GetField("IsActive");
