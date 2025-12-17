@@ -76,8 +76,13 @@ namespace Runtime.Business.Util
                 Affiliation.Tetra => "泰特拉",
                 Affiliation.Elysion => "极乐净土",
                 Affiliation.Pilgrim => "朝圣者",
-                Affiliation.Abnormal => "反常",
                 Affiliation.Unique => "特殊",
+                Affiliation.Successor => "继承者",
+                Affiliation.Natalon => "纳特伦学院",
+                Affiliation.DunBlya => "桐伯莱亚",
+                Affiliation.SpiritKing => "精灵王",
+                Affiliation.PoF => "过去或未来",
+                Affiliation.Covenant => "圣约",
                 _ => throw new ArgumentOutOfRangeException(nameof(affiliation), affiliation, null)
             };
         }

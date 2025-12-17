@@ -7,7 +7,13 @@ namespace Runtime.Business.Data
         Tetra,
         Elysion,
         Pilgrim,
-        Abnormal,
         Unique,
+        
+        Successor,
+        Natalon,
+        DunBlya,
+        SpiritKing,
+        PoF,
+        Covenant,
     }
 }
