@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1418165788
+CRC: 3464820129
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -1233,4 +1233,58 @@ AssetBundleManifest:
       Dependencies: {}
     Info_408:
       Name: messageui_prefab
+      Dependencies: {}
+    Info_409:
+      Name: st06-001_png
+      Dependencies: {}
+    Info_410:
+      Name: st06-001sign_png
+      Dependencies: {}
+    Info_411:
+      Name: st06-002_png
+      Dependencies: {}
+    Info_412:
+      Name: st06-003_png
+      Dependencies: {}
+    Info_413:
+      Name: st06-004_png
+      Dependencies: {}
+    Info_414:
+      Name: st06-005_png
+      Dependencies: {}
+    Info_415:
+      Name: st06-006_png
+      Dependencies: {}
+    Info_416:
+      Name: st06-007_png
+      Dependencies: {}
+    Info_417:
+      Name: st06-008_png
+      Dependencies: {}
+    Info_418:
+      Name: st06-009_png
+      Dependencies: {}
+    Info_419:
+      Name: st06-010_png
+      Dependencies: {}
+    Info_420:
+      Name: st06-011_png
+      Dependencies: {}
+    Info_421:
+      Name: st06-012_png
+      Dependencies: {}
+    Info_422:
+      Name: st06-013_png
+      Dependencies: {}
+    Info_423:
+      Name: st06-014_png
+      Dependencies: {}
+    Info_424:
+      Name: st06-015_png
+      Dependencies: {}
+    Info_425:
+      Name: st06-016_png
+      Dependencies: {}
+    Info_426:
+      Name: st06-017_png
       Dependencies: {}
