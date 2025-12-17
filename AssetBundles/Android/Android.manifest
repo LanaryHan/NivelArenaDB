@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 3464820129
+CRC: 2864011793
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -1287,4 +1287,7 @@ AssetBundleManifest:
       Dependencies: {}
     Info_426:
       Name: st06-017_png
+      Dependencies: {}
+    Info_427:
+      Name: pack_st06_png
       Dependencies: {}
