@@ -88,6 +88,7 @@ namespace Runtime.Business.UI.CardDetail
         {
             var skillIds = _cardEntry.Skills;
             var cardType = _cardEntry.CardType;
+            var haveKeyword = true;
             if (skillIds == null || skillIds.Length == 0 || cardType is CardType.Skill)
             {
                 var keywordTxt = Instantiate(tempKeyword, keywordsContent);
@@ -97,6 +98,8 @@ namespace Runtime.Business.UI.CardDetail
                 {
                     skillContent.gameObject.SetActive(false);
                 }
+                
+                haveKeyword = false;
             }
 
             for (var i = 0; i < skillIds?.Length; i++)
@@ -107,10 +110,13 @@ namespace Runtime.Business.UI.CardDetail
                 skillGroup.Init(skillEntry, _cardEntry.SkillParams[i], _cardEntry.IconTextParams[i]);
                 skillGroup.gameObject.SetActive(true);
 
-                var keywordTxt = Instantiate(tempKeyword, keywordsContent);
-                var keyText = skillEntry.Key1.ToChinese();
-                keywordTxt.text = keyText + (i == skillIds.Length - 1 ? "" : ",");
-                keywordTxt.gameObject.SetActive(true);
+                if (haveKeyword)
+                {
+                    var keywordTxt = Instantiate(tempKeyword, keywordsContent);
+                    var keyText = skillEntry.Key1.ToChinese();
+                    keywordTxt.text = keyText + (i == skillIds.Length - 1 ? "" : ",");
+                    keywordTxt.gameObject.SetActive(true);
+                }
             }
         }
 
