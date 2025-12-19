@@ -110,6 +110,11 @@ namespace Runtime.Business.UI.CardDetail
             _skillEntry = skillEntry;
             iconGroups.ForEach(ig => ig.SetActive(skillEntry.Key1));
             var activeGroup = iconGroups.First(ig => ig.effectType.Contains(skillEntry.Key1));
+            if (skillEntry.Key1 is KeyType.Mix && skillEntry.Key2 != null)
+            {
+                activeGroup = iconGroups.First(ig => ig.effectType.Contains(skillEntry.Key2.Value));
+            }
+
             if (skillEntry.Key2 == null)
             {
                 activeGroup.SetIcon(_skillEntry.Key1, iconParam);
