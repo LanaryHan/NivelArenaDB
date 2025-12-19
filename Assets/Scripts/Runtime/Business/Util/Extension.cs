@@ -108,7 +108,7 @@ namespace Runtime.Business.Util
                 Affiliation.Anniversary => "周年纪念",
                 Affiliation.School => "军官学园",
                 Affiliation.Test => "实验体",
-                Affiliation.Festival => "庆典",
+                Affiliation.Festival => "祭典",
                 Affiliation.Change => "转变",
                 Affiliation.Valentine => "情人节",
                 Affiliation.Legion => "炼狱",
@@ -116,6 +116,8 @@ namespace Runtime.Business.Util
                 Affiliation.Sunset => "晚霞",
                 Affiliation.GhostHunter => "幽灵猎人",
                 Affiliation.Prison => "监狱",
+                Affiliation.Pajamas => "睡衣派对",
+                Affiliation.Lucky => "好运",
                 _ => throw new ArgumentOutOfRangeException(nameof(affiliation), affiliation, null)
             };
         }

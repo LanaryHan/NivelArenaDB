@@ -16,5 +16,6 @@ namespace Runtime.Business.Data
         BT04,   //补充包04《苦涩冬日》
         ST08,   //起始套牌08《周年纪念》
         ST09,   //起始套牌09《热带》
+        BT05,   //补充包05《祭典》
     }
 }

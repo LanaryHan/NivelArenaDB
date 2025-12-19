@@ -49,6 +49,7 @@ namespace Runtime.Business.Data
         Sunset,
         GhostHunter,
         Prison,
-        
+        Pajamas,
+        Lucky,
     }
 }
