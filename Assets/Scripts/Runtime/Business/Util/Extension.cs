@@ -112,6 +112,10 @@ namespace Runtime.Business.Util
                 Affiliation.Change => "转变",
                 Affiliation.Valentine => "情人节",
                 Affiliation.Legion => "炼狱",
+                Affiliation.Splash => "逐浪",
+                Affiliation.Sunset => "晚霞",
+                Affiliation.GhostHunter => "幽灵猎人",
+                Affiliation.Prison => "监狱",
                 _ => throw new ArgumentOutOfRangeException(nameof(affiliation), affiliation, null)
             };
         }

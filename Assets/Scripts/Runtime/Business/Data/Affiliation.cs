@@ -45,5 +45,10 @@ namespace Runtime.Business.Data
         Change,
         Valentine,
         Legion,
+        Splash,
+        Sunset,
+        GhostHunter,
+        Prison,
+        
     }
 }
