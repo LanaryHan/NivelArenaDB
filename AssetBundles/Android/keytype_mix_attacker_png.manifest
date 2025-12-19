@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 3838372646
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fc6e24bb29f79d7cfaacd68d06ce70b2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 9885afd4a342d257c0af366affe7ebe6
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/KeyTypeMask/keyType_mix_attacker.png
+Dependencies: []
