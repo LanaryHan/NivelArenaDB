@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1678540859
+CRC: 1137350227
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 988d7086dc9977c90592c3e4dab12668
+    Hash: b01da241bd75857654d7d15f09bb257b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 914b0e2e97826f36f8da4ecd47b64416
+    Hash: a700842ee26f953aa4c16b7d9438367f
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: e1ec6e052085e136f59d7329fd62bdf4
+    Hash: fb6e1648b542d812980765800ec6d950
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -41,6 +41,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: f36ecf610fcd493da4e2036c1d05e4e7, type: 3}
 - Class: 114
@@ -86,6 +88,10 @@ SerializeReferenceClassIdentifiers:
   ClassName: TMPro.TMP_FontFeatureTable
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.TMP_FontWeightPair
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_SpriteCharacter
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_SpriteGlyph
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.VertexGradient
 - AssemblyName: UnityEngine.CoreModule
