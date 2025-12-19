@@ -37,5 +37,13 @@ namespace Runtime.Business.Data
         SFP,
         FallLand,
         Perland,
+        
+        Anniversary,
+        School,
+        Test,
+        Festival,
+        Change,
+        Valentine,
+        Legion,
     }
 }

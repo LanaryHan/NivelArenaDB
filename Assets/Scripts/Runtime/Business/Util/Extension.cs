@@ -105,6 +105,13 @@ namespace Runtime.Business.Util
                 Affiliation.SFP => "幻影队",
                 Affiliation.FallLand => "腐朽大地",
                 Affiliation.Perland => "普兰特",
+                Affiliation.Anniversary => "周年纪念",
+                Affiliation.School => "军官学园",
+                Affiliation.Test => "实验体",
+                Affiliation.Festival => "庆典",
+                Affiliation.Change => "转变",
+                Affiliation.Valentine => "情人节",
+                Affiliation.Legion => "炼狱",
                 _ => throw new ArgumentOutOfRangeException(nameof(affiliation), affiliation, null)
             };
         }
