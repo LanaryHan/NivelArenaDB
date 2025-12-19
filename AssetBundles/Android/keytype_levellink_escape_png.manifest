@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 3192416003
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d578dc7e05304a5d9cd0c52e27b19202
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a166b793bb8f1026adfe235de61fa39c
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/KeyTypeMask/keyType_levellink_escape.png
+Dependencies: []

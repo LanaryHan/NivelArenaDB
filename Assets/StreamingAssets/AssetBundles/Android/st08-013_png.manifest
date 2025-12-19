@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 3485565787
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6c96d73bff02b50d42fda764e7f2bb13
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: e6491a641b5b0dbb08c4ea3a7bc34f8a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/ST08/ST08-013.png
+Dependencies: []

@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1758876330
+CRC: 3074834022
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -1662,4 +1662,70 @@ AssetBundleManifest:
       Dependencies: {}
     Info_551:
       Name: bt04-084_png
+      Dependencies: {}
+    Info_552:
+      Name: keytype_levellink_escape_png
+      Dependencies: {}
+    Info_553:
+      Name: st08-001_png
+      Dependencies: {}
+    Info_554:
+      Name: st08-001sign_png
+      Dependencies: {}
+    Info_555:
+      Name: st08-002_png
+      Dependencies: {}
+    Info_556:
+      Name: st08-003_png
+      Dependencies: {}
+    Info_557:
+      Name: st08-004_png
+      Dependencies: {}
+    Info_558:
+      Name: st08-005_png
+      Dependencies: {}
+    Info_559:
+      Name: st08-006_png
+      Dependencies: {}
+    Info_560:
+      Name: st08-007_png
+      Dependencies: {}
+    Info_561:
+      Name: st08-008_png
+      Dependencies: {}
+    Info_562:
+      Name: st08-009_png
+      Dependencies: {}
+    Info_563:
+      Name: st08-010_png
+      Dependencies: {}
+    Info_564:
+      Name: st08-011_png
+      Dependencies: {}
+    Info_565:
+      Name: st08-012_png
+      Dependencies: {}
+    Info_566:
+      Name: st08-013_png
+      Dependencies: {}
+    Info_567:
+      Name: st08-014_png
+      Dependencies: {}
+    Info_568:
+      Name: st08-015_png
+      Dependencies: {}
+    Info_569:
+      Name: st08-016_png
+      Dependencies: {}
+    Info_570:
+      Name: st08-017_png
+      Dependencies: {}
+    Info_571:
+      Name: pack_bt05_png
+      Dependencies: {}
+    Info_572:
+      Name: pack_st08_png
+      Dependencies: {}
+    Info_573:
+      Name: pack_st09_png
       Dependencies: {}

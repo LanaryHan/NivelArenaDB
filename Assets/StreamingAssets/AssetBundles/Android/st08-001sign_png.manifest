@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 2341007799
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 246a9aa9735035c23f4a5a6de34159da
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 027f445655088dfe5a67daddb88e5942
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/ST08/ST08-001Sign.png
+Dependencies: []
