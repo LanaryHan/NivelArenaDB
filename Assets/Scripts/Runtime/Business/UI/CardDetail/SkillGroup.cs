@@ -1,139 +1,56 @@
-using System;
 using System.Linq;
-using Coffee.UISoftMask;
-using QFramework;
+using System.Text;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
-using Runtime.Business.Manager;
 using Runtime.Business.Util;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using Util;
 
 namespace Runtime.Business.UI.CardDetail
 {
     public class SkillGroup : MonoBehaviour
     {
-        [Serializable]
-        public class IconGroup
-        {
-            public KeyType[] effectType;
-            public GameObject root;
-            public Image iconImage;
-            public TMP_Text iconText;
-            public SoftMask softMask;
-            public Image specialFront;
-            public TMP_Text descriptionText;
-
-            public void SetActive(KeyType active)
-            {
-                root.SetActive(effectType.Contains(active));
-            }
-
-            public void SetIcon(KeyType keyType, string iconParam)
-            {
-                if (keyType is KeyType.None)
-                {
-                    return;
-                }
-
-                iconText.text = keyType.ToChinese(iconParam);
-                if (keyType is KeyType.ArmedCondition)
-                {
-                    return;
-                }
-                
-                iconImage.color = keyType switch
-                {
-                    KeyType.Entry => "#EE7325".ToRGB(),
-                    KeyType.Attacker => "#C30D23".ToRGB(),
-                    KeyType.Defender => "#028554".ToRGB(),
-                    KeyType.Exit => "#555455".ToRGB(),
-                    KeyType.Passive => "#601886".ToRGB(),
-                    KeyType.Active => "#0D70B8".ToRGB(),
-                    KeyType.Guardian => "#0FA0A1".ToRGB(),
-                    KeyType.Armed => "#6F3F20".ToRGB(),
-                    KeyType.LevelLink => "#5BAB46".ToRGB(),
-                    KeyType.WireBuilding => "#0F5182".ToRGB(),
-                    KeyType.Mix => Color.white,
-                    KeyType.Credits => "#C78800".ToRGB(),
-                    KeyType.Escape => "#12A1DE".ToRGB(),
-                    KeyType.Oath => Color.white,
-                    KeyType.Awakening => Color.black,
-                    _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
-                };
-                iconText.color = keyType is KeyType.Oath ? Color.black : Color.white;
-                if (softMask && keyType == KeyType.Mix)
-                {
-                    softMask.enabled = true;
-                    specialFront.gameObject.SetActive(true);
-                }
-                else
-                {
-                    if (specialFront)
-                    {
-                        specialFront.gameObject.SetActive(false);
-                    }
-
-                    if (softMask)
-                    {
-                        softMask.enabled = false;
-                    }
-                }
-            }
-
-            public void SetIcon(KeyType key1, KeyType key2, string iconParam1, string iconParam2)
-            {
-                iconText.text = $"{key1.ToChinese(iconParam1)} | {key2.ToChinese(iconParam2)}";
-                var sprite = DataManager.Instance.LoadSkillMaskSprite(key1, key2);
-                if (sprite)
-                {
-                    softMask.enabled = true;
-                    specialFront.overrideSprite = sprite;
-                    specialFront.gameObject.SetActive(true);
-                }
-            }
-
-            public void SetDescription(string pattern, string param)
-            {
-                descriptionText.text = pattern.ToDescription(param);
-            }
-        }
-        
-        public IconGroup[] iconGroups;
-
-        private SkillEntry _skillEntry;
+        public TMP_Text descTxt;
 
         public void Init(SkillEntry skillEntry, string descParam, string iconParam)
         {
-            _skillEntry = skillEntry;
-            iconGroups.ForEach(ig => ig.SetActive(skillEntry.Key1));
-            var activeGroup = iconGroups.First(ig => ig.effectType.Contains(skillEntry.Key1));
-            if (skillEntry.Key1 is KeyType.Mix && skillEntry.Key2 != null)
+            var builder = new StringBuilder();
+            if (skillEntry.Key1 is not KeyType.None)
             {
-                activeGroup = iconGroups.First(ig => ig.effectType.Contains(skillEntry.Key2.Value));
-            }
-
-            if (skillEntry.Key2 == null)
-            {
-                activeGroup.SetIcon(_skillEntry.Key1, iconParam);
-            }
-            else
-            {
-                var strings = iconParam.Split(",").ToList();
-                if (strings.Count == 1)
+                if (!string.IsNullOrEmpty(iconParam))
                 {
-                    strings.Add(string.Empty);
-                }
+                    if (skillEntry.Key2 != null)
+                    {
+                        var param = iconParam.Split(",").ToList();
+                        if (param.Count == 1)
+                        {
+                            param.Add(string.Empty);
+                        }
 
-                activeGroup.SetIcon(skillEntry.Key1, skillEntry.Key2.Value, strings[0], strings[1]);
+                        builder.Append(!string.IsNullOrEmpty(param[0])
+                            ? $"<sprite name=\"{skillEntry.Key1.ToString().ToLower()}_{param[0]}\">"
+                            : $"<sprite name=\"{skillEntry.Key1.ToString().ToLower()}\">");
+                        builder.Append(!string.IsNullOrEmpty(param[1])
+                            ? $"<sprite name=\"{skillEntry.Key2.Value.ToString().ToLower()}_{param[1]}\">"
+                            : $"<sprite name=\"{skillEntry.Key2.Value.ToString().ToLower()}\">");
+                    }
+                    else
+                    {
+                        builder.Append($"<sprite name=\"{skillEntry.Key1.ToString().ToLower()}_{iconParam}\">");
+                    }
+                }
+                else
+                {
+                    builder.Append($"<sprite name=\"{skillEntry.Key1.ToString().ToLower()}\">");
+                    if (skillEntry.Key2 != null)
+                    {
+                        builder.Append($"<sprite name=\"{skillEntry.Key2.Value.ToString().ToLower()}\">");
+                    }
+                }
             }
             
-            if (skillEntry.Key1 is not KeyType.ArmedCondition)
-            {
-                activeGroup.SetDescription(skillEntry.Description, descParam);
-            }
+            builder.Append(skillEntry.Description.ToDescription(descParam));
+            descTxt.text = builder.ToString();
         }
     }
 } 
