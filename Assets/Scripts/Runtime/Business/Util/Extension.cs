@@ -118,6 +118,7 @@ namespace Runtime.Business.Util
                 Affiliation.Prison => "监狱",
                 Affiliation.Pajamas => "睡衣派对",
                 Affiliation.Lucky => "好运",
+                Affiliation.Snow => "冰雪",
                 _ => throw new ArgumentOutOfRangeException(nameof(affiliation), affiliation, null)
             };
         }

@@ -51,5 +51,6 @@ namespace Runtime.Business.Data
         Prison,
         Pajamas,
         Lucky,
+        Snow,
     }
 }
