@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1137350227
+CRC: 737909229
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b01da241bd75857654d7d15f09bb257b
+    Hash: acce427246f2c029cbd78d71e42fbcd5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: a700842ee26f953aa4c16b7d9438367f
+    Hash: 15cc7a952cf357d687b64808f084228e
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: fb6e1648b542d812980765800ec6d950
+    Hash: 90ff7c7936248acb653177fa93bf7379
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -30,8 +30,6 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 385b7d1277b6c4007a84c065696e0f8c, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
@@ -48,8 +46,6 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 97bc2ebab6563400c95b036136d26ea6, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
@@ -64,10 +60,6 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
-- AssemblyName: Business
-  ClassName: Runtime.Business.UI.CardDetail.SkillGroup/IconGroup
-- AssemblyName: Coffee.SoftMaskForUGUI
-  ClassName: Coffee.UISoftMaskInternal.MinMax01
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.FaceInfo_Legacy
 - AssemblyName: Unity.TextMeshPro
@@ -128,5 +120,4 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.SpriteState
 Assets:
 - Assets/Artworks/UI/CardDetailUI/Dialog/CardDetailUI.prefab
-Dependencies:
-- /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/keytype_mix_png
+Dependencies: []
