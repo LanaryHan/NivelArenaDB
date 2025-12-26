@@ -1,15 +1,15 @@
-Name,DisplayName,BundleRes,Group,IsActive
-ST01,起始套牌ST01\n《反击》,pack_ST01,1,1
-ST02,起始套牌ST02\n《真善美》,pack_ST02,1,1
-ST03,起始套牌ST03\n《赫拉克勒斯》,pack_ST03,1,1
-ST04,起始套牌ST04\n《继承者》,pack_ST04,1,1
-ST05,起始套牌ST05\n《专为你打造》,pack_ST05,1,1
-BT01,补充包BT01\n《遇敌》,pack_BT01,1,1
-BT02,补充包BT02\n《王国》,pack_BT02,1,1
-BT03,补充包BT03\n《坚不可破》,pack_BT03,1,1
-ST06,起始套牌ST06\n《继承者》,pack_ST06,2,1
-ST07,起始套牌ST07\n《人造人》,pack_ST07,2,1
-BT04,补充包BT04\n《苦涩冬日》,pack_BT04,2,1
-ST08,起始套牌ST08\n《周年纪念》,pack_ST08,3,1
-ST09,起始套牌ST09\n《热带》,pack_ST09,3,1
-BT05,补充包BT05\n《祭典》,pack_BT05,3,1
+Name,DisplayName,BundleRes,Group,IsActive,Title
+ST01,起始套牌ST01\n《反击》,pack_ST01,1,1,ST01:<i>Counters</i>
+ST02,起始套牌ST02\n《真善美》,pack_ST02,1,1,ST02:<i>Real Kindness</i>
+ST03,起始套牌ST03\n《异端者》,pack_ST03,1,1,ST03:<i>Heretic</i>
+ST04,起始套牌ST04\n《继承者部队》,pack_ST04,1,1,ST04:<i>Inherit</i>
+ST05,起始套牌ST05\n《专为你打造》,pack_ST05,1,1,ST05:<i>Made for You</i>
+BT01,补充包BT01\n《遇敌》,pack_BT01,1,1,BT01:<i>Encounter</i>
+BT02,补充包BT02\n《王国》,pack_BT02,1,1,BT02:<i>Kingdom</i>
+BT03,补充包BT03\n《坚不可破》,pack_BT03,1,1,BT03:<i>Unbreakable</i>
+ST06,起始套牌ST06\n《继承者》,pack_ST06,2,1,ST06:<i>Successor</i>
+ST07,起始套牌ST07\n《人造人》,pack_ST07,2,1,ST07:<i>Homunculus</i>
+BT04,补充包BT04\n《苦涩冬日》,pack_BT04,2,1,BT04:<i>Bitter Cold Days</i>
+ST08,起始套牌ST08\n《周年纪念》,pack_ST08,3,1,ST08:<i>Anniversary</i>
+ST09,起始套牌ST09\n《热带》,pack_ST09,3,1,ST09:<i>Tropical</i>
+BT05,补充包BT05\n《祭典》,pack_BT05,3,1,BT05:<i>Matsuri</i>

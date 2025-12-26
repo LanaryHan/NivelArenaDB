@@ -9,13 +9,18 @@
         "GUID:8ed2a396aae604c5ca111525d261bb03",
         "GUID:8ef573751495a4f88822a98a88954a0b",
         "GUID:735c8f008d0ad4caa9cdc4306f1c3042",
-        "GUID:7793e5cd8d2e94e21b56de41db6606bb"
+        "GUID:7793e5cd8d2e94e21b56de41db6606bb",
+        "GUID:3414cd329dece46deb20a82d3734200e"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "DOTween.dll",
+        "CsvHelper.dll",
+        "DOTweenEditor.dll"
+    ],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
