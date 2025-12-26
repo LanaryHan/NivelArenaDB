@@ -7,5 +7,6 @@ namespace Runtime.Business.Data.Entry
         public string BundleRes { get; set; }
         public int Group { get; set; }
         public bool IsActive { get; set; }
+        public string Title { get; set; }
     }
 }

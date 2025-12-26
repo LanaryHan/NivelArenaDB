@@ -26,6 +26,7 @@ namespace QFramework
 	
 	public abstract partial class UIPanel : QMonoBehaviour, IPanel,IEvent
 	{
+		public Dialog dialogName = Dialog.NULL;
 		public Transform Transform => transform;
 
 		IPanelLoader IPanel.Loader { get; set; }
@@ -114,6 +115,11 @@ namespace QFramework
 		protected void CloseSelf()
 		{
 			UIKit.ClosePanel(this);
+		}
+
+		protected void HideSelf<T>() where T : UIPanel
+		{
+			UIKit.HidePanel<T>();
 		}
 
 		protected void Back()
