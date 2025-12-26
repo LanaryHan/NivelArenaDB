@@ -16,6 +16,7 @@ namespace Runtime.Business.Data.Map
                 var text = row.Row.GetField("IsActive");
                 return !string.IsNullOrEmpty(text) && int.Parse(text) == 1;
             });
+            Map(m => m.Title).Index(5);
         }
     }
 }

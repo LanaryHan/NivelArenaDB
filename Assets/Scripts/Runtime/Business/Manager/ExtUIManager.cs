@@ -5,6 +5,56 @@ using QFramework;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
+namespace UIEvents
+{
+    public class OnDialogShow : GameEventBaseNoDefaultCreate<OnDialogShow>
+    {
+        public UIPanel Dialog;
+
+        public static OnDialogShow Create(UIPanel dialog)
+        {
+            var self = Create();
+            self.Dialog = dialog;
+            return self;
+        }
+    }
+    
+    public class OnDialogHide : GameEventBaseNoDefaultCreate<OnDialogHide>
+    {
+        public UIPanel Dialog;
+
+        public static OnDialogHide Create(UIPanel dialog)
+        {
+            var self = Create();
+            self.Dialog = dialog;
+            return self;
+        }
+    }
+    public class OnDialogOpen : GameEventBaseNoDefaultCreate<OnDialogOpen>
+    {
+        public UIPanel Dialog;
+
+        public static OnDialogOpen Create(UIPanel dialog)
+        {
+            var self = Create();
+            self.Dialog = dialog;
+            return self;
+        }
+    }
+
+    public class OnDialogClose : GameEventBaseNoDefaultCreate<OnDialogClose>
+    {
+        public Dialog Dialog;
+
+        public static OnDialogClose Create(Dialog dialog)
+        {
+            var self = Create();
+            self.Dialog = dialog;
+            return self;
+        }
+    }
+}
+
 namespace GameEvents
 {
     public class ClickBackKey : GameEventBase<ClickBackKey>{}
@@ -89,43 +139,95 @@ namespace Runtime.Business.Manager
 
         #region UI
 
-        public void OpenDialog<T>() where T : UIPanel
+        public void OpenDialog<T>(Dialog dialogName) where T : UIPanel
         {
             var openPanel = UIKit.OpenPanel<T>();
+            openPanel.dialogName = dialogName;
             _uiList.Add(openPanel);
+            GetEventComponent().Send(UIEvents.OnDialogOpen.Create(openPanel));
         }
-        
-        public void OpenDialog<T>(UILevel uiLevel) where T : UIPanel
+
+        public void OpenDialog<T>(Dialog dialogName, UILevel uiLevel) where T : UIPanel
         {
             var openPanel = UIKit.OpenPanel<T>(uiLevel);
+            openPanel.dialogName = dialogName;
             _uiList.Add(openPanel);
+            GetEventComponent().Send(UIEvents.OnDialogOpen.Create(openPanel));
         }
 
-        public void OpenDialog<T>(IUIData uiData) where T : UIPanel
+        public void OpenDialog<T>(Dialog dialog, IUIData uiData) where T : UIPanel
         {
             var openPanel = UIKit.OpenPanel<T>(uiData);
+            openPanel.dialogName = dialog;
             _uiList.Add(openPanel);
+            GetEventComponent().Send(UIEvents.OnDialogOpen.Create(openPanel));
         }
 
-        public void OpenDialog<T>(IUIData uiData, UILevel uiLevel) where T : UIPanel
+        public void OpenDialog<T>(Dialog dialog, IUIData uiData, UILevel uiLevel) where T : UIPanel
         {
             var openPanel = UIKit.OpenPanel<T>(uiLevel, uiData);
+            openPanel.dialogName = dialog;
             _uiList.Add(openPanel);
+            GetEventComponent().Send(UIEvents.OnDialogOpen.Create(openPanel));
         }
         
-        public void CloseDialog<T>(T dialog) where T : UIPanel
+        public void CloseDialog<T>() where T : UIPanel
         {
+            var dialog = _uiList.Find(ui => ui is T);
+            var dialogName = dialog.dialogName;
             UIKit.ClosePanel(dialog);
             _uiList.Remove(dialog);
+            GetEventComponent().Send(UIEvents.OnDialogClose.Create(dialogName));
+        }
+
+        public void CloseDialog<T>(T dialog) where T : UIPanel
+        {
+            var dialogName = dialog.dialogName;
+            UIKit.ClosePanel(dialog);
+            _uiList.Remove(dialog);
+            GetEventComponent().Send(UIEvents.OnDialogClose.Create(dialogName));
+        }
+
+        public void HideDialog<T>() where T : UIPanel
+        {
+            var dialog = _uiList.Find(ui => ui is T);
+            dialog.Hide();
+            dialog.gameObject.SetActive(false);
+            GetEventComponent().Send(UIEvents.OnDialogHide.Create(dialog));
+        }
+
+        public void HideDialog<T>(T dialog) where T : UIPanel
+        {
+            dialog.Hide();
+            dialog.gameObject.SetActive(false);
+            GetEventComponent().Send(UIEvents.OnDialogHide.Create(dialog));
+        }
+
+        public void ShowDialog<T>() where T : UIPanel
+        {
+            var dialog = _uiList.Find(ui => ui is T);
+            dialog.Show();
+            dialog.gameObject.SetActive(true);
+            GetEventComponent().Send(UIEvents.OnDialogShow.Create(dialog));
+        }
+
+        public void ShowDialog<T>(T dialog) where T : UIPanel
+        {
+            dialog.Show();
+            dialog.gameObject.SetActive(true);
+            GetEventComponent().Send(UIEvents.OnDialogShow.Create(dialog));
         }
 
         private void OnBackKey()
         {
-            var uiPanel = _uiList[^1];
-            if (uiPanel.CanCloseByBackKey)
+            for (int i = _uiList.Count - 1; i >= 0; i--)
             {
-                _uiList.Remove(uiPanel);
-                UIKit.ClosePanel(uiPanel);
+                var uiPanel = _uiList[i];
+                if (uiPanel.CanCloseByBackKey)
+                {
+                    CloseDialog(uiPanel);
+                    return;
+                }
             }
         }
 

@@ -117,7 +117,7 @@ namespace Runtime.Business.UI.Message
             var param = new MessageParam();
             _imagePath = null;
             _imageSize = Vector2.zero;
-            ExtUIManager.Instance.OpenDialog<MessageUI>(param, UILevel.PopUI);
+            ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.Message_UI, param, UILevel.PopUI);
             return param;
         }
 
@@ -126,7 +126,7 @@ namespace Runtime.Business.UI.Message
             var param = new MessageParam();
             _imagePath = imageBundleName;
             _imageSize = new Vector2(size.x, size.y);
-            ExtUIManager.Instance.OpenDialog<MessageUI>(param, UILevel.PopUI);
+            ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.Message_UI, param, UILevel.PopUI);
             return param;
         }
 

@@ -16,9 +16,7 @@ namespace Runtime.Business.Manager
         private void Start()
         {
             _resLoader = ResLoader.Allocate();
-
-            // UIKit.OpenPanel<PackUI>();
-            ExtUIManager.Instance.OpenDialog<PackUI>();
+            ExtUIManager.Instance.OpenDialog<PackUI>(Dialog.Pack_UI);
         }
 
         private void Update()

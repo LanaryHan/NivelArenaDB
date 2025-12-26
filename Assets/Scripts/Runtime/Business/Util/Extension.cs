@@ -3,6 +3,7 @@ using System.Linq;
 using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Manager;
+using UI;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -13,6 +14,16 @@ namespace Runtime.Business.Util
         public static void CloseSelfByExt(this UIPanel panel)
         {
             ExtUIManager.Instance.CloseDialog(panel);
+        }
+
+        public static void HideSelfByExt(this UIPanel panel)
+        {
+            ExtUIManager.Instance.HideDialog(panel);
+        }
+
+        public static void ShowSelfByExt(this UIPanel panel)
+        {
+            ExtUIManager.Instance.ShowDialog(panel);
         }
 
         public static void RemoveAllChildren(this Transform parent, params Transform[] excepts)
@@ -165,6 +176,63 @@ namespace Runtime.Business.Util
             var args = @params.Select(p => (object) p).ToArray();
             var result = string.Format(pattern, args);
             return result;
+        }
+
+        private static int LowestBit(int value)
+        {
+            for (var i = 0; i < 32; i++)
+            {
+                if ((value & (1 << i)) != 0)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
+        public static string ToChinese(this Enum @enum)
+        {
+            switch (@enum)
+            {
+                case AttributeFlags attributeFlags:
+                {
+                    var i = LowestBit((int)attributeFlags);
+                    var element = (ElementAttribute)i;
+                    return element.ToChinese();
+                }
+                case KeywordFlags keywordFlags:
+                {
+                    var i = LowestBit((int)keywordFlags);
+                    var keyType = (KeyType)(i + 1);
+                    return keyType.ToChinese();
+                }
+                case CostFlags costFlags:
+                    return costFlags switch
+                    {
+                        CostFlags.None => string.Empty,
+                        CostFlags.Zero => "0",
+                        CostFlags.One => "1",
+                        CostFlags.Two => "2",
+                        CostFlags.Three => "3",
+                        CostFlags.Four => "4",
+                        CostFlags.Five => "5",
+                        CostFlags.Six => "6",
+                        CostFlags.Seven => "7",
+                        CostFlags.Eight => "8",
+                        CostFlags.Nine => "9",
+                        CostFlags.TenPlus => "10+",
+                        _ => throw new ArgumentOutOfRangeException()
+                    };
+                case CardTypeFlags cardTypeFlags:
+                {
+                    var i = LowestBit((int)cardTypeFlags);
+                    var type = (CardType)i;
+                    return type.ToChinese();
+                }
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(@enum), @enum, null);
+            }
         }
     }
 }

@@ -65,28 +65,27 @@ namespace UI
             if (id.Length != 7)
             {
                 messageParam.SetMessage("卡牌id应该为7位数字字母组合，例如ST01001。");
-                ExtUIManager.Instance.OpenDialog<MessageUI>(messageParam, UILevel.PopUI);
+                ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.Message_UI, messageParam, UILevel.PopUI);
                 return;
             }
             
             if (!id.StartsWith("ST") && !id.StartsWith("BT"))
             {
                 messageParam.SetMessage("卡包应该以ST或BT开头，例如ST01001。");
-                ExtUIManager.Instance.OpenDialog<MessageUI>(messageParam, UILevel.PopUI);
+                ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.Message_UI, messageParam, UILevel.PopUI);
                 return;
             }
 
             id = id.Insert(4, "-");
-            Debug.Log(id);
             var cardEntry = DataManager.Instance.GetCard(id);
             if (cardEntry == null)
             {
                 messageParam.SetMessage("卡牌id不存在！");
-                ExtUIManager.Instance.OpenDialog<MessageUI>(messageParam, UILevel.PopUI);
+                ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.Message_UI, messageParam, UILevel.PopUI);
                 return;
             }
 
-            ExtUIManager.Instance.OpenDialog<CardDetailUI>(new CardDetailData(cardEntry.Id));
+            ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.Card_Details_UI, new CardDetailData(cardEntry.Id));
         }
     }
 }
