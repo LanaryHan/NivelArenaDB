@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
@@ -38,8 +40,7 @@ namespace Runtime.Business.UI.CardDetail
         public TMP_Text hitTxt;
         public TMP_Text affiliationTxt;
         [Header("Keywords")] 
-        public Transform keywordsContent;
-        public TMP_Text tempKeyword;
+        public TMP_Text keywordsTxt;
         [Header("Trigger")] 
         public GameObject triggerRoot;
         public TMP_Text triggerTxt;
@@ -52,7 +53,6 @@ namespace Runtime.Business.UI.CardDetail
         {
             base.OnInit(uiData);
             tempSkillGroup.gameObject.SetActive(false);
-            tempKeyword.gameObject.SetActive(false);
             closeBtn.onClick.AddListener(this.CloseSelfByExt);
         }
 
@@ -60,7 +60,6 @@ namespace Runtime.Business.UI.CardDetail
         {
             base.OnOpen(uiData);
             skillContent.RemoveAllChildren(tempSkillGroup.transform, skillBg);
-            keywordsContent.RemoveAllChildren(tempKeyword.transform);
             if (uiData is not CardDetailData cardData)
             {
                 return;
@@ -91,9 +90,7 @@ namespace Runtime.Business.UI.CardDetail
             var haveKeyword = true;
             if (skillIds == null || skillIds.Length == 0 || cardType is CardType.Skill)
             {
-                var keywordTxt = Instantiate(tempKeyword, keywordsContent);
-                keywordTxt.text = "——";
-                keywordTxt.gameObject.SetActive(true);
+                keywordsTxt.text = "——";
                 if (cardType is not CardType.Skill)
                 {
                     skillContent.gameObject.SetActive(false);
@@ -102,6 +99,7 @@ namespace Runtime.Business.UI.CardDetail
                 haveKeyword = false;
             }
 
+            var keywords = new HashSet<KeyType>();
             for (var i = 0; i < skillIds?.Length; i++)
             {
                 var skillId = skillIds[i];
@@ -110,13 +108,25 @@ namespace Runtime.Business.UI.CardDetail
                 skillGroup.Init(skillEntry, _cardEntry.SkillParams[i], _cardEntry.IconTextParams[i]);
                 skillGroup.gameObject.SetActive(true);
 
-                if (haveKeyword)
+                if (!haveKeyword)
                 {
-                    var keywordTxt = Instantiate(tempKeyword, keywordsContent);
-                    var keyText = skillEntry.Key1.ToChinese();
-                    keywordTxt.text = keyText + (i == skillIds.Length - 1 || skillEntry.Key1 is KeyType.None ? "" : ",");
-                    keywordTxt.gameObject.SetActive(true);
+                    continue;
                 }
+
+                if (skillEntry.Key1 is not KeyType.None)
+                {
+                    keywords.Add(skillEntry.Key1);
+                }
+
+                if (skillEntry.Key2 != null && skillEntry.Key2.Value is not KeyType.None)
+                {
+                    keywords.Add(skillEntry.Key2.Value);
+                }
+            }
+
+            if (haveKeyword)
+            {
+                keywordsTxt.text = string.Join(", ", keywords.Select(k => k.ToChinese()));
             }
         }
 
