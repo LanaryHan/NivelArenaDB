@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
+using GameEvents;
 using Runtime.Business.Data.Entry;
-using Runtime.Business.Manager;
 using Runtime.Business.Util;
 using TMPro;
 using UnityEngine;
@@ -16,8 +17,10 @@ namespace UI
         public Transform content;
         public CardButton tempBtn;
 
+        private List<CardButton> _cards;
         public void Init(List<CardEntry> cardEntries, string showLineString)
         {
+            _cards = new List<CardButton>();
             tempBtn.gameObject.SetActive(false);
             content.RemoveAllChildren(tempBtn.transform, line.transform);
             if (string.IsNullOrEmpty(showLineString))
@@ -37,7 +40,14 @@ namespace UI
                 var cardButton = Instantiate(tempBtn,content);
                 cardButton.Init(cardEntry.Id);
                 cardButton.gameObject.SetActive(true);
+                _cards.Add(cardButton);
             }
+        }
+
+        public void UpdateView(UpdateCardByFilter e)
+        {
+            _cards.ForEach(card => card.gameObject.SetActive(card.UpdateView(e)));
+            gameObject.SetActive(_cards.Any(card => card.gameObject.activeSelf));
         }
     }
 }

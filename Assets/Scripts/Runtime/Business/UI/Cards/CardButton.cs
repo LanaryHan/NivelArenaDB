@@ -1,5 +1,9 @@
+using System.Collections.Generic;
+using System.Linq;
+using GameEvents;
 using QFramework;
 using Runtime.Business.Data;
+using Runtime.Business.Data.Entry;
 using Runtime.Business.Manager;
 using Runtime.Business.UI.CardDetail;
 using TMPro;
@@ -18,6 +22,7 @@ namespace UI
         public Image frame;
 
         private string _cardId;
+        private CardEntry _cardEntry;
         public void Init(string cardId)
         {
             button.onClick.RemoveAllListeners();
@@ -30,12 +35,12 @@ namespace UI
             UpdateIcon(cardEntry.Attribute);
             UpdateFrame(cardEntry.Attribute);
             button.onClick.AddListener(OnClick);
+            _cardEntry = cardEntry;
         }
 
         private void OnClick()
         {
-            // UIKit.OpenPanel<CardDetailUI>(new CardDetailData(_cardId));
-            ExtUIManager.Instance.OpenDialog<CardDetailUI>(new CardDetailData(_cardId));
+            ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.Card_Details_UI, new CardDetailData(_cardId));
         }
 
         private void UpdateIcon(ElementAttribute attribute)
@@ -58,6 +63,78 @@ namespace UI
                 ElementAttribute.Lightning => Color.yellow,
                 _ => Color.white
             };
+        }
+
+        public bool UpdateView(UpdateCardByFilter e)
+        {
+            if (e.CostFlags is not CostFlags.None)
+            {
+                if (_cardEntry.Cost == null)
+                {
+                    return false;
+                }
+
+                if ((e.CostFlags & CostFlags.TenPlus) != 0 && _cardEntry.Cost.Value >= 10)
+                {
+                    return true;
+                }
+
+                var flag = (CostFlags)(1 << _cardEntry.Cost.Value);
+                if ((e.CostFlags & flag) == 0)
+                {
+                    return false;
+                }
+            }
+            
+            if (e.AttributeFlags is not AttributeFlags.None)
+            {
+                var flag = (AttributeFlags)(1 << (int)_cardEntry.Attribute);
+                if ((e.AttributeFlags & flag) == 0)
+                {
+                    return false;
+                }
+            }
+
+            if (e.CardTypeFlags is not CardTypeFlags.None)
+            {
+                var flag = (CardTypeFlags)(1 << (int)_cardEntry.CardType);
+                if ((e.CardTypeFlags & flag) == 0)
+                {
+                    return false;
+                }
+            }
+
+            var canShowKeywords = false;
+            if (e.KeywordFlags is not KeywordFlags.None)
+            {
+                if (_cardEntry.Skills.Length == 0)
+                {
+                    return false;
+                }
+
+                var keys = new HashSet<KeyType>();
+                foreach (var skillId in _cardEntry.Skills)
+                {
+                    var skillEntry = DataManager.Instance.GetSkill(skillId);
+                    if (skillEntry.Key1 is not KeyType.None)
+                    {
+                        keys.Add(skillEntry.Key1);
+                    }
+
+                    if (skillEntry.Key2 != null)
+                    {
+                        if (skillEntry.Key2.Value is not KeyType.None)
+                        {
+                            keys.Add(skillEntry.Key2.Value);
+                        }
+                    }
+                }
+
+                var flag = keys.Select(key => (KeywordFlags)(1 << (int)key - 1)).Aggregate(KeywordFlags.None, (current, f) => current | f);
+                return (flag & e.KeywordFlags) != 0;
+            }
+
+            return true;
         }
     }
 }
