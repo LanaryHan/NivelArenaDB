@@ -210,10 +210,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2128954101114026623}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -960}
-  m_SizeDelta: {x: 1080, y: 1920}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6262015062778405861
 CanvasRenderer:
@@ -10409,6 +10409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9863bb5543394bea9668d38ac3c4e8dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogName: 0
   tempCardGroup: {fileID: 9033804079493603385}
   content: {fileID: 7765880647290093638}
   closeBtn: {fileID: 6135243201476555034}
@@ -10660,10 +10661,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2128954101114026623}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 856}
-  m_SizeDelta: {x: 0, y: -1500}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -104}
+  m_SizeDelta: {x: 1080, y: 420}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6306687352563083767
 CanvasRenderer:
