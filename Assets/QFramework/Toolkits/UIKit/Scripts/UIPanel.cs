@@ -26,7 +26,7 @@ namespace QFramework
 	
 	public abstract partial class UIPanel : QMonoBehaviour, IPanel,IEvent
 	{
-		public Dialog dialogName = Dialog.NULL;
+		public Dialog dialogName { get; set; } = Dialog.NULL;
 		public Transform Transform => transform;
 
 		IPanelLoader IPanel.Loader { get; set; }

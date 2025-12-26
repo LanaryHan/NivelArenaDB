@@ -1425,6 +1425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608cfd61f5684a869ae587a2d37f19fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogName: 0
   tempBtn: {fileID: 8644623187871310389}
   contents:
   - {fileID: 8261438013244079751}
@@ -1861,10 +1862,10 @@ RectTransform:
   - {fileID: 1711203319304310034}
   m_Father: {fileID: 8433010977060441520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 1220}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2784167806223635863
 CanvasRenderer:
@@ -1993,10 +1994,10 @@ RectTransform:
   - {fileID: 8771030648697789717}
   m_Father: {fileID: 1324390705706995697}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 10}
-  m_SizeDelta: {x: 1080, y: 1240}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8946039000467719222
 CanvasRenderer:
@@ -2475,10 +2476,10 @@ RectTransform:
   - {fileID: 285343255027807239}
   m_Father: {fileID: 4355490537796107919}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 1220}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4409987912257724590
 CanvasRenderer:
