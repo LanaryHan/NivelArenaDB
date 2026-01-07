@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 2795513505
+CRC: 1103356398
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5e462329dbcdf0f29ff1b2a8b8d4602a
+    Hash: e5bee5e0129ad9def40f4f117bb2bdaa
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ed3894021f34055bc34490d8e8083003
+    Hash: 854ff8781052220d80ec06ff1a2fe177
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 5ff57c5c94d229bb124b6599e546aa78
+    Hash: fe02cd4d006ebd89dc4a060468ec205c
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -49,7 +49,7 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
 - AssemblyName: Business
-  ClassName: Runtime.Business.UI.Message.MessageUI/MessageButton
+  ClassName: UI.MessageUI/MessageButton
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.FaceInfo_Legacy
 - AssemblyName: Unity.TextMeshPro

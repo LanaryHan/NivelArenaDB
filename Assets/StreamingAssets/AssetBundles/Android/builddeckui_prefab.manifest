@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 2654997610
+CRC: 967381176
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 54b1b94aba272d1efd80e6dcd31e8e75
+    Hash: 034e6e23b494b2cc38cf3e940e2a38a6
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 2065a7184fcff0b159463452a08156c7
+    Hash: c8e1a8324174439510a6decdff4a104c
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 40651bba22446c7e89072fb965053129
+    Hash: 7e660decaeba5a9d5647ba1e5a5c6e52
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -24,8 +24,6 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 16f0b0b6d0b7542bfbd20a3e05b04ff1, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -38,11 +36,7 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 854fc483322b485a921f5d91de2acb0e, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 9863bb5543394bea9668d38ac3c4e8dd, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 7f86eaeb47554988884e1ae8b6a34fac, type: 3}
+  Script: {fileID: 11500000, guid: dd3701e35a714bde90924cf1ef343a7a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
 - Class: 114
@@ -51,12 +45,6 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 115
   Script: {instanceID: 0}
-- Class: 128
-  Script: {instanceID: 0}
-- Class: 198
-  Script: {instanceID: 0}
-- Class: 199
-  Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 - Class: 222
@@ -64,22 +52,12 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
-- AssemblyName: Coffee.UIParticle
-  ClassName: Coffee.UIExtensions.AnimatableProperty
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.FaceInfo_Legacy
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.FontAssetCreationSettings
 - AssemblyName: Unity.TextMeshPro
-  ClassName: TMPro.GlyphAnchorPoint
-- AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.KerningTable
-- AssemblyName: Unity.TextMeshPro
-  ClassName: TMPro.LigatureSubstitutionRecord
-- AssemblyName: Unity.TextMeshPro
-  ClassName: TMPro.MarkPositionAdjustment
-- AssemblyName: Unity.TextMeshPro
-  ClassName: TMPro.MarkToBaseAdjustmentRecord
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.TMP_Character
 - AssemblyName: Unity.TextMeshPro
@@ -100,12 +78,6 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.TextCore.GlyphMetrics
 - AssemblyName: UnityEngine.TextCoreFontEngineModule
   ClassName: UnityEngine.TextCore.GlyphRect
-- AssemblyName: UnityEngine.TextCoreFontEngineModule
-  ClassName: UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord
-- AssemblyName: UnityEngine.TextCoreFontEngineModule
-  ClassName: UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord
-- AssemblyName: UnityEngine.TextCoreFontEngineModule
-  ClassName: UnityEngine.TextCore.LowLevel.GlyphValueRecord
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.AnimationTriggers
 - AssemblyName: UnityEngine.UI
@@ -121,6 +93,6 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
 Assets:
-- Assets/Artworks/UI/CardsUI/Dialog/CardsUI.prefab
+- Assets/Artworks/UI/BuildDeckUI/Dialog/BuildDeckUI.prefab
 Dependencies:
-- /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/st01-008_png
+- /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/bt01-073sign_png
