@@ -5,7 +5,6 @@ using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
 using Runtime.Business.Manager;
-using Runtime.Business.UI.CardDetail;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -104,7 +103,6 @@ namespace UI
                 }
             }
 
-            var canShowKeywords = false;
             if (e.KeywordFlags is not KeywordFlags.None)
             {
                 if (_cardEntry.Skills.Length == 0)
