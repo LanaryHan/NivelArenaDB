@@ -7,16 +7,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Runtime.Business.UI.Message
+namespace UI
 {
     public class MessageParam : UIPanelData
     {
-        public Action<MessageUI.ButtonType, MessageUI> Callback;
-        public string Title;
-        public string Message;
-        public List<MessageUI.ButtonLabel> Buttons;
-        public Action CloseCallback;
-        public Action<MessageUI> StartCallback;
+        public Action<MessageUI.ButtonType, MessageUI> Callback { get; private set; }
+        public string Title { get; private set; } = string.Empty;
+        public string Message { get; private set; } = string.Empty;
+        public List<MessageUI.ButtonLabel> Buttons { get; private set; }
+        public Action CloseCallback { get; private set; }
+        public Action<MessageUI> StartCallback { get; private set; }
 
         public MessageParam SetTitle(string title)
         {
