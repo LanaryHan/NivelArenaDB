@@ -6,7 +6,7 @@ using Runtime.Business.Util;
 using TMPro;
 using UnityEngine;
 
-namespace Runtime.Business.UI.CardDetail
+namespace UI
 {
     public class SkillGroup : MonoBehaviour
     {

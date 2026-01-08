@@ -1,5 +1,3 @@
-using JetBrains.Annotations;
-
 namespace Runtime.Business.Data.Entry
 {
     public class CardEntry

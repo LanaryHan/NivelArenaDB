@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Logic;
 using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
@@ -9,7 +10,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Runtime.Business.UI.CardDetail
+namespace UI
 {
     public class CardDetailData : UIPanelData
     {
@@ -44,7 +45,9 @@ namespace Runtime.Business.UI.CardDetail
         [Header("Trigger")] 
         public GameObject triggerRoot;
         public TMP_Text triggerTxt;
-        
+        [Header("Build")] 
+        public Button addBtn;
+        public Button removeBtn;
         
         private CardEntry _cardEntry;
         public override bool CanCloseByBackKey => true;
@@ -54,17 +57,28 @@ namespace Runtime.Business.UI.CardDetail
             base.OnInit(uiData);
             tempSkillGroup.gameObject.SetActive(false);
             closeBtn.onClick.AddListener(this.CloseSelfByExt);
+            addBtn.onClick.AddListener(() =>
+            {
+                GetEventComponent().Send(GameEvents.AddCardToDeck.Create(_cardEntry.Id));
+            });
+            removeBtn.onClick.AddListener(() =>
+            {
+                GetEventComponent().Send(GameEvents.RemoveCardFromDeck.Create(_cardEntry.Id));
+            });
         }
 
         protected override void OnOpen(IUIData uiData = null)
         {
             base.OnOpen(uiData);
             skillContent.RemoveAllChildren(tempSkillGroup.transform, skillBg);
+            var buildDeckLogic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
+            addBtn.gameObject.SetActive(buildDeckLogic.IsBuilding);
+            removeBtn.gameObject.SetActive(buildDeckLogic.IsBuilding);
             if (uiData is not CardDetailData cardData)
             {
                 return;
             }
-
+            
             var ec = GetEventComponent();
             var cardId = cardData.CardId;
             _cardEntry = DataManager.Instance.GetCard(cardId);
