@@ -5,8 +5,7 @@ namespace Runtime.Business.Handler
 {
     public class CardUIFollowHandler : EventMonoBehaviour
     {
-        public Camera uiCamera;
-        public Camera cardCamera;
+        public Camera c;
         public GameObject card;
 
         private RectTransform _uiCardTarget;
@@ -38,10 +37,7 @@ namespace Runtime.Business.Handler
                 return;
             }
 
-            var screenPos = RectTransformUtility.WorldToScreenPoint(uiCamera, _uiCardTarget.position);
-            var worldPos = cardCamera.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 0));
-            worldPos.z = 200f;
-            card.transform.position = worldPos;
+            card.transform.position = _uiCardTarget.position;
         }
     }
 }
