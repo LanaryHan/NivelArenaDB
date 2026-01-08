@@ -102,7 +102,7 @@ namespace QFramework
             if (group == null)
             {
                 group = new AssetDataGroup(key);
-                Debug.Log("#Create Config Group:" + key);
+                // Debug.Log("#Create Config Group:" + key);
                 mAllAssetDataGroup.Add(group);
             }
 
