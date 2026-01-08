@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using QFramework;
 using Runtime.Business.Manager;
+using Runtime.Business.UI;
 using Runtime.Business.Util;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,17 +28,9 @@ namespace UI
             KeywordFlags = keywordFlags;
         }
     }
-    public class CardFilterUI : UIPanel
+    public class CardFilterUI : EdgeUIBase
     {
         public FilterFlagGroup[] filterFlagGroups;
-        public GameObject bg;
-        public GameObject mask;        
-        public RectTransform root;
-        public Button button;
-
-        private bool _isOpen;
-        private Button _bgButton;
-        
         public override bool CanCloseByBackKey => false;
         
         private Dictionary<string, Action<Enum,bool>> _callbacks = new();
@@ -78,51 +71,12 @@ namespace UI
                 }
             });
             
-            _bgButton = bg.GetComponent<Button>();
-            button.onClick.AddListener(OnClickFilter);
-            _bgButton.onClick.AddListener(OnClickFilter);
-        }
-
-        private float GetDuration()
-        {
-            return !_isOpen
-                ? root.anchoredPosition.x * -0.0015f + 0.375f
-                : root.anchoredPosition.x * 0.0015f + 0.375f;
-        }
-
-        private void OnClickFilter()
-        {
-            root.DOKill();
-            if (!_isOpen)
+            OnShowEdgeStart += () =>
             {
-                root.DOAnchorPosX(250f, GetDuration()).OnStart(() =>
-                {
-                    _isOpen = true;
-                    bg.SetActive(true);
-                    mask.SetActive(true);
-                }).OnComplete(() =>
-                {
-                    mask.SetActive(false);
-                });
-            }
-            else
-            {
-                root.DOAnchorPosX(-250f, GetDuration()).OnStart(() =>
-                {
-                    _isOpen = false;
-                    bg.SetActive(false);
-                    mask.SetActive(true);
-                });
-            }
+                transform.SetAsLastSibling();
+            };
         }
-
-        protected override void OnOpen(IUIData uiData = null)
-        {
-            base.OnOpen(uiData);
-            bg.gameObject.SetActive(false);
-            mask.gameObject.SetActive(true);
-        }
-
+        
         private void UpdateAttribute(Enum attributeFlags,bool value)
         {
             if (mUIData is not CardFilterData data)

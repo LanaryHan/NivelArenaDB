@@ -1,7 +1,5 @@
 using QFramework;
 using Runtime.Business.Manager;
-using Runtime.Business.UI.CardDetail;
-using Runtime.Business.UI.Message;
 using Runtime.Business.Util;
 using TMPro;
 using UnityEngine;
