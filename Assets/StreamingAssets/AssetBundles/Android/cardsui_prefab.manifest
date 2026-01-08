@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 2654997610
+CRC: 3213048073
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 54b1b94aba272d1efd80e6dcd31e8e75
+    Hash: 77d8795e4d4f968f19c3e76310ebd2b9
   TypeTreeHash:
     serializedVersion: 2
     Hash: 2065a7184fcff0b159463452a08156c7
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 40651bba22446c7e89072fb965053129
+    Hash: 42c2d7563f8234572e9402e1749da772
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -121,6 +121,6 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
 Assets:
-- Assets/Artworks/UI/CardsUI/Dialog/CardsUI.prefab
+- Assets/Artworks/UI/Common/CardsUI/Dialog/CardsUI.prefab
 Dependencies:
 - /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/st01-008_png

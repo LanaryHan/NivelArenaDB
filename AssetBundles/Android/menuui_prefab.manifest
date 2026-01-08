@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1603306611
+CRC: 467844553
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c754cb49b28c0be3a79e1504e1d9b6dc
+    Hash: afbf59273ed7610b265d0d9e7bef981f
   TypeTreeHash:
     serializedVersion: 2
     Hash: 71bdd370cc361cbae8135bb99ff1516b
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: b0837798d41a2bc2261ac33129975412
+    Hash: b589bf28dfda7ce56a012d4388de7b1d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -81,5 +81,5 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
 Assets:
-- Assets/Artworks/UI/MenuUI/Dialog/MenuUI.prefab
+- Assets/Artworks/UI/Pop/MenuUI/Dialog/MenuUI.prefab
 Dependencies: []

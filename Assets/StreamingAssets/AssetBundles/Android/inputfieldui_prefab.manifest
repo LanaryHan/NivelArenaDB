@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1990550114
+CRC: 538914613
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9b546e2cbc9716fc7a3e4a94e18694b8
+    Hash: a62825e631cc41f11c4228524905356a
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4c7d3b306ab27bf5121e21baa4f85707
+    Hash: 1f55a9b3e26a863883721f0d699d089e
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: e94f1de7d1594cf285aded0b70c91953
+    Hash: 010e1b3051909199a73d65c59658cec7
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -22,35 +22,25 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: 90d698e2396e493a85fa87aa576e9ce8, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: ab9568631db94269bfa25257a87aab07, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 8915630df16649b9b166c0c2a88c49ae, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  Script: {fileID: 11500000, guid: 3f15b4fb8cad41ab8587e2c7afdf0357, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -83,6 +73,16 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.TMP_FontWeightPair
 - AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_InputField/OnChangeEvent
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_InputField/SelectionEvent
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_InputField/SubmitEvent
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_InputField/TextSelectionEvent
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_InputField/TouchScreenKeyboardEvent
+- AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.VertexGradient
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
@@ -113,11 +113,7 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.Navigation
 - AssemblyName: UnityEngine.UI
-  ClassName: UnityEngine.UI.ScrollRect/ScrollRectEvent
-- AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
-- AssemblyName: UnityEngine.UI
-  ClassName: UnityEngine.UI.Toggle/ToggleEvent
 Assets:
-- Assets/Artworks/UI/Pop/CardFilterUI/Dialog/CardFilterUI.prefab
+- Assets/Artworks/UI/Pop/InputFieldUI/Dialog/InputFieldUI.prefab
 Dependencies: []

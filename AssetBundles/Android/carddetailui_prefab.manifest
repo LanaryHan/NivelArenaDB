@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1099783461
+CRC: 413441990
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f086dcd7ea6988e55497e5eb8a73babe
+    Hash: 18e36e6944a62d4a12a66a6fa6532792
   TypeTreeHash:
     serializedVersion: 2
     Hash: cf5135905976b4b025824b3c1c3f9264
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: b5710d03c0cf27d9bdb4ee78ecd62256
+    Hash: e3dd1d1b6597a27fd9eb97d0c9d2b8b0
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -119,5 +119,5 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
 Assets:
-- Assets/Artworks/UI/CardDetailUI/Dialog/CardDetailUI.prefab
+- Assets/Artworks/UI/Common/CardDetailUI/Dialog/CardDetailUI.prefab
 Dependencies: []

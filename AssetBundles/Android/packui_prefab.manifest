@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 2297811035
+CRC: 238174170
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 15dbf8f3559f91164eba860127dcfa46
+    Hash: c320f86f220f25ed80e98c31e74bbb7a
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5056515caae2ae494cbab90fb0fb0f5c
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: e464c62c2b43f3a471d5bedeb5246c30
+    Hash: a5e98f0a62c1c7e91d80863e4efea520
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -149,6 +149,6 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.Toggle/ToggleEvent
 Assets:
-- Assets/Artworks/UI/PackUI/Dialog/PackUI.prefab
+- Assets/Artworks/UI/Common/PackUI/Dialog/PackUI.prefab
 Dependencies:
 - /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/pack_bt01_png

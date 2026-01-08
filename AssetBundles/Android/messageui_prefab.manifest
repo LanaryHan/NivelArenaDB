@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1103356398
+CRC: 2656678048
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e5bee5e0129ad9def40f4f117bb2bdaa
+    Hash: fec1779e83ee9eab1513b852f9b6128e
   TypeTreeHash:
     serializedVersion: 2
     Hash: 854ff8781052220d80ec06ff1a2fe177
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: fe02cd4d006ebd89dc4a060468ec205c
+    Hash: 8410f8a4d5ed22d55f579d36d2a21e70
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -103,5 +103,5 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
 Assets:
-- Assets/Artworks/UI/MessageUI/Prefab/MessageUI.prefab
+- Assets/Artworks/UI/Pop/MessageUI/Dialog/MessageUI.prefab
 Dependencies: []
