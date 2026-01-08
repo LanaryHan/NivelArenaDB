@@ -20,6 +20,20 @@ namespace Runtime.Business.Handler
             {
                 _enable = false;
             });
+            ec.Listen<UIEvents.OnDialogOpen>(e =>
+            {
+                if (e.Dialog.dialogName is Dialog.Message_UI)
+                {
+                    _enable = false;
+                }
+            });
+            ec.Listen<UIEvents.OnDialogClose>(e =>
+            {
+                if (e.Dialog is Dialog.Message_UI)
+                {
+                    _enable = true;
+                }
+            });
         }
 
         private void Update()
