@@ -63,6 +63,12 @@ namespace Runtime.Business.Data.Map
                 var text = row.Row.GetField("HasSpecial");
                 return !string.IsNullOrEmpty(text) && int.Parse(text) == 1;
             });
+            Map(m => m.HasAnniversary).Convert(row =>
+            {
+                var text = row.Row.GetField("HasAnniversary");
+                return !string.IsNullOrEmpty(text) && int.Parse(text) == 1;
+            });
+            Map(m => m.Id2).Index(26);
         }
     }
 }

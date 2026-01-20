@@ -84,8 +84,23 @@ namespace Runtime.Business.Data.Entry
         /// </summary>
         public bool HasSpecial { get; set; }
         
+        /// <summary>
+        /// 是否有周年卡
+        /// </summary>
+        public bool HasAnniversary { get; set; }
+        
+        /// <summary>
+        /// 展示用Id，为卡牌的实际Id
+        /// </summary>
+        public string Id2 { get; set; }
+        
         #endregion
-
+        
+        /// <summary>
+        /// 记录Id，可能与实际Id不符
+        /// </summary>
         public string Id => $"{Pack}-{Number}";
+
+        public string ShowId => string.IsNullOrEmpty(Id2) ? Id : Id2;
     }
 }

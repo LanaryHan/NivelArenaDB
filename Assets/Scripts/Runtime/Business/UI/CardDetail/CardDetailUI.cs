@@ -83,7 +83,7 @@ namespace UI
             var cardId = cardData.CardId;
             _cardEntry = DataManager.Instance.GetCard(cardId);
             cardNameTxt.text = _cardEntry.Name;
-            cardIdTxt.text = _cardEntry.Id;
+            cardIdTxt.text = _cardEntry.ShowId;
             cardTypeTxt.text = _cardEntry.CardType.ToChinese();
             cardAttributeTxt.text = _cardEntry.Attribute.ToChinese();
             costTxt.text = _cardEntry.Cost == null ? "——" : _cardEntry.Cost.Value.ToString();
