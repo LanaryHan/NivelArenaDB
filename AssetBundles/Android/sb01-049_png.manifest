@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 3452530148
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9ef39ae5520b8ea0b65fecf48923dd9b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 4bbbf597860029b0fcfd1af480ea5b2e
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/SB01/SB01-049.png
+Dependencies: []
