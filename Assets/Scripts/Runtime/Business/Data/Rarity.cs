@@ -10,5 +10,8 @@ namespace Runtime.Business.Data
         SPR,    //Special Rare   签名卡
         SPL,    //Special Leader 领袖签名卡
         P,      //
+        SBL,    //Speical Booster Leader    特签领袖卡
+        ANL,    //Anniversary Leader        周年特签领袖卡
+        SBR     //Speical Booster Rare      特签卡
     }
 }
