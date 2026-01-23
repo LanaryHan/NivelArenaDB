@@ -57,6 +57,20 @@ namespace GameEvents
         
     }
 
+    public class RenameDeck : GameEventBaseNoDefaultCreate<RenameDeck>
+    {
+        public string OldName;
+        public string NewName;
+
+        public static RenameDeck Create(string oldName, string newName)
+        {
+            var self = Create();
+            self.OldName = oldName;
+            self.NewName = newName;
+            return self;
+        }
+    }
+
     public class DeleteDeck : GameEventBaseNoDefaultCreate<DeleteDeck>
     {
         public string Name;
@@ -96,7 +110,7 @@ namespace Logic
         /// <summary>
         /// json长期储存
         /// </summary>
-        public Dictionary<string, BuildDeckEntry> DeckEntries { get; private set; }
+        public Dictionary<string, BuildDeckEntry> DeckEntries { get; private set; } = new();
 
         private CardEntry _leaderCard;
         private int _triggerCardCount;
@@ -115,7 +129,16 @@ namespace Logic
                 e.OnStateChanged?.Invoke();
             });
             ec.Listen<SaveDeck>(OnSave);
+            ec.Listen<RenameDeck>(e =>
+            {
+                var entry = DeckEntries[e.OldName];
+                entry.DeckName = e.NewName;
+                DeckEntries.Remove(e.OldName);
+                DeckEntries.Add(e.NewName, entry);
+                Save();
+            });
             ec.Listen<DeleteDeck>(OnDelete);
+            ec.Listen<EditDeck>(OnEdit);
 
             var filePath = Path.Combine(Application.persistentDataPath, "decks.json");
             if (!File.Exists(filePath))
@@ -124,7 +147,8 @@ namespace Logic
             }
 
             var json = File.ReadAllText(filePath);
-            DeckEntries = JsonConvert.DeserializeObject<Dictionary<string, BuildDeckEntry>>(json);
+            DeckEntries = JsonConvert.DeserializeObject<Dictionary<string, BuildDeckEntry>>(json) 
+                          ?? new Dictionary<string, BuildDeckEntry>();
         }
 
         private void OnAddCard(AddCardToDeck e)
@@ -260,7 +284,7 @@ namespace Logic
         {
             if (_leaderCard != null && CardIds.Count == 40)
             {
-                PresetDeckNameInputUI.Create().SetTitle("请输入卡组名称").SetCallback(deckName =>
+                InputFieldUI.Create().SetTitle("请输入卡组名称").SetCallback(deckName =>
                 {
                     var buildDeckEntry = new BuildDeckEntry(deckName, CardIds);
                     DeckEntries.Add(deckName, buildDeckEntry);
@@ -283,6 +307,19 @@ namespace Logic
 
             DeckEntries.Remove(e.Name);
             Save();
+        }
+
+        private void OnEdit(EditDeck e)
+        {
+            if(!DeckEntries.TryGetValue(e.Name, out var entry))
+            {
+                //不应该有这种情况
+                return;
+            }
+            
+            CardIds.Clear();
+            CardIds = entry.CardIds;
+            IsBuilding = true;
         }
 
         private void Save()
