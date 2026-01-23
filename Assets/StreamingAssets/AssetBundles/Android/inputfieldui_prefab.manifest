@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 398597758
+CRC: 4275666588
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e0f55e1740e99b1031308de33e0fe8e3
+    Hash: 99eecdf421c39fc3602c66fcae6ec5b3
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1f55a9b3e26a863883721f0d699d089e
+    Hash: 6089b0c734c80f13a3d03f2be70d6a24
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 13698d10fcee951b23f36ccc2fac5c7b
+    Hash: bf91f17690ede1b0cae6d2fafffea5e2
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -43,8 +43,6 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 115
   Script: {instanceID: 0}
-- Class: 128
-  Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 - Class: 222
@@ -57,15 +55,7 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.FontAssetCreationSettings
 - AssemblyName: Unity.TextMeshPro
-  ClassName: TMPro.GlyphAnchorPoint
-- AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.KerningTable
-- AssemblyName: Unity.TextMeshPro
-  ClassName: TMPro.LigatureSubstitutionRecord
-- AssemblyName: Unity.TextMeshPro
-  ClassName: TMPro.MarkPositionAdjustment
-- AssemblyName: Unity.TextMeshPro
-  ClassName: TMPro.MarkToBaseAdjustmentRecord
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.TMP_Character
 - AssemblyName: Unity.TextMeshPro
@@ -96,12 +86,6 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.TextCore.GlyphMetrics
 - AssemblyName: UnityEngine.TextCoreFontEngineModule
   ClassName: UnityEngine.TextCore.GlyphRect
-- AssemblyName: UnityEngine.TextCoreFontEngineModule
-  ClassName: UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord
-- AssemblyName: UnityEngine.TextCoreFontEngineModule
-  ClassName: UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord
-- AssemblyName: UnityEngine.TextCoreFontEngineModule
-  ClassName: UnityEngine.TextCore.LowLevel.GlyphValueRecord
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.AnimationTriggers
 - AssemblyName: UnityEngine.UI
