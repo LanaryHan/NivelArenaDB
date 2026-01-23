@@ -7,6 +7,7 @@ using Runtime.Business.Data.Entry;
 using Runtime.Business.Manager;
 using Runtime.Business.Util;
 using TMPro;
+using UIEvents;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +25,7 @@ namespace UI
     public class DeckEditorUI : UIPanel
     {
         public Button closeBtn;
-        public Image tempCardImage;
+        public Button tempCard;
         public Image leaderImage;
         public Transform content1;
         public Transform content2;
@@ -39,15 +40,31 @@ namespace UI
         protected override void OnInit(IUIData uiData = null)
         {
             base.OnInit(uiData);
-            tempCardImage.gameObject.SetActive(false);
+            tempCard.gameObject.SetActive(false);
+            var ec = GetEventComponent();
+            ec.Listen<OnDialogClose>(evt =>
+            {
+                if (evt.Dialog is Dialog.Card_Details_UI)
+                {
+                    var logic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
+                    if (logic.IsBuilding)
+                    {
+                        content1.RemoveAllChildren();
+                        content2.RemoveAllChildren();
+                        UpdateViewBuilding();
+                    }
+                }
+            });
             closeBtn.onClick.AddListener(this.CloseSelfByExt);
             saveBtn.onClick.AddListener(() =>
             {
                 GetEventComponent().Send(GameEvents.SaveDeck.Create());
+                UpdateButtons(false);
             });
             editBtn.onClick.AddListener(() =>
             {
                 GetEventComponent().Send(GameEvents.EditDeck.Create(_deckName));
+                UpdateButtons(true);
             });
             cancelBtn.onClick.AddListener(OnClickCancel);
         }
@@ -134,10 +151,14 @@ namespace UI
             for (int i = 0; i < cardEntries.Count; i++)
             {
                 var cardEntry = cardEntries[i];
-                var image = Instantiate(tempCardImage, i < 4 ? content1 : content2);
+                var btn = Instantiate(tempCard, i < 4 ? content1 : content2);
                 var cardSprite = DataManager.Instance.LoadCardSprite(cardEntry.Id);
-                image.sprite = cardSprite;
-                image.gameObject.SetActive(true);
+                btn.image.sprite = cardSprite;
+                btn.gameObject.SetActive(true);
+                btn.onClick.AddListener(() =>
+                {
+                    ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.Card_Details_UI, new CardDetailData(cardEntry.Id));
+                });
             }
         }
 
