@@ -25,7 +25,7 @@ namespace UI
             return this;
         }
     }
-    public class PresetDeckNameInputUI : UIPanel
+    public class InputFieldUI : UIPanel
     {
         public TMP_InputField nameInputField;
         public TMP_Text titleText;
@@ -36,7 +36,7 @@ namespace UI
         public static NameInputParam Create()
         {
             var param = new NameInputParam();
-            ExtUIManager.Instance.OpenDialog<PresetDeckNameInputUI>(Dialog.Preset_Deck_Name_Input_UI,UILevel.PopUI);
+            ExtUIManager.Instance.OpenDialog<InputFieldUI>(Dialog.Preset_Deck_Name_Input_UI, param, UILevel.PopUI);
             return param;
         }
 
@@ -48,12 +48,13 @@ namespace UI
                 closeBtn.onClick.AddListener(this.CloseSelfByExt);
                 saveBtn.onClick.AddListener(() =>
                 {
-                    if (!string.IsNullOrEmpty(nameInputField.text))
+                    if (string.IsNullOrEmpty(nameInputField.text))
                     {
                         return;
                     }
 
                     param.Callback?.Invoke(nameInputField.text);
+                    this.CloseSelfByExt();
                 });
             }
         }
