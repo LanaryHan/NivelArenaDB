@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -114,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 8
-        y: 1000
+        y: 1050
         width: 440
         height: 200
       alignment: 0
@@ -136,7 +149,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 453
-        y: 1000
+        y: 1050
         width: 267
         height: 200
       alignment: 0
@@ -158,7 +171,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 720
-        y: 1000
+        y: 1050
         width: 303
         height: 200
       alignment: 0
@@ -180,7 +193,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1029
-        y: 1000
+        y: 1050
         width: 267
         height: 200
       alignment: 0
@@ -198,11 +211,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: levellnk_10
+      name: levellink_10
       rect:
         serializedVersion: 2
         x: 1296
-        y: 1000
+        y: 1050
         width: 578
         height: 200
       alignment: 0
@@ -224,7 +237,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1873
-        y: 1000
+        y: 1050
         width: 543
         height: 200
       alignment: 0
@@ -246,7 +259,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2416
-        y: 1000
+        y: 1050
         width: 543
         height: 200
       alignment: 0
@@ -268,7 +281,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 8
-        y: 793
+        y: 843
         width: 543
         height: 200
       alignment: 0
@@ -290,7 +303,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 551
-        y: 793
+        y: 843
         width: 543
         height: 200
       alignment: 0
@@ -312,7 +325,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1093
-        y: 793
+        y: 843
         width: 543
         height: 200
       alignment: 0
@@ -333,8 +346,8 @@ TextureImporter:
       name: levellink_4
       rect:
         serializedVersion: 2
-        x: 1636
-        y: 793
+        x: 1640
+        y: 843
         width: 543
         height: 200
       alignment: 0
@@ -356,7 +369,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2179
-        y: 793
+        y: 843
         width: 543
         height: 200
       alignment: 0
@@ -377,8 +390,8 @@ TextureImporter:
       name: levellink_2
       rect:
         serializedVersion: 2
-        x: 8
-        y: 585
+        x: 4
+        y: 635
         width: 543
         height: 200
       alignment: 0
@@ -400,7 +413,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 551
-        y: 585
+        y: 635
         width: 543
         height: 200
       alignment: 0
@@ -422,7 +435,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1453
-        y: 585
+        y: 635
         width: 267
         height: 200
       alignment: 0
@@ -444,7 +457,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1094
-        y: 585
+        y: 635
         width: 359
         height: 200
       alignment: 0
@@ -466,7 +479,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1726
-        y: 584
+        y: 634
         width: 267
         height: 200
       alignment: 0
@@ -488,7 +501,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 585
+        y: 635
         width: 267
         height: 200
       alignment: 0
@@ -510,7 +523,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2270
-        y: 585
+        y: 635
         width: 359
         height: 200
       alignment: 0
@@ -528,11 +541,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: credit_3
+      name: credits_3
       rect:
         serializedVersion: 2
         x: 9
-        y: 375
+        y: 429
         width: 356
         height: 200
       alignment: 0
@@ -550,11 +563,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: credit_2
+      name: credits_2
       rect:
         serializedVersion: 2
-        x: 365
-        y: 375
+        x: 369
+        y: 429
         width: 356
         height: 200
       alignment: 0
@@ -572,11 +585,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: credit_
+      name: credits_1
       rect:
         serializedVersion: 2
         x: 721
-        y: 375
+        y: 429
         width: 365
         height: 200
       alignment: 0
@@ -598,7 +611,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1083
-        y: 375
+        y: 429
         width: 303
         height: 200
       alignment: 0
@@ -620,7 +633,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1385
-        y: 375
+        y: 429
         width: 359
         height: 200
       alignment: 0
@@ -642,7 +655,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2341
-        y: 375
+        y: 429
         width: 267
         height: 200
       alignment: 0
@@ -664,7 +677,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1745
-        y: 375
+        y: 429
         width: 596
         height: 200
       alignment: 0
@@ -685,8 +698,8 @@ TextureImporter:
       name: active_main
       rect:
         serializedVersion: 2
-        x: 9
-        y: 169
+        x: 8
+        y: 220
         width: 592
         height: 200
       alignment: 0
@@ -708,7 +721,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 611
-        y: 169
+        y: 224
         width: 679
         height: 200
       alignment: 0
@@ -730,7 +743,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1305
-        y: 202
+        y: 252
         width: 165
         height: 165
       alignment: 0
@@ -752,7 +765,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1478
-        y: 202
+        y: 252
         width: 165
         height: 165
       alignment: 0
@@ -774,7 +787,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1651
-        y: 195
+        y: 245
         width: 165
         height: 165
       alignment: 0
@@ -796,7 +809,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1842
-        y: 197
+        y: 247
         width: 165
         height: 165
       alignment: 0
@@ -818,7 +831,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2030
-        y: 205
+        y: 255
         width: 165
         height: 165
       alignment: 0
@@ -831,6 +844,138 @@ TextureImporter:
       bones: []
       spriteID: 9f5fad745adbc4fc19c8f8bd30a92903
       internalID: 713789534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buff_1
+      rect:
+        serializedVersion: 2
+        x: 2218
+        y: 224
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5e2d8b51629453d9eecf6568412b28
+      internalID: 631329638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buff_2
+      rect:
+        serializedVersion: 2
+        x: 2574
+        y: 224
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8451ff2ad9d6418980fcb03e285d676
+      internalID: -1951127192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buff_3
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 17
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3f97d7494c54709abd2938ccf49b9a
+      internalID: -1010454611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chain_1
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 17
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35110a12c4514caca655a18e978d73a
+      internalID: 202063919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chain_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 17
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff15f0aa7c9943c280c8cfbab7b633d
+      internalID: 1868437139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chain_3
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 17
+        width: 356
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab16edf9286f4a8e9b853fb739ed9b0
+      internalID: 595485705
       vertices: []
       indices: 
       edges: []
@@ -855,9 +1000,15 @@ TextureImporter:
       armedcondition: -1480624892
       attacker: -1630471879
       awakening: -1693918227
-      credit_: 1733753349
-      credit_2: -1616798747
-      credit_3: 787031938
+      buff_1: 631329638
+      buff_2: -1951127192
+      buff_3: -1010454611
+      chain_1: 202063919
+      chain_2: 1868437139
+      chain_3: 595485705
+      credits_1: 1733753349
+      credits_2: -1616798747
+      credits_3: 787031938
       defender: 1235634948
       element_earth: -1460683461
       element_flame: 2019339265
@@ -869,6 +1020,7 @@ TextureImporter:
       exit: -316619010
       guardian: -906943187
       levellink_1: 385708913
+      levellink_10: 1673281569
       levellink_2: -659982009
       levellink_3: 1088336490
       levellink_4: 1722906434
@@ -877,7 +1029,6 @@ TextureImporter:
       levellink_7: 1467559057
       levellink_8: 634038503
       levellink_9: -1705266602
-      levellnk_10: 1673281569
       mix: 979325422
       oath: -954114700
       passive: -80304574
