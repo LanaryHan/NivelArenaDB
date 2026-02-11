@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 4133798619
+CRC: 3232388497
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -2339,4 +2339,67 @@ AssetBundleManifest:
       Dependencies: {}
     Info_777:
       Name: sb01-051sign_png
+      Dependencies: {}
+    Info_778:
+      Name: pack_bt06_png
+      Dependencies: {}
+    Info_779:
+      Name: pack_st10_png
+      Dependencies: {}
+    Info_780:
+      Name: pack_st11_png
+      Dependencies: {}
+    Info_781:
+      Name: st10-001_png
+      Dependencies: {}
+    Info_782:
+      Name: st10-001sign_png
+      Dependencies: {}
+    Info_783:
+      Name: st10-002_png
+      Dependencies: {}
+    Info_784:
+      Name: st10-003_png
+      Dependencies: {}
+    Info_785:
+      Name: st10-004_png
+      Dependencies: {}
+    Info_786:
+      Name: st10-005_png
+      Dependencies: {}
+    Info_787:
+      Name: st10-006_png
+      Dependencies: {}
+    Info_788:
+      Name: st10-007_png
+      Dependencies: {}
+    Info_789:
+      Name: st10-008_png
+      Dependencies: {}
+    Info_790:
+      Name: st10-009_png
+      Dependencies: {}
+    Info_791:
+      Name: st10-010_png
+      Dependencies: {}
+    Info_792:
+      Name: st10-011_png
+      Dependencies: {}
+    Info_793:
+      Name: st10-012_png
+      Dependencies: {}
+    Info_794:
+      Name: st10-013_png
+      Dependencies: {}
+    Info_795:
+      Name: st10-014_png
+      Dependencies: {}
+    Info_796:
+      Name: st10-015_png
+      Dependencies: {}
+    Info_797:
+      Name: st10-016_png
+      Dependencies: {}
+    Info_798:
+      Name: st10-017_png
       Dependencies: {}
