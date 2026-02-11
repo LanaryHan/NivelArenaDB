@@ -940,7 +940,7 @@ TextureImporter:
       name: chain_2
       rect:
         serializedVersion: 2
-        x: 720
+        x: 725
         y: 17
         width: 356
         height: 200
@@ -962,7 +962,7 @@ TextureImporter:
       name: chain_3
       rect:
         serializedVersion: 2
-        x: 1076
+        x: 1081
         y: 17
         width: 356
         height: 200
@@ -976,6 +976,50 @@ TextureImporter:
       bones: []
       spriteID: 5ab16edf9286f4a8e9b853fb739ed9b0
       internalID: 595485705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyTypeGroup_0
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 17
+        width: 267
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a609300b7fb4b3dbf230fbc8851ddf
+      internalID: -29063507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyTypeGroup_1
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 17
+        width: 267
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3afb750f85f043fca311ee6c1c6273d
+      internalID: -958571460
       vertices: []
       indices: 
       edges: []
@@ -1019,6 +1063,8 @@ TextureImporter:
       escape: 613355610
       exit: -316619010
       guardian: -906943187
+      keyTypeGroup_0: -29063507
+      keyTypeGroup_1: -958571460
       levellink_1: 385708913
       levellink_10: 1673281569
       levellink_2: -659982009
