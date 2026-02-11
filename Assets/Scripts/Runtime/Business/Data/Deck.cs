@@ -17,5 +17,6 @@ namespace Runtime.Business.Data
         ST08,   //起始套牌08《周年纪念》
         ST09,   //起始套牌09《热带》
         BT05,   //补充包05《祭典》
+        ST10    //起始套牌10 《贝伦》
     }
 }

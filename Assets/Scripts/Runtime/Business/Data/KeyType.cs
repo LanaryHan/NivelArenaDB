@@ -17,6 +17,8 @@ namespace Runtime.Business.Data
         Credits,            //借贷
         Escape,             //逃脱
         ArmedCondition,     //武装条件
+        Buff,               
+        Chain,              //连锁
         
         
         Oath,               //誓约

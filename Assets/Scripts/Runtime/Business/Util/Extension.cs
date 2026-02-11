@@ -130,6 +130,16 @@ namespace Runtime.Business.Util
                 Affiliation.Pajamas => "睡衣派对",
                 Affiliation.Lucky => "好运",
                 Affiliation.Snow => "冰雪",
+                Affiliation.Beilun => "贝伦",
+                Affiliation.SureHitHunter => "百分百命中率猎人团",
+                Affiliation.Aldebaran => "阿尔德巴伦佣兵团",
+                Affiliation.Church => "阿克莱特教团",
+                Affiliation.Blacksmith => "流浪铁匠",
+                Affiliation.Cocytus => "科库讬斯",
+                Affiliation.Traveller => "来历不明的旅行者",
+                Affiliation.Loatheb => "罗戴夫盗贼公会",
+                Affiliation.Larcal => "拉勒凯私立幼儿园",
+                Affiliation.Castlevania => "恶魔",
                 _ => throw new ArgumentOutOfRangeException(nameof(affiliation), affiliation, null)
             };
         }
@@ -153,6 +163,8 @@ namespace Runtime.Business.Util
                 KeyType.Credits => "借贷",
                 KeyType.Escape => "逃脱",
                 KeyType.ArmedCondition => "武装条件",
+                KeyType.Buff =>"",
+                KeyType.Chain => "连锁",
                 KeyType.Oath => "誓约",
                 KeyType.Awakening => "觉醒",
                 _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)

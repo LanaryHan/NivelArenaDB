@@ -52,5 +52,16 @@ namespace Runtime.Business.Data
         Pajamas,
         Lucky,
         Snow,
+        
+        Beilun,
+        SureHitHunter,
+        Aldebaran,
+        Church,
+        Blacksmith,
+        Cocytus,
+        Traveller,
+        Loatheb,
+        Larcal,
+        Castlevania,
     }
 }
