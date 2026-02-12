@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 3232388497
+CRC: 682115394
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -2402,4 +2402,58 @@ AssetBundleManifest:
       Dependencies: {}
     Info_798:
       Name: st10-017_png
+      Dependencies: {}
+    Info_799:
+      Name: st11-001_png
+      Dependencies: {}
+    Info_800:
+      Name: st11-001sign_png
+      Dependencies: {}
+    Info_801:
+      Name: st11-002_png
+      Dependencies: {}
+    Info_802:
+      Name: st11-003_png
+      Dependencies: {}
+    Info_803:
+      Name: st11-004_png
+      Dependencies: {}
+    Info_804:
+      Name: st11-005_png
+      Dependencies: {}
+    Info_805:
+      Name: st11-006_png
+      Dependencies: {}
+    Info_806:
+      Name: st11-007_png
+      Dependencies: {}
+    Info_807:
+      Name: st11-008_png
+      Dependencies: {}
+    Info_808:
+      Name: st11-009_png
+      Dependencies: {}
+    Info_809:
+      Name: st11-010_png
+      Dependencies: {}
+    Info_810:
+      Name: st11-011_png
+      Dependencies: {}
+    Info_811:
+      Name: st11-012_png
+      Dependencies: {}
+    Info_812:
+      Name: st11-013_png
+      Dependencies: {}
+    Info_813:
+      Name: st11-014_png
+      Dependencies: {}
+    Info_814:
+      Name: st11-015_png
+      Dependencies: {}
+    Info_815:
+      Name: st11-016_png
+      Dependencies: {}
+    Info_816:
+      Name: st11-017_png
       Dependencies: {}
