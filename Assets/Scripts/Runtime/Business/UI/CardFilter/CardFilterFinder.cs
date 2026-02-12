@@ -57,5 +57,7 @@ namespace UI
         Mix = 1 << 10,
         Credits = 1 << 11,
         Escape = 1 << 12,
+        Buff = 1 << 13,
+        Chain = 1 << 14,
     }
 }

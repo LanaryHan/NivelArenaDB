@@ -16,10 +16,9 @@ namespace Runtime.Business.Data
         Mix,                //混合
         Credits,            //借贷
         Escape,             //逃脱
-        ArmedCondition,     //武装条件
-        Buff,               
+        Buff,               //增幅
         Chain,              //连锁
-        
+        ArmedCondition,     //武装条件
         
         Oath,               //誓约
         Awakening,          //觉醒
