@@ -981,7 +981,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: keyTypeGroup_0
+      name: buff
       rect:
         serializedVersion: 2
         x: 1441
@@ -989,7 +989,7 @@ TextureImporter:
         width: 267
         height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1003,7 +1003,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: keyTypeGroup_1
+      name: chain
       rect:
         serializedVersion: 2
         x: 1715
@@ -1011,7 +1011,7 @@ TextureImporter:
         width: 267
         height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1044,9 +1044,11 @@ TextureImporter:
       armedcondition: -1480624892
       attacker: -1630471879
       awakening: -1693918227
+      buff: -29063507
       buff_1: 631329638
       buff_2: -1951127192
       buff_3: -1010454611
+      chain: -958571460
       chain_1: 202063919
       chain_2: 1868437139
       chain_3: 595485705
@@ -1063,8 +1065,6 @@ TextureImporter:
       escape: 613355610
       exit: -316619010
       guardian: -906943187
-      keyTypeGroup_0: -29063507
-      keyTypeGroup_1: -958571460
       levellink_1: 385708913
       levellink_10: 1673281569
       levellink_2: -659982009

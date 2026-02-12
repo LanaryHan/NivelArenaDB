@@ -275,6 +275,16 @@ MonoBehaviour:
     m_GlyphIndex: 38
     m_Scale: 1
     m_Name: chain_3
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 39
+    m_Scale: 1
+    m_Name: buff
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 40
+    m_Scale: 1
+    m_Name: chain
   m_GlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -876,7 +886,7 @@ MonoBehaviour:
       m_HorizontalBearingY: 98.47
       m_HorizontalAdvance: 243.02933
     m_GlyphRect:
-      m_X: 491
+      m_X: 494
       m_Y: 11
       m_Width: 243
       m_Height: 136
@@ -892,7 +902,7 @@ MonoBehaviour:
       m_HorizontalBearingY: 98.47
       m_HorizontalAdvance: 243.02933
     m_GlyphRect:
-      m_X: 734
+      m_X: 737
       m_Y: 11
       m_Width: 243
       m_Height: 136
@@ -900,5 +910,37 @@ MonoBehaviour:
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
     sprite: {fileID: 595485705, guid: 3bdb1007060364de892e7258d63417db, type: 3}
+  - m_Index: 39
+    m_Metrics:
+      m_Width: 182.272
+      m_Height: 136.48
+      m_HorizontalBearingX: 2.7
+      m_HorizontalBearingY: 98.47
+      m_HorizontalAdvance: 182.272
+    m_GlyphRect:
+      m_X: 983
+      m_Y: 11
+      m_Width: 182
+      m_Height: 136
+    m_Scale: 1.8
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: -29063507, guid: 3bdb1007060364de892e7258d63417db, type: 3}
+  - m_Index: 40
+    m_Metrics:
+      m_Width: 182.272
+      m_Height: 136.48
+      m_HorizontalBearingX: 2.7
+      m_HorizontalBearingY: 98.47
+      m_HorizontalAdvance: 182.272
+    m_GlyphRect:
+      m_X: 1170
+      m_Y: 11
+      m_Width: 182
+      m_Height: 136
+    m_Scale: 1.8
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: -958571460, guid: 3bdb1007060364de892e7258d63417db, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []
