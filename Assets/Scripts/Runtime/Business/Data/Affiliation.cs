@@ -63,5 +63,12 @@ namespace Runtime.Business.Data
         Loatheb,
         Larcal,
         Castlevania,
+        SixStars,
+        Idols,
+        Svern,
+        EotWSeekers,
+        Genar,
+        WestWind,
+        SteinsTower,
     }
 }

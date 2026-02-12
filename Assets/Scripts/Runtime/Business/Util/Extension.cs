@@ -135,11 +135,18 @@ namespace Runtime.Business.Util
                 Affiliation.Aldebaran => "阿尔德巴伦佣兵团",
                 Affiliation.Church => "阿克莱特教团",
                 Affiliation.Blacksmith => "流浪铁匠",
-                Affiliation.Cocytus => "科库讬斯",
+                Affiliation.Cocytus => "科库托斯",
                 Affiliation.Traveller => "来历不明的旅行者",
                 Affiliation.Loatheb => "罗戴夫盗贼公会",
                 Affiliation.Larcal => "拉勒凯私立幼儿园",
                 Affiliation.Castlevania => "恶魔",
+                Affiliation.SixStars => "6魔星",
+                Affiliation.Idols => "偶像",
+                Affiliation.Svern => "史贝伦",
+                Affiliation.EotWSeekers => "末日探求者对抗部队",
+                Affiliation.Genar => "凯那尔",
+                Affiliation.WestWind => "西风阁",
+                Affiliation.SteinsTower => "施塔因之塔",
                 _ => throw new ArgumentOutOfRangeException(nameof(affiliation), affiliation, null)
             };
         }
@@ -163,7 +170,7 @@ namespace Runtime.Business.Util
                 KeyType.Credits => "借贷",
                 KeyType.Escape => "逃脱",
                 KeyType.ArmedCondition => "武装条件",
-                KeyType.Buff =>"",
+                KeyType.Buff =>"增幅",
                 KeyType.Chain => "连锁",
                 KeyType.Oath => "誓约",
                 KeyType.Awakening => "觉醒",
