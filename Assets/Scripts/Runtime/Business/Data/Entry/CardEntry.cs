@@ -87,7 +87,7 @@ namespace Runtime.Business.Data.Entry
         /// <summary>
         /// 是否有周年卡
         /// </summary>
-        public bool HasAnniversary { get; set; }
+        public bool HasExtension { get; set; }
         
         /// <summary>
         /// 展示用Id，为卡牌的实际Id

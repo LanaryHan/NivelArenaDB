@@ -19,5 +19,6 @@ namespace Runtime.Business.Data
         BT05,   //补充包05《祭典》
         ST10,   //起始套牌10 《贝伦》
         ST11,   //起始套牌11 《科库托斯》
+        BT06,   //补充包06 《黄金蛋》
     }
 }
