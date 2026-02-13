@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 2052672896
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1f27f0a40fe08e2d61972a6bee7f94e7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 1c1821d8bb6e49d96a2b17389a2c517e
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/BT06/BT06-021.png
+Dependencies: []

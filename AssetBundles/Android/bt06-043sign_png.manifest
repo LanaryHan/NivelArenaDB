@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 3345274068
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7c8cc53feccd3d29f5cef496e3bdf48d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 8bb8f34f45244a0d92158f93d1c1afda
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/BT06/BT06-043Sign.png
+Dependencies: []

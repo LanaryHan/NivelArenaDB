@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 510869719
+CRC: 612776110
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6c231905ff39bed12cde1c067be24333
+    Hash: a294248431663de0e099b09236956c9e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: cf5135905976b4b025824b3c1c3f9264
+    Hash: 2718a4f0daaaf08e2d37553f76f77298
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 91253399598897f4eacde9c514b50e32
+    Hash: 573a711a70290a1c72ae273f68f51377
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -49,6 +49,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -118,6 +120,8 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.ScrollRect/ScrollRectEvent
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Toggle/ToggleEvent
 Assets:
 - Assets/Artworks/UI/Common/CardDetailUI/Dialog/CardDetailUI.prefab
 Dependencies: []
