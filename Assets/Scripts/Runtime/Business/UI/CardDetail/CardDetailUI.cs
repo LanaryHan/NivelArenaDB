@@ -30,6 +30,7 @@ namespace UI
         public TMP_Text cardAttributeTxt;
         public RectTransform cardTarget;
         public Button closeBtn;
+        public Toggle specialToggle;
         [Header("Skill")] 
         public Transform skillBg;
         public SkillGroup tempSkillGroup;
@@ -91,10 +92,15 @@ namespace UI
             powerTxt.text = _cardEntry.Power == null ? "——" : _cardEntry.Power.Value.ToString();
             hitTxt.text = _cardEntry.Hit == null ? "——" : _cardEntry.Hit.Value.ToString();
             affiliationTxt.text = _cardEntry.Affiliation.ToChinese();
+            specialToggle.gameObject.SetActive(_cardEntry.HasExtension);
+            specialToggle.onValueChanged.AddListener(value =>
+            {
+                ec.Send(GameEvents.ShowCard.Create(cardId, value));
+            });
             UpdateSkills();
             UpdateTrigger();
             ec.Send(GameEvents.CardFollowReady.Create(cardTarget));
-            ec.Send(GameEvents.ShowCard.Create(cardId));
+            ec.Send(GameEvents.ShowCard.Create(cardId, false));
         }
 
         private void UpdateSkills()

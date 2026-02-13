@@ -100,6 +100,12 @@ namespace Runtime.Business.Manager
             return sprite;
         }
 
+        public Sprite LoadExtensionCardSprite(string id)
+        {
+            var sprite = _resLoader.LoadSync<Sprite>($"{id}Ex");
+            return sprite;
+        }
+
         public Sprite LoadPackSprite(Deck pack)
         {
             var packEntry = GetPack(pack);

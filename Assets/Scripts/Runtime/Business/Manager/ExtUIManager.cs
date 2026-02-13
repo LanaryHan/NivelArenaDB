@@ -68,11 +68,13 @@ namespace GameEvents
     public class ShowCard : GameEventBaseNoDefaultCreate<ShowCard>
     {
         public string CardId;
+        public bool ShowExtension;
 
-        public static ShowCard Create(string cardId)
+        public static ShowCard Create(string cardId, bool showExtension)
         {
             var self = Create();
             self.CardId = cardId;
+            self.ShowExtension = showExtension;
             return self;
         }
     }
@@ -264,8 +266,19 @@ namespace Runtime.Business.Manager
             normalCard.sprite = normalSprite;
             if (cardEntry.HasSpecial)
             {
-                var specialSpite = DataManager.Instance.LoadSpecialCardSprite(cardId);
-                specialCard.sprite = specialSpite;
+                Sprite reverseSprite; 
+                if (evt.ShowExtension)
+                {
+                    reverseSprite = DataManager.Instance.LoadExtensionCardSprite(cardId);
+                    specialCard.overrideSprite = reverseSprite;
+                }
+                else
+                {
+                    reverseSprite = DataManager.Instance.LoadSpecialCardSprite(cardId);
+                    specialCard.sprite = reverseSprite;
+                    specialCard.overrideSprite = null;
+                }
+
                 _canReverse = true;
             }
             else
