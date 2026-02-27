@@ -142,21 +142,14 @@ namespace Logic
             ec.Listen<EditDeck>(OnEdit);
 
             var filePath = Path.Combine(Application.persistentDataPath, "decks.json");
-            var resJson = Resources.Load<TextAsset>("decks").text;
-            var needCreate = false;
             if (!File.Exists(filePath))
             {
                 File.Create(filePath).Close();
-                needCreate = true;
             }
 
-            var json = needCreate ? resJson : File.ReadAllText(filePath);
-            DeckEntries = JsonConvert.DeserializeObject<Dictionary<string, BuildDeckEntry>>(json) 
+            var json = File.ReadAllText(filePath);
+            DeckEntries = JsonConvert.DeserializeObject<Dictionary<string, BuildDeckEntry>>(json)
                           ?? new Dictionary<string, BuildDeckEntry>();
-            if (needCreate)
-            {
-                Save();
-            }
         }
 
         private void OnAddCard(AddCardToDeck e)
