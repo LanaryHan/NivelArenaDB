@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 2107861439
+CRC: 4082723790
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 568155c7db96821ad611ea994362c5de
+    Hash: fccef83d292a0e5670ba51bc95cb0b89
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f9e3e91b9c68d412b12567af29555a67
+    Hash: aa9411cebf28b5e77ee9b5ca6441a643
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 311477056464cbe895451508f1d071da
+    Hash: 1e2463f37f6040ea4d3f4deddb1bf648
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,9 +26,13 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 059cfbc2f75d460ea97537230ff29666, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e08d305ebb3540149f74a457a482a2c6, type: 3}
 - Class: 114
@@ -36,11 +40,17 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: f866f2b203534b31b0a97d9fe5be9c2d, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: b06e2d7c2fff4f2aab2e69fec60117b9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
@@ -67,6 +77,8 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
 - AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent`1
+- AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.RectOffset
 - AssemblyName: UnityEngine.TextCoreFontEngineModule
   ClassName: UnityEngine.TextCore.FaceInfo
@@ -90,6 +102,8 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.ScrollRect/ScrollRectEvent
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Toggle/ToggleEvent
 Assets:
 - Assets/Artworks/UI/Common/PresetDeckUI/Dialog/PresetDeckUI.prefab
 Dependencies: []
