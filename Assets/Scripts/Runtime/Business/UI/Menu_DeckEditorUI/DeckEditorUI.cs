@@ -122,7 +122,7 @@ namespace UI
         {
             var logic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
             var cardIds = logic.CardIds;
-            UpdateCards(cardIds);
+            UpdateCards(new List<string>(cardIds) { logic.LeaderCard.Id });
         }
 
         private void UpdateView(BuildDeckEntry entry)
@@ -146,7 +146,7 @@ namespace UI
 
             //todo 这样排序可能有问题
             cardEntries = (from card in cardEntries
-                orderby card.Id, card.Cost
+                orderby card.CardType, card.Cost, card.Id
                 select card).ToList();
             for (int i = 0; i < cardEntries.Count; i++)
             {

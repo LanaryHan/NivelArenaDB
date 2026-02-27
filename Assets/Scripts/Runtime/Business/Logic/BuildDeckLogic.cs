@@ -113,6 +113,7 @@ namespace Logic
         public Dictionary<string, BuildDeckEntry> DeckEntries { get; private set; } = new();
 
         private CardEntry _leaderCard;
+        public CardEntry LeaderCard => _leaderCard;
         private int _triggerCardCount;
         private HashSet<ElementAttribute> _cardAttributes = new();
 
@@ -141,14 +142,21 @@ namespace Logic
             ec.Listen<EditDeck>(OnEdit);
 
             var filePath = Path.Combine(Application.persistentDataPath, "decks.json");
+            var resJson = Resources.Load<TextAsset>("decks").text;
+            var needCreate = false;
             if (!File.Exists(filePath))
             {
                 File.Create(filePath).Close();
+                needCreate = true;
             }
 
-            var json = File.ReadAllText(filePath);
+            var json = needCreate ? resJson : File.ReadAllText(filePath);
             DeckEntries = JsonConvert.DeserializeObject<Dictionary<string, BuildDeckEntry>>(json) 
                           ?? new Dictionary<string, BuildDeckEntry>();
+            if (needCreate)
+            {
+                Save();
+            }
         }
 
         private void OnAddCard(AddCardToDeck e)
@@ -186,13 +194,11 @@ namespace Logic
                                     }
                                     
                                     _leaderCard = cardEntry;
-                                    CardIds.Add(id);
                                 }, null);
                         }
                         else
                         {
                             _leaderCard = cardEntry;
-                            CardIds.Add(id);
                         }
                     }
                     else
@@ -203,6 +209,8 @@ namespace Logic
                             SendTips($"当前领袖牌只允许有1种除<sprite name=\"{cardEntry.SkillParams[0]}\">属性的卡，请先移除多出的{diffCount - 1}种。");
                             return;
                         }
+                        
+                        _leaderCard = cardEntry;
                     }
                 }
 
@@ -286,7 +294,7 @@ namespace Logic
             {
                 InputFieldUI.Create().SetTitle("请输入卡组名称").SetCallback(deckName =>
                 {
-                    var buildDeckEntry = new BuildDeckEntry(deckName, CardIds);
+                    var buildDeckEntry = new BuildDeckEntry(deckName, new List<string>(CardIds) { _leaderCard.Id });
                     DeckEntries.Add(deckName, buildDeckEntry);
                     Save();
                     IsBuilding = false;
@@ -294,7 +302,7 @@ namespace Logic
             }
             else
             {
-                SendTips("卡牌数量未达到40!");
+                SendTips(_leaderCard == null ? "尚未选择领袖牌!" : "卡牌数量未达到40!");
             }
         }
 
@@ -324,7 +332,7 @@ namespace Logic
 
         private void Save()
         {
-            var json = JsonConvert.SerializeObject(DeckEntries);
+            var json = JsonConvert.SerializeObject(DeckEntries, Formatting.Indented);
             var filePath = Path.Combine(Application.persistentDataPath, "decks.json");
             File.WriteAllText(filePath, json);
         }
