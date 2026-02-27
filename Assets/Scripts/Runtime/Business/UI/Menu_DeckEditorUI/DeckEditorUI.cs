@@ -25,6 +25,7 @@ namespace UI
     public class DeckEditorUI : UIPanel
     {
         public Button closeBtn;
+        public Button leaderCard;
         public Button tempCard;
         public Image leaderImage;
         public Transform content1;
@@ -36,6 +37,7 @@ namespace UI
 
         private string _deckName;
         public override bool CanCloseByBackKey => true;
+        private string _leaderId;
 
         protected override void OnInit(IUIData uiData = null)
         {
@@ -67,6 +69,7 @@ namespace UI
                 UpdateButtons(true);
             });
             cancelBtn.onClick.AddListener(OnClickCancel);
+            leaderCard.onClick.AddListener(OnClickLeaderCard);
         }
         
         protected override void OnOpen(IUIData uiData = null)
@@ -144,7 +147,7 @@ namespace UI
                 cardEntries.Remove(leaderCard);
             }
 
-            //todo 这样排序可能有问题
+            _leaderId = leaderCard?.Id ?? string.Empty;
             cardEntries = (from card in cardEntries
                 orderby card.CardType, card.Cost, card.Id
                 select card).ToList();
@@ -167,6 +170,16 @@ namespace UI
             editBtn.gameObject.SetActive(!isBuilding);
             saveBtn.gameObject.SetActive(isBuilding);
             cancelBtn.gameObject.SetActive(isBuilding);
+        }
+
+        private void OnClickLeaderCard()
+        {
+            if (string.IsNullOrEmpty(_leaderId))
+            {
+                return;
+            }
+
+            ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.Card_Details_UI, new CardDetailData(_leaderId));
         }
         protected override void OnClose()
         {
