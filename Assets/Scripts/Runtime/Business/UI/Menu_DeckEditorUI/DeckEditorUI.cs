@@ -87,7 +87,7 @@ namespace UI
             }
             else
             {
-                UpdateView(logic.DeckEntries[deckEditorData.DeckName]);
+                UpdateView(logic.GetDeckEntry(deckEditorData.DeckName));
             }
 
             UpdateButtons(logic.IsBuilding);
@@ -116,7 +116,7 @@ namespace UI
                 GetEventComponent().Send(GameEvents.SetBuildingState.Create(false, () =>
                 {
                     var logic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
-                    UpdateView(logic.DeckEntries[_deckName]);
+                    UpdateView(logic.GetDeckEntry(_deckName));
                 }));
             }
         }

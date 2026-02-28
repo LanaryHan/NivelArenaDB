@@ -107,10 +107,21 @@ namespace Logic
         /// </summary>
         public List<string> CardIds { get; private set; } = new();
 
+        
+        private Dictionary<string, BuildDeckEntry> _deckEntries = new();
+
         /// <summary>
         /// json长期储存
         /// </summary>
-        public Dictionary<string, BuildDeckEntry> DeckEntries { get; private set; } = new();
+        public Dictionary<string, BuildDeckEntry> DeckEntries => _deckEntries;
+
+        
+        private Dictionary<string, BuildDeckEntry> _presetDeckEntries = new();
+
+        /// <summary>
+        /// Resource预设储存
+        /// </summary>
+        public Dictionary<string, BuildDeckEntry> PresetDeckEntries => _presetDeckEntries;
 
         private CardEntry _leaderCard;
         public CardEntry LeaderCard => _leaderCard;
@@ -148,8 +159,29 @@ namespace Logic
             }
 
             var json = File.ReadAllText(filePath);
-            DeckEntries = JsonConvert.DeserializeObject<Dictionary<string, BuildDeckEntry>>(json)
+            _deckEntries = JsonConvert.DeserializeObject<Dictionary<string, BuildDeckEntry>>(json)
                           ?? new Dictionary<string, BuildDeckEntry>();
+
+            var resJson = Resources.Load<TextAsset>("decks").text;
+            _presetDeckEntries = JsonConvert.DeserializeObject<Dictionary<string, BuildDeckEntry>>(resJson) ??
+                                new Dictionary<string, BuildDeckEntry>();
+        }
+        
+        private void Save()
+        {
+            var json = JsonConvert.SerializeObject(_deckEntries, Formatting.Indented);
+            var filePath = Path.Combine(Application.persistentDataPath, "decks.json");
+            File.WriteAllText(filePath, json);
+        }
+
+        public BuildDeckEntry GetDeckEntry(string deckName)
+        {
+            if (_deckEntries.TryGetValue(deckName, out var entry))
+            {
+                return entry;
+            }
+
+            return _presetDeckEntries.TryGetValue(deckName, out entry) ? entry : null;
         }
 
         private void OnAddCard(AddCardToDeck e)
@@ -321,13 +353,6 @@ namespace Logic
             CardIds.Clear();
             CardIds = entry.CardIds;
             IsBuilding = true;
-        }
-
-        private void Save()
-        {
-            var json = JsonConvert.SerializeObject(DeckEntries, Formatting.Indented);
-            var filePath = Path.Combine(Application.persistentDataPath, "decks.json");
-            File.WriteAllText(filePath, json);
         }
 
         private void SendTips(string tips)

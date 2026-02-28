@@ -3,6 +3,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using CsvHelper;
+using EnumsNET;
 using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
@@ -116,6 +117,20 @@ namespace Runtime.Business.Manager
         public CardEntry GetCard(string id)
         {
             return Cards.GetValueOrDefault(id);
+        }
+
+        public CardEntry TryGetCard(string id)
+        {
+            if (!id.StartsWith("SB"))
+            {
+                return GetCard(id);
+            }
+
+            var deckId = id.Substring(0, 4);
+            var deck = Enums.Parse<Deck>(deckId);
+            var cards = GetCardFromPack(deck);
+            var id2Card = cards.FirstOrDefault(card => card.ShowId.Equals(id));
+            return id2Card;
         }
 
         public PackEntry GetPack(Deck pack)

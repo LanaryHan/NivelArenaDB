@@ -67,15 +67,15 @@ namespace UI
                 return;
             }
             
-            if (!id.StartsWith("ST") && !id.StartsWith("BT"))
+            if (!id.StartsWith("ST") && !id.StartsWith("BT") && !id.StartsWith("SB"))
             {
-                messageParam.SetMessage("卡包应该以ST或BT开头，例如ST01001。");
+                messageParam.SetMessage("卡包错误!");
                 ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.Message_UI, messageParam, UILevel.PopUI);
                 return;
             }
 
             id = id.Insert(4, "-");
-            var cardEntry = DataManager.Instance.GetCard(id);
+            var cardEntry = DataManager.Instance.TryGetCard(id);
             if (cardEntry == null)
             {
                 messageParam.SetMessage("卡牌id不存在！");
