@@ -19,6 +19,8 @@ namespace Runtime.Business.Data
         Buff,               //增幅
         Chain,              //连锁
         ArmedCondition,     //武装条件
+        Position,           //站位
+        Switch,             //切换
         
         Oath,               //誓约
         Awakening,          //觉醒

@@ -100,5 +100,9 @@ namespace Runtime.Business.Data
         FreelanceDJ,
         ExposureChurch,
         VorpalRabbit,
+        
+        Colony,
+        Native,
+        Xion,
     }
 }

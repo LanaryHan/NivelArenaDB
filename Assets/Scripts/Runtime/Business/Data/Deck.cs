@@ -20,5 +20,6 @@ namespace Runtime.Business.Data
         ST10,   //起始套牌10 《贝伦》
         ST11,   //起始套牌11 《科库托斯》
         BT06,   //补充包06 《黄金蛋》
+        BT07,   //补充包07 《EVE协议》
     }
 }

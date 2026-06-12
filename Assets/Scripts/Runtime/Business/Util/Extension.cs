@@ -177,6 +177,9 @@ namespace Runtime.Business.Util
                 Affiliation.FreelanceDJ => "自由职业者DJ",
                 Affiliation.ExposureChurch => "暴露救赎教",
                 Affiliation.VorpalRabbit => "杀戮兔",
+                Affiliation.Colony => "殖民地",
+                Affiliation.Native => "孽奇拔",
+                Affiliation.Xion => "曦安",
                 _ => throw new ArgumentOutOfRangeException(nameof(affiliation), affiliation, null)
             };
         }
@@ -202,6 +205,8 @@ namespace Runtime.Business.Util
                 KeyType.ArmedCondition => "武装条件",
                 KeyType.Buff =>"增幅",
                 KeyType.Chain => "连锁",
+                KeyType.Position => "站位",
+                KeyType.Switch => "切换",
                 KeyType.Oath => "誓约",
                 KeyType.Awakening => "觉醒",
                 _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
