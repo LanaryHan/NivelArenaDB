@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 136348476
+CRC: 3959607671
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -3107,4 +3107,7 @@ AssetBundleManifest:
       Dependencies: {}
     Info_1033:
       Name: bt07-088_png
+      Dependencies: {}
+    Info_1034:
+      Name: pack_bt07_png
       Dependencies: {}
