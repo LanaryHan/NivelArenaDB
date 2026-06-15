@@ -43,7 +43,8 @@ namespace Runtime.Editor
             var xssfWorkbook = new XSSFWorkbook(fs);
             var records = new List<SkillEntry>();
             var sheetCount = xssfWorkbook.NumberOfSheets;
-            for (int i = 0; i < sheetCount; i++)
+            //0为Config
+            for (int i = 1; i < sheetCount; i++)
             {
                 var sheet = xssfWorkbook.GetSheetAt(i);
                 var sheetName = sheet.SheetName;
