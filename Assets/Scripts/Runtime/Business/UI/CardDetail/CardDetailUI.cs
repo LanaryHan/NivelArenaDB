@@ -110,13 +110,16 @@ namespace UI
             var haveKeyword = true;
             if (skillIds == null || skillIds.Length == 0 || cardType is CardType.Skill)
             {
-                keywordsTxt.text = "——";
                 if (cardType is not CardType.Skill)
                 {
                     skillContent.gameObject.SetActive(false);
                 }
-                
-                haveKeyword = false;
+
+                var kwExtEntry = DataManager.Instance.GetKeywordExtension(_cardEntry.Id);
+                if (kwExtEntry == null)
+                {
+                    haveKeyword = false;
+                }
             }
 
             var keywords = new HashSet<KeyType>();
@@ -144,10 +147,9 @@ namespace UI
                 }
             }
 
-            if (haveKeyword)
-            {
-                keywordsTxt.text = string.Join(", ", keywords.Select(k => k.ToChinese()));
-            }
+            keywordsTxt.text = haveKeyword 
+                ? string.Join(", ", keywords.Select(k => k.ToChinese())) 
+                : "——";
         }
 
         private void UpdateTrigger()

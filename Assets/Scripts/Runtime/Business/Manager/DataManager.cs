@@ -20,6 +20,7 @@ namespace Runtime.Business.Manager
         public Dictionary<Deck, PackEntry> Packs;
         public Dictionary<int, SkillEntry> Skills;
         public Dictionary<int, TriggerEntry> Triggers;
+        public Dictionary<string, KeywordExtensionEntry> KeywordExts;
 
         private readonly ResLoader _resLoader = ResLoader.Allocate();
 
@@ -77,6 +78,21 @@ namespace Runtime.Business.Manager
                 {
                     var records = csvReader.GetRecords<TriggerEntry>();
                     Triggers = records.ToDictionary(entry => entry.Id, entry => entry);
+                }
+            }
+
+            #endregion
+
+            #region KeywordExtension
+
+            csv = Resources.Load<TextAsset>("keyword_extension");
+            using (var stringReader = new StringReader(csv.text))
+            {
+                using (var csvReader = new CsvReader(stringReader, CultureInfo.InvariantCulture))
+                {
+                    csvReader.Context.RegisterClassMap<KeywordExtensionEntryMap>();
+                    var records = csvReader.GetRecords<KeywordExtensionEntry>();
+                    KeywordExts = records.ToDictionary(entry => entry.Id, entry => entry);
                 }
             }
 
@@ -153,6 +169,11 @@ namespace Runtime.Business.Manager
             var bundle = $"keyType_{key1.ToString()}_{key2.ToString()}".ToLower();
             var sprite = _resLoader.LoadSync<Sprite>(bundle);
             return sprite;
+        }
+
+        public KeywordExtensionEntry GetKeywordExtension(string id)
+        {
+            return KeywordExts.GetValueOrDefault(id);
         }
     }
 }
