@@ -52,6 +52,8 @@ namespace Runtime.Business.Data
         Pajamas,
         Lucky,
         Snow,
+        Vacation,
+        Maid,
         
         Beilun,
         SureHitHunter,

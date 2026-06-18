@@ -130,6 +130,8 @@ namespace Runtime.Business.Util
                 Affiliation.Pajamas => "睡衣派对",
                 Affiliation.Lucky => "好运",
                 Affiliation.Snow => "冰雪",
+                Affiliation.Vacation => "度假",
+                Affiliation.Maid => "女仆",
                 Affiliation.Beilun => "贝伦",
                 Affiliation.SureHitHunter => "百分百命中率猎人团",
                 Affiliation.Aldebaran => "阿尔德巴伦佣兵团",
