@@ -52,7 +52,7 @@ namespace UI
                 var personalDeck = Instantiate(tmpDeck, personalContent);
                 personalDeck.Init(deckEntry.DeckName,
                     deckEntry.CardIds.Select(id => DataManager.Instance.GetCard(id))
-                        .First(card => card.CardType is CardType.Leader).Id);
+                        .First(card => card.CardType is CardType.Leader).Id, false);
                 personalDeck.gameObject.SetActive(true);
             }
 
@@ -69,7 +69,7 @@ namespace UI
                 var presetDeck = Instantiate(tmpDeck, presetContent);
                 presetDeck.Init(deckEntry.DeckName,
                     deckEntry.CardIds.Select(id => DataManager.Instance.GetCard(id))
-                        .First(card => card.CardType is CardType.Leader).Id);
+                        .First(card => card.CardType is CardType.Leader).Id, true);
                 presetDeck.gameObject.SetActive(true);
             }
 

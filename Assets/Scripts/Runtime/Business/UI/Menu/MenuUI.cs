@@ -30,7 +30,8 @@ namespace UI
                 var logic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
                 if (logic.IsBuilding)
                 {
-                    ExtUIManager.Instance.OpenDialog<DeckEditorUI>(Dialog.Deck_Editor_UI, new DeckEditorData(null));
+                    ExtUIManager.Instance.OpenDialog<DeckEditorUI>(Dialog.Deck_Editor_UI,
+                        new DeckEditorData(null, true));
                 }
                 else
                 {

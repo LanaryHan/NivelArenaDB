@@ -16,10 +16,12 @@ namespace UI
     public class DeckEditorData : UIPanelData
     {
         public string DeckName;
+        public bool CanEdit;
 
-        public DeckEditorData(string deckName)
+        public DeckEditorData(string deckName, bool canEdit)
         {
             DeckName = deckName;
+            CanEdit = canEdit;
         }
     }
     public class DeckEditorUI : UIPanel
@@ -42,6 +44,11 @@ namespace UI
         protected override void OnInit(IUIData uiData = null)
         {
             base.OnInit(uiData);
+            if (mUIData is not DeckEditorData deckEditorData)
+            {
+                return;
+            }
+
             tempCard.gameObject.SetActive(false);
             var ec = GetEventComponent();
             ec.Listen<OnDialogClose>(evt =>
@@ -58,16 +65,23 @@ namespace UI
                 }
             });
             closeBtn.onClick.AddListener(this.CloseSelfByExt);
-            saveBtn.onClick.AddListener(() =>
+            saveBtn.gameObject.SetActive(deckEditorData.CanEdit);
+            editBtn.gameObject.SetActive(deckEditorData.CanEdit);
+            cancelBtn.gameObject.SetActive(deckEditorData.CanEdit);
+            if (deckEditorData.CanEdit)
             {
-                GetEventComponent().Send(GameEvents.SaveDeck.Create());
-                UpdateButtons(false);
-            });
-            editBtn.onClick.AddListener(() =>
-            {
-                GetEventComponent().Send(GameEvents.EditDeck.Create(_deckName));
-                UpdateButtons(true);
-            });
+                saveBtn.onClick.AddListener(() =>
+                {
+                    GetEventComponent().Send(GameEvents.SaveDeck.Create());
+                    UpdateButtons(false);
+                });
+                editBtn.onClick.AddListener(() =>
+                {
+                    GetEventComponent().Send(GameEvents.EditDeck.Create(_deckName));
+                    UpdateButtons(true);
+                });
+            }
+
             cancelBtn.onClick.AddListener(OnClickCancel);
             leaderCard.onClick.AddListener(OnClickLeaderCard);
         }
@@ -90,7 +104,10 @@ namespace UI
                 UpdateView(logic.GetDeckEntry(deckEditorData.DeckName));
             }
 
-            UpdateButtons(logic.IsBuilding);
+            if (deckEditorData.CanEdit)
+            {
+                UpdateButtons(logic.IsBuilding);
+            }
         }
         
         private void OnClickCancel()
