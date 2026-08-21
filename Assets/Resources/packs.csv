@@ -19,4 +19,4 @@ ST11,起始套牌ST11\n 《科库托斯》,pack_ST11,4,1,ST11:<i>Cocytus</i>
 BT06,补充包BT06\n《黄金蛋》,pack_BT06,4,1,BT06:<i>Golden Tamago</i>
 BT07,补充包BT07\n《EVE协议》,pack_BT07,4,1,BT07:<i>EVE Protocol</i>
 SB02,2026特别补充包,pack_SB02,3,1,<i>2026 Special Booster</i>
-BT08,补充包BT08\n《向你挥手》,pack_BT08,1,0,BT08:<i>Wave to You</i>
+BT08,补充包BT08\n《向你挥手》,pack_BT08,1,1,BT08:<i>Wave to You</i>
