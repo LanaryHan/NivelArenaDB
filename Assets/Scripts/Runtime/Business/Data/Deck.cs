@@ -22,5 +22,6 @@ namespace Runtime.Business.Data
         BT06,   //补充包06 《黄金蛋》
         BT07,   //补充包07 《EVE协议》
         SB02,   //特别补充包2026
+        BT08,   //补充包BT08《向你挥手》
     }
 }
