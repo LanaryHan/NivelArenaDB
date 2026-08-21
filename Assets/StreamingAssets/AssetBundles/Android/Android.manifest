@@ -1,6 +1,6 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 4238319497
+CRC: 2625900221
 HashAppended: 0
 AssetBundleManifest:
   AssetBundleInfos:
@@ -3398,4 +3398,337 @@ AssetBundleManifest:
       Dependencies: {}
     Info_1130:
       Name: pack_sb02_png
+      Dependencies: {}
+    Info_1131:
+      Name: bt08-001_png
+      Dependencies: {}
+    Info_1132:
+      Name: bt08-001ex_png
+      Dependencies: {}
+    Info_1133:
+      Name: bt08-001sign_png
+      Dependencies: {}
+    Info_1134:
+      Name: bt08-002_png
+      Dependencies: {}
+    Info_1135:
+      Name: bt08-003_png
+      Dependencies: {}
+    Info_1136:
+      Name: bt08-004_png
+      Dependencies: {}
+    Info_1137:
+      Name: bt08-005_png
+      Dependencies: {}
+    Info_1138:
+      Name: bt08-006_png
+      Dependencies: {}
+    Info_1139:
+      Name: bt08-007_png
+      Dependencies: {}
+    Info_1140:
+      Name: bt08-007sign_png
+      Dependencies: {}
+    Info_1141:
+      Name: bt08-008_png
+      Dependencies: {}
+    Info_1142:
+      Name: bt08-009_png
+      Dependencies: {}
+    Info_1143:
+      Name: bt08-010_png
+      Dependencies: {}
+    Info_1144:
+      Name: bt08-010sign_png
+      Dependencies: {}
+    Info_1145:
+      Name: bt08-011_png
+      Dependencies: {}
+    Info_1146:
+      Name: bt08-011sign_png
+      Dependencies: {}
+    Info_1147:
+      Name: bt08-012_png
+      Dependencies: {}
+    Info_1148:
+      Name: bt08-013_png
+      Dependencies: {}
+    Info_1149:
+      Name: bt08-014_png
+      Dependencies: {}
+    Info_1150:
+      Name: bt08-015_png
+      Dependencies: {}
+    Info_1151:
+      Name: bt08-016_png
+      Dependencies: {}
+    Info_1152:
+      Name: bt08-017_png
+      Dependencies: {}
+    Info_1153:
+      Name: bt08-018_png
+      Dependencies: {}
+    Info_1154:
+      Name: bt08-018ex_png
+      Dependencies: {}
+    Info_1155:
+      Name: bt08-018sign_png
+      Dependencies: {}
+    Info_1156:
+      Name: bt08-019_png
+      Dependencies: {}
+    Info_1157:
+      Name: bt08-020_png
+      Dependencies: {}
+    Info_1158:
+      Name: bt08-021_png
+      Dependencies: {}
+    Info_1159:
+      Name: bt08-022_png
+      Dependencies: {}
+    Info_1160:
+      Name: bt08-023_png
+      Dependencies: {}
+    Info_1161:
+      Name: bt08-024_png
+      Dependencies: {}
+    Info_1162:
+      Name: bt08-025_png
+      Dependencies: {}
+    Info_1163:
+      Name: bt08-026_png
+      Dependencies: {}
+    Info_1164:
+      Name: bt08-027_png
+      Dependencies: {}
+    Info_1165:
+      Name: bt08-027sign_png
+      Dependencies: {}
+    Info_1166:
+      Name: bt08-028_png
+      Dependencies: {}
+    Info_1167:
+      Name: bt08-028sign_png
+      Dependencies: {}
+    Info_1168:
+      Name: bt08-029_png
+      Dependencies: {}
+    Info_1169:
+      Name: bt08-029sign_png
+      Dependencies: {}
+    Info_1170:
+      Name: bt08-030_png
+      Dependencies: {}
+    Info_1171:
+      Name: bt08-031_png
+      Dependencies: {}
+    Info_1172:
+      Name: bt08-032_png
+      Dependencies: {}
+    Info_1173:
+      Name: bt08-033_png
+      Dependencies: {}
+    Info_1174:
+      Name: bt08-034_png
+      Dependencies: {}
+    Info_1175:
+      Name: bt08-035_png
+      Dependencies: {}
+    Info_1176:
+      Name: bt08-035ex_png
+      Dependencies: {}
+    Info_1177:
+      Name: bt08-035sign_png
+      Dependencies: {}
+    Info_1178:
+      Name: bt08-036_png
+      Dependencies: {}
+    Info_1179:
+      Name: bt08-037_png
+      Dependencies: {}
+    Info_1180:
+      Name: bt08-038_png
+      Dependencies: {}
+    Info_1181:
+      Name: bt08-039_png
+      Dependencies: {}
+    Info_1182:
+      Name: bt08-040_png
+      Dependencies: {}
+    Info_1183:
+      Name: bt08-040sign_png
+      Dependencies: {}
+    Info_1184:
+      Name: bt08-041_png
+      Dependencies: {}
+    Info_1185:
+      Name: bt08-042_png
+      Dependencies: {}
+    Info_1186:
+      Name: bt08-042sign_png
+      Dependencies: {}
+    Info_1187:
+      Name: bt08-043_png
+      Dependencies: {}
+    Info_1188:
+      Name: bt08-044_png
+      Dependencies: {}
+    Info_1189:
+      Name: bt08-045_png
+      Dependencies: {}
+    Info_1190:
+      Name: bt08-045sign_png
+      Dependencies: {}
+    Info_1191:
+      Name: bt08-046_png
+      Dependencies: {}
+    Info_1192:
+      Name: bt08-047_png
+      Dependencies: {}
+    Info_1193:
+      Name: bt08-048_png
+      Dependencies: {}
+    Info_1194:
+      Name: bt08-049_png
+      Dependencies: {}
+    Info_1195:
+      Name: bt08-050_png
+      Dependencies: {}
+    Info_1196:
+      Name: bt08-051_png
+      Dependencies: {}
+    Info_1197:
+      Name: bt08-052_png
+      Dependencies: {}
+    Info_1198:
+      Name: bt08-052ex_png
+      Dependencies: {}
+    Info_1199:
+      Name: bt08-052sign_png
+      Dependencies: {}
+    Info_1200:
+      Name: bt08-053_png
+      Dependencies: {}
+    Info_1201:
+      Name: bt08-054_png
+      Dependencies: {}
+    Info_1202:
+      Name: bt08-055_png
+      Dependencies: {}
+    Info_1203:
+      Name: bt08-056_png
+      Dependencies: {}
+    Info_1204:
+      Name: bt08-057_png
+      Dependencies: {}
+    Info_1205:
+      Name: bt08-058_png
+      Dependencies: {}
+    Info_1206:
+      Name: bt08-059_png
+      Dependencies: {}
+    Info_1207:
+      Name: bt08-060_png
+      Dependencies: {}
+    Info_1208:
+      Name: bt08-060sign_png
+      Dependencies: {}
+    Info_1209:
+      Name: bt08-061_png
+      Dependencies: {}
+    Info_1210:
+      Name: bt08-061sign_png
+      Dependencies: {}
+    Info_1211:
+      Name: bt08-062_png
+      Dependencies: {}
+    Info_1212:
+      Name: bt08-062sign_png
+      Dependencies: {}
+    Info_1213:
+      Name: bt08-063_png
+      Dependencies: {}
+    Info_1214:
+      Name: bt08-064_png
+      Dependencies: {}
+    Info_1215:
+      Name: bt08-065_png
+      Dependencies: {}
+    Info_1216:
+      Name: bt08-066_png
+      Dependencies: {}
+    Info_1217:
+      Name: bt08-067_png
+      Dependencies: {}
+    Info_1218:
+      Name: bt08-068_png
+      Dependencies: {}
+    Info_1219:
+      Name: bt08-069_png
+      Dependencies: {}
+    Info_1220:
+      Name: bt08-069ex_png
+      Dependencies: {}
+    Info_1221:
+      Name: bt08-069sign_png
+      Dependencies: {}
+    Info_1222:
+      Name: bt08-070_png
+      Dependencies: {}
+    Info_1223:
+      Name: bt08-071_png
+      Dependencies: {}
+    Info_1224:
+      Name: bt08-072_png
+      Dependencies: {}
+    Info_1225:
+      Name: bt08-073_png
+      Dependencies: {}
+    Info_1226:
+      Name: bt08-074_png
+      Dependencies: {}
+    Info_1227:
+      Name: bt08-075_png
+      Dependencies: {}
+    Info_1228:
+      Name: bt08-076_png
+      Dependencies: {}
+    Info_1229:
+      Name: bt08-076sign_png
+      Dependencies: {}
+    Info_1230:
+      Name: bt08-077_png
+      Dependencies: {}
+    Info_1231:
+      Name: bt08-077sign_png
+      Dependencies: {}
+    Info_1232:
+      Name: bt08-078_png
+      Dependencies: {}
+    Info_1233:
+      Name: bt08-078sign_png
+      Dependencies: {}
+    Info_1234:
+      Name: bt08-079_png
+      Dependencies: {}
+    Info_1235:
+      Name: bt08-080_png
+      Dependencies: {}
+    Info_1236:
+      Name: bt08-081_png
+      Dependencies: {}
+    Info_1237:
+      Name: bt08-082_png
+      Dependencies: {}
+    Info_1238:
+      Name: bt08-083_png
+      Dependencies: {}
+    Info_1239:
+      Name: bt08-084_png
+      Dependencies: {}
+    Info_1240:
+      Name: bt08-085_png
+      Dependencies: {}
+    Info_1241:
+      Name: pack_bt08_png
       Dependencies: {}

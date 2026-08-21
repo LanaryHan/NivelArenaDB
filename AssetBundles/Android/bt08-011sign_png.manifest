@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 4189908538
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9feb7b5e3a2da9679a6c539718cdc9a1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: f717d4b1beb7bd98d567c4f05a7a8608
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/BT08/BT08-011Sign.png
+Dependencies: []
