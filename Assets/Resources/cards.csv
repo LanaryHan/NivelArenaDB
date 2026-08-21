@@ -901,25 +901,25 @@ Number,Pack,Rarity,CardType,Attribute,Name,Cost,Power,Hit,Skill1,SkillParam1,Ico
 063,SB02,UR,Unit,Lightning,顽皮熊熊女仆 雷妮,4,3000,2,10656,"<sprite name=""active_main"">,lightning",,,,,,,,,,,,,Maid,1,0,SB02-038
 064,SB02,SR,Skill,Lightning,准备好了？那就出发吧.,2,,,10657,"道具,lightning",,,,,,,,,,,,,None,0,0,SB02-039
 065,SB02,SR,Item,Lightning,血日左轮,2,,,10013,无,,10658,"1,1",,,,,,,,,,None,0,0,SB02-040
-001,BT08,L,Leader,Flame,阿妮斯:超级巨星-星光,,,,10001,flame,,10002,5,,10660,attacker,,10661,"狂战士,\t·<sprite name=""active_main"">若存在遭遇单位，选择1张费用为2或以下的手牌弃置。接着，此单位进行攻击。\n\t·战斗力+2000。",,,,Tetra,1,1,
+001,BT08,L,Leader,Flame,阿妮斯:超级巨星-星光,,,,10001,flame,,10002,5,,10660,attacker,,10661,"狂战士,\n\t·<sprite name=""active_main"">若存在遭遇单位，选择1张费用为2或以下的手牌弃置。接着，此单位进行攻击。\n\t·战斗力+2000。",main,,,Tetra,1,1,
 002,BT08,C,Unit,Flame,红莲:暗影-莲花,1,4000,1,10054,,,,,,,,,,,,,,Pilgrim,0,0,
 003,BT08,R,Unit,Flame,敏特,1,2500,1,10662,"狂战士,1",,,,,,,,,,,,,Tetra,0,0,
 004,BT08,C,Unit,Flame,诺亚尔-黑猫,2,4000,1,10054,,,10663,"狂战士,1000",,,,,,,,,,Tetra,0,0,
 005,BT08,C,Unit,Flame,露姬-倒霉兔,2,5000,1,10054,,,,,,,,,,,,,,Tetra,0,0,
 006,BT08,R,Unit,Flame,普莉卡,2,4000,1,10054,,,10664,"狂战士,3个或以上,1,1",,,,,,,,,,Tetra,0,0,
-007,BT08,SR,Unit,Flame,拉毗:小红帽-耀光,2,5000,1,10054,,,10665,"2或以下,1,狂战士",,,,,,,,20002,,Elysion,1,0,
+007,BT08,SR,Unit,Flame,拉毗:小红帽-耀光,2,5000,1,10054,,,10665,"2或以下,1,狂战士",main,,,,,,,20002,,Elysion,1,0,
 008,BT08,C,Unit,Flame,毒蛇-毒兔,3,5500,1,10054,,,10663,"狂战士,1000",,,,,,,,,,Tetra,0,0,
 009,BT08,R,Unit,Flame,尼恩:透视之眼,4,1000,2,10054,,,10666,"狂战士,2000",,10667,"狂战士,4或以上,1",,,,,,,Missilis,0,0,
 010,BT08,SR,Unit,Flame,白雪公主:重型武装,4,4000,2,10668,"attacker,贯通,2000",,10669,"1,<sprite name=""attacker""><b>贯通[1]</b>",main,,,,,,,,,Pilgrim,1,0,
-011,BT08,UR,Unit,Flame,阿妮斯:超级巨星-星光,5,5500,2,10054,,,10670,"狂战士,\t·<sprite name=""attacker""><b>贯通[1]</b>\n\t·战斗力+2000。,\t·<sprite name=""attacker""><b>掠夺[1]</b>\n\t·战斗力+2000。",,,,,,,,20003,"1,2",Tetra,1,0,
+011,BT08,UR,Unit,Flame,阿妮斯:超级巨星-星光,5,5500,2,10054,,,10670,"狂战士,\t·<sprite name=""attacker""><b>贯通[1]</b>\n\t·战斗力+2000。,\t·<sprite name=""attacker""><b>掠夺[1]</b>\n\t·战斗力+2000。",main,,,,,,,20003,"1,2",Tetra,1,0,
 012,BT08,C,Skill,Flame,火力全开,1,,,10671,"狂战士,2000,3个或以上,<sprite name=""attacker""><b>贯通[1]</b>",,,,,,,,,,,,,None,0,0,
 013,BT08,C,Skill,Flame,超级巨星阿妮斯,2,,,10672,"1,狂战士",,,,,,,,,,,,,None,0,0,
-014,BT08,C,Skill,Flame,七个小矮人全面出击,2,,,10673,"<sprite name=""attacker"">若此单位还具有<sprite name=""attacker""><b>贯通</b>,抽一张牌。",,,,,,,,,,,,,None,0,0,
+014,BT08,C,Skill,Flame,七个小矮人全面出击,2,,,10673,"<sprite name=""attacker"">若此单位还具有<sprite name=""attacker""><b>贯通</b>，抽一张牌。",,,,,,,,,,,,,None,0,0,
 015,BT08,R,Skill,Flame,TRACING THE STARS,2,,,10674,"<sprite name=""attacker""><b>贯通</b>,<sprite name=""attacker""><b>贯通[2]</b>,<sprite name=""attacker""><b>贯通[1]</b>",,,,,,,,,,,,,None,0,0,
 016,BT08,C,Item,Flame,诺恩代码鞋,1,,,10013,具有<b>狂战士</b>的单位,,10234,"1,单位",,,,,,,,,,None,0,0,
 017,BT08,C,Item,Flame,钛金属护臂,2,,,10013,"具有<sprite name=""attacker""><b>贯通</b>的单位",,10008,2,,,,,,,,,,None,0,0,
 018,BT08,L,Leader,"Earth
-",玛律恰娜:海洋进修,,,,10001,earth,,10002,5,,10660,levellink,,10675,1或以下,,,,Elysion,1,1,
+",玛律恰娜:海洋进修,,,,10001,earth,,10002,5,,10660,levellink,,10675,1或以下,main,,,Elysion,1,1,
 019,BT08,C,Unit,"Earth
 ",芙萝拉,1,2000,1,10676,"1,2000",,10677,,,,,,,,,,,Missilis,0,0,
 020,BT08,C,Unit,"Earth
@@ -943,14 +943,11 @@ Number,Pack,Rarity,CardType,Attribute,Name,Cost,Power,Hit,Skill1,SkillParam1,Ico
 029,BT08,SR,Unit,"Earth
 ",娜由塔-无为,7,8500,3,10686,"1,3或以下",,,,,,,,,,,,,Pilgrim,1,0,
 030,BT08,C,Skill,"Earth
-",苦行,2,,,10687,,,,,,,,,,,,,,None,0,"0
-0",
+",苦行,2,,,10687,,,,,,,,,,,,,,None,0,0,
 031,BT08,C,Skill,"Earth
-",毕业旅行,2,,,10688,"基础型,1000",,,,,,,,,,,,,None,0,"0
-0",
+",毕业旅行,2,,,10688,"基础型,1000",,,,,,,,,,,,,None,0,0,
 032,BT08,R,Skill,"Earth
-",企鹅螺旋,3,,,10689,基础型,,,,,,,,,,,,,None,0,"0
-0",
+",企鹅螺旋,3,,,10689,基础型,,,,,,,,,,,,,None,0,0,
 033,BT08,C,Item,"Earth
 ",稀有金属防护服,0,,,10013,无,,10690,2000,,,,,,,,,,None,0,0,
 034,BT08,C,Item,"Earth
@@ -959,10 +956,10 @@ Number,Pack,Rarity,CardType,Attribute,Name,Cost,Power,Hit,Skill1,SkillParam1,Ico
 036,BT08,R,Unit,Storm,阿尔卡娜:命运伴侣,1,4500,1,10693,"<sprite name=""defender""><b>终结</b>",,10037,,,,,,,,,,,Elysion,0,0,
 037,BT08,C,Unit,Storm,D:杀手妻子,2,4500,1,10037,,,,,,,,,,,,,,Elysion,0,0,
 038,BT08,C,Unit,Storm,樱花:夏日绽放,3,5500,1,10037,,,,,,,,,,,,,,Tetra,0,0,
-039,BT08,R,Unit,Storm,牡丹-百花之王,3,4500,1,10694,"<sprite <sprite name=""defender""><b>终结</b>,2000",,10037,,,,,,,,,,,Tetra,0,0,
+039,BT08,R,Unit,Storm,牡丹-百花之王,3,4500,1,10694,"<sprite name=""defender""><b>终结</b>,2000",,10037,,,,,,,,,,,Tetra,0,0,
 040,BT08,SR,Unit,Storm,小美人鱼-珍珠贝公主,3,3000,1,10695,"1,1",,10124,"1,6或以下,单位",,,,,,,,,,Pilgrim,1,0,
 041,BT08,C,Unit,Storm,梅登:冰玫瑰,4,6500,2,10037,,,,,,,,,,,,,,Elysion,0,0,
-042,BT08,UR,Unit,Storm,莉贝雷利奥-梦境湖,4,5000,2,10696,"<sprite name=""defender""><b>终结</b>,1",,,,,,,,,,,20002,,Pilgrim,1,0,
+042,BT08,UR,Unit,Storm,莉贝雷利奥-梦境湖,4,5000,2,10696,"<sprite name=""defender""><b>终结</b>,1",main,,,,,,,,,,20002,,Pilgrim,1,0,
 043,BT08,C,Unit,Storm,神罚-初次的爱恋,5,6000,2,10030,,,,,,,,,,,,,,Pilgrim,0,0,
 044,BT08,R,Unit,Storm,普丽瓦蒂-严厉教诲,5,7000,2,10176,1,,10037,,,,,,,,,,,Elysion,0,0,
 045,BT08,SR,Unit,Storm,灰姑娘:琉璃波光,7,9500,3,10037,,,10697,"1,<sprite name=""defender""><b>终结</b>,6或以下",,,,,,,,20006,"3,1",Pilgrim,1,0,
@@ -977,7 +974,7 @@ Number,Pack,Rarity,CardType,Attribute,Name,Cost,Power,Hit,Skill1,SkillParam1,Ico
 054,BT08,C,Unit,Wave,富克旺-湿润兔,2,2000,1,10706,"1,<b>突破[费用3以上]</b>",,,,,,,,,,,,,Tetra,0,0,
 055,BT08,R,Unit,Wave,方舟黑色游侠,2,2500,1,10707,"2或以下,1",,,,,,,,,,,,,Tetra,0,0,
 056,BT08,R,Unit,Wave,波莉-警察加油,2,1000,1,10708,"<sprite name=""guardian"">,1",,10709,"<sprite name=""guardian"">,1",,,,,,,,,,Elysion,0,0,
-057,BT08,C,Unit,Wave,伊莎贝尔-蜜月派对,3,2000,1,10710,"5或以上,突破",,,,,,,,,,,,,Pilgrim,0,0,
+057,BT08,C,Unit,Wave,伊莎贝尔-蜜月派对,3,2000,1,10710,"5或以上,<b>突破</b>",,,,,,,,,,,,,Pilgrim,0,0,
 058,BT08,R,Unit,Wave,白鹤,3,3000,1,10711,"1,<sprite name=""guardian"">",,10038,1,,,,,,,,,,Missilis,0,0,
 059,BT08,C,Unit,Wave,梅里:海湾女神,4,2500,2,10712,5或以上,,,,,,,,,,,,,Tetra,0,0,
 060,BT08,SR,Unit,Wave,机甲神谢芙蒂,4,2500,2,10706,"1,<b>突破[费用5以上]</b>",,,,,,,,,,,,,Elysion,1,0,
