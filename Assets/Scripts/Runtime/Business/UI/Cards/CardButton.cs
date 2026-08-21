@@ -15,9 +15,7 @@ namespace UI
     public class CardButton : EventMonoBehaviour
     {
         public Image image;
-        public TMP_Text cardName;
         public Button button;
-        public Image[] attributeIcons;
         public Image frame;
 
         private string _cardId;
@@ -30,8 +28,6 @@ namespace UI
             var cardEntry = DataManager.Instance.GetCard(cardId);
             var sprite = DataManager.Instance.LoadCardSprite(cardId);
             image.sprite = sprite;
-            cardName.text = cardEntry.Name;
-            UpdateIcon(cardEntry.Attribute);
             UpdateFrame(cardEntry.Attribute);
             button.onClick.AddListener(OnClick);
             _cardEntry = cardEntry;
@@ -41,16 +37,6 @@ namespace UI
         {
             ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.Card_Details_UI, new CardDetailData(_cardId));
         }
-
-        private void UpdateIcon(ElementAttribute attribute)
-        {
-            for (var i = 0; i < attributeIcons.Length; i++)
-            {
-                var attributeIcon = attributeIcons[i];
-                attributeIcon.gameObject.SetActive(i == (int)attribute);
-            }
-        }
-
         private void UpdateFrame(ElementAttribute attribute)
         {
             frame.color = attribute switch

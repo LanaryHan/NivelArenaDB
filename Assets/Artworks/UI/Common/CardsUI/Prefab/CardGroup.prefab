@@ -59,7 +59,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 312, y: 518.07}
+  m_CellSize: {x: 312, y: 413.96}
   m_Spacing: {x: 30, y: 45}
   m_Constraint: 1
   m_ConstraintCount: 3
@@ -516,22 +516,6 @@ PrefabInstance:
     - target: {fileID: 7120023104162043756, guid: 1648f9e851b684d56af076da69795c24, type: 3}
       propertyPath: m_Name
       value: CardButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 7682841236324755659, guid: 1648f9e851b684d56af076da69795c24, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 291.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7682841236324755659, guid: 1648f9e851b684d56af076da69795c24, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 406.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7682841236324755659, guid: 1648f9e851b684d56af076da69795c24, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7682841236324755659, guid: 1648f9e851b684d56af076da69795c24, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -211.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
