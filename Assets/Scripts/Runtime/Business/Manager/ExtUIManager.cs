@@ -5,6 +5,7 @@ using DG.Tweening;
 using GameEvents;
 using QFramework;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Vector3 = UnityEngine.Vector3;
 
@@ -145,7 +146,7 @@ namespace Runtime.Business.Manager
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
                 OnBackKey();
             }

@@ -1,5 +1,7 @@
 using QFramework;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 
 namespace Runtime.Business.Handler
 {
@@ -36,6 +38,16 @@ namespace Runtime.Business.Handler
             });
         }
 
+        private void OnEnable()
+        {
+            EnhancedTouchSupport.Enable();
+        }
+
+        private void OnDisable()
+        {
+            EnhancedTouchSupport.Disable();
+        }
+
         private void Update()
         {
             if (!_enable)
@@ -43,14 +55,26 @@ namespace Runtime.Business.Handler
                 return;
             }
 
-            if (Input.GetMouseButtonDown(0))
+            Vector2 screenPosition;
+
+            if (Mouse.current?.leftButton.wasPressedThisFrame == true)
             {
-                var worldPos = cardCamera.ScreenToWorldPoint(Input.mousePosition);
-                var hit = Physics2D.Raycast(worldPos, Vector2.zero);
-                if (hit.collider)
-                {
-                    EventManager.Instance.Send(GameEvents.ReverseCard.Create());
-                }
+                screenPosition = Mouse.current.position.ReadValue();
+            }
+            else if (Touchscreen.current?.primaryTouch.press.wasPressedThisFrame == true)
+            {
+                screenPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+            }
+            else
+            {
+                return;
+            }
+            
+            var worldPoint = cardCamera.ScreenToWorldPoint(screenPosition);
+            var hit = Physics2D.Raycast(worldPoint, Vector2.zero);
+            if (hit.collider)
+            {
+                EventManager.Instance.Send(GameEvents.ReverseCard.Create());
             }
         }
     }

@@ -246,7 +246,7 @@ namespace QFramework
             }
         }
 
-        private void OnGUI()
+        /*private void OnGUI()
         {
             if (PlatformCheck.IsEditor && Input.GetKey(KeyCode.F1))
             {
@@ -265,7 +265,7 @@ namespace QFramework
                     SafeObjectPool<ResLoader>.Instance.CurCount));
                 GUILayout.EndVertical();
             }
-        }
+        }*/
 
         private void OnIEnumeratorTaskFinish()
         {

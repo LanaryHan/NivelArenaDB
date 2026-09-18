@@ -1,6 +1,6 @@
 using QFramework;
 using UI;
-using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Runtime.Business.Manager
 {
@@ -22,7 +22,7 @@ namespace Runtime.Business.Manager
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
                 GetEventComponent().Send(GameEvents.ClickBackKey.Create());
             }
