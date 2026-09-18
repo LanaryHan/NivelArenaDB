@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 851328163
+CRC: 2896800770
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 21f16ebbf605d2876a91cef4a00cbaf4
+    Hash: 3446eb5f318ab2f7327815ce86182636
   TypeTreeHash:
     serializedVersion: 2
     Hash: 1b8f54e3e67b1567ad6148b7d8445741
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 8349a105bac2284e8d6f814c4f690117
+    Hash: c7fe35dc2e938716f8dce83878a9ab5b
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -123,4 +123,4 @@ SerializeReferenceClassIdentifiers:
 Assets:
 - Assets/Artworks/UI/Common/CardsUI/Dialog/CardsUI.prefab
 Dependencies:
-- /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/st01-008_png
+- /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/st01

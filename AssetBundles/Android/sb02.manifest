@@ -1,0 +1,117 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 1626197423
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2e76e6812d49d97f477bcf3fb86f41b7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 940f521ea0e5a7c596819d577e54ee72
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/SB02/SB02-053.png
+- Assets/Artworks/Textures/SB02/SB02-012.png
+- Assets/Artworks/Textures/SB02/SB02-016.png
+- Assets/Artworks/Textures/SB02/SB02-004.png
+- Assets/Artworks/Textures/SB02/SB02-008.png
+- Assets/Artworks/Textures/SB02/SB02-026.png
+- Assets/Artworks/Textures/SB02/SB02-023Sign.png
+- Assets/Artworks/Textures/SB02/SB02-062Sign.png
+- Assets/Artworks/Textures/SB02/SB02-011.png
+- Assets/Artworks/Textures/SB02/SB02-042Sign.png
+- Assets/Artworks/Textures/SB02/SB02-048Sign.png
+- Assets/Artworks/Textures/SB02/SB02-017.png
+- Assets/Artworks/Textures/SB02/SB02-037Sign.png
+- Assets/Artworks/Textures/SB02/SB02-045.png
+- Assets/Artworks/Textures/SB02/SB02-018Sign.png
+- Assets/Artworks/Textures/SB02/SB02-006.png
+- Assets/Artworks/Textures/SB02/SB02-040.png
+- Assets/Artworks/Textures/SB02/SB02-061.png
+- Assets/Artworks/Textures/SB02/SB02-006Sign.png
+- Assets/Artworks/Textures/SB02/SB02-019Ex.png
+- Assets/Artworks/Textures/SB02/SB02-056Sign.png
+- Assets/Artworks/Textures/SB02/SB02-033.png
+- Assets/Artworks/Textures/SB02/SB02-003.png
+- Assets/Artworks/Textures/SB02/SB02-037.png
+- Assets/Artworks/Textures/SB02/SB02-058Sign.png
+- Assets/Artworks/Textures/SB02/SB02-018.png
+- Assets/Artworks/Textures/SB02/SB02-028.png
+- Assets/Artworks/Textures/SB02/SB02-014.png
+- Assets/Artworks/Textures/SB02/SB02-047.png
+- Assets/Artworks/Textures/SB02/SB02-036Sign.png
+- Assets/Artworks/Textures/SB02/SB02-036.png
+- Assets/Artworks/Textures/SB02/SB02-045Ex.png
+- Assets/Artworks/Textures/SB02/SB02-049.png
+- Assets/Artworks/Textures/SB02/SB02-009.png
+- Assets/Artworks/Textures/SB02/SB02-019.png
+- Assets/Artworks/Textures/SB02/SB02-044.png
+- Assets/Artworks/Textures/SB02/SB02-013.png
+- Assets/Artworks/Textures/SB02/SB02-063Sign.png
+- Assets/Artworks/Textures/SB02/SB02-021.png
+- Assets/Artworks/Textures/SB02/SB02-002.png
+- Assets/Artworks/Textures/SB02/SB02-041.png
+- Assets/Artworks/Textures/SB02/SB02-058.png
+- Assets/Artworks/Textures/SB02/SB02-059Sign.png
+- Assets/Artworks/Textures/SB02/SB02-050Sign.png
+- Assets/Artworks/Textures/SB02/SB02-031.png
+- Assets/Artworks/Textures/SB02/SB02-045Sign.png
+- Assets/Artworks/Textures/SB02/SB02-055.png
+- Assets/Artworks/Textures/SB02/SB02-064.png
+- Assets/Artworks/Textures/SB02/SB02-049Sign.png
+- Assets/Artworks/Textures/SB02/SB02-025.png
+- Assets/Artworks/Textures/SB02/SB02-042.png
+- Assets/Artworks/Textures/SB02/SB02-021Sign.png
+- Assets/Artworks/Textures/SB02/SB02-051.png
+- Assets/Artworks/Textures/SB02/SB02-056.png
+- Assets/Artworks/Textures/SB02/SB02-059.png
+- Assets/Artworks/Textures/SB02/SB02-027.png
+- Assets/Artworks/Textures/SB02/SB02-052.png
+- Assets/Artworks/Textures/SB02/SB02-003Sign.png
+- Assets/Artworks/Textures/SB02/SB02-015.png
+- Assets/Artworks/Textures/SB02/SB02-024.png
+- Assets/Artworks/Textures/SB02/SB02-009Sign.png
+- Assets/Artworks/Textures/SB02/SB02-034Sign.png
+- Assets/Artworks/Textures/SB02/SB02-046.png
+- Assets/Artworks/Textures/SB02/SB02-060.png
+- Assets/Artworks/Textures/SB02/SB02-050.png
+- Assets/Artworks/Textures/SB02/SB02-048.png
+- Assets/Artworks/Textures/SB02/SB02-010Sign.png
+- Assets/Artworks/Textures/SB02/SB02-011Sign.png
+- Assets/Artworks/Textures/SB02/SB02-019Sign.png
+- Assets/Artworks/Textures/SB02/SB02-006Ex.png
+- Assets/Artworks/Textures/SB02/SB02-022.png
+- Assets/Artworks/Textures/SB02/SB02-063.png
+- Assets/Artworks/Textures/SB02/SB02-010.png
+- Assets/Artworks/Textures/SB02/SB02-032.png
+- Assets/Artworks/Textures/SB02/SB02-062.png
+- Assets/Artworks/Textures/SB02/SB02-024Sign.png
+- Assets/Artworks/Textures/SB02/SB02-034.png
+- Assets/Artworks/Textures/SB02/SB02-039.png
+- Assets/Artworks/Textures/SB02/SB02-023.png
+- Assets/Artworks/Textures/SB02/SB02-057.png
+- Assets/Artworks/Textures/SB02/SB02-031Sign.png
+- Assets/Artworks/Textures/SB02/SB02-007.png
+- Assets/Artworks/Textures/SB02/SB02-030.png
+- Assets/Artworks/Textures/SB02/SB02-032Sign.png
+- Assets/Artworks/Textures/SB02/SB02-038.png
+- Assets/Artworks/Textures/SB02/SB02-043.png
+- Assets/Artworks/Textures/SB02/SB02-058Ex.png
+- Assets/Artworks/Textures/SB02/SB02-020.png
+- Assets/Artworks/Textures/SB02/SB02-054.png
+- Assets/Artworks/Textures/SB02/SB02-065.png
+- Assets/Artworks/Textures/SB02/SB02-005.png
+- Assets/Artworks/Textures/SB02/SB02-035.png
+- Assets/Artworks/Textures/SB02/SB02-032Ex.png
+- Assets/Artworks/Textures/SB02/SB02-029.png
+- Assets/Artworks/Textures/SB02/SB02-001.png
+Dependencies: []

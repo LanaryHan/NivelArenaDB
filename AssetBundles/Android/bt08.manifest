@@ -1,0 +1,132 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 3322934018
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a57c91b4b7e1bbaaa9a41838cc50822b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 245d8ff56f86761282188861e2b2f750
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/BT08/BT08-078Sign.png
+- Assets/Artworks/Textures/BT08/BT08-078.png
+- Assets/Artworks/Textures/BT08/BT08-067.png
+- Assets/Artworks/Textures/BT08/BT08-008.png
+- Assets/Artworks/Textures/BT08/BT08-082.png
+- Assets/Artworks/Textures/BT08/BT08-001.png
+- Assets/Artworks/Textures/BT08/BT08-029Sign.png
+- Assets/Artworks/Textures/BT08/BT08-069.png
+- Assets/Artworks/Textures/BT08/BT08-073.png
+- Assets/Artworks/Textures/BT08/BT08-037.png
+- Assets/Artworks/Textures/BT08/BT08-085.png
+- Assets/Artworks/Textures/BT08/BT08-069Ex.png
+- Assets/Artworks/Textures/BT08/BT08-059.png
+- Assets/Artworks/Textures/BT08/BT08-022.png
+- Assets/Artworks/Textures/BT08/BT08-052Ex.png
+- Assets/Artworks/Textures/BT08/BT08-018Sign.png
+- Assets/Artworks/Textures/BT08/BT08-011.png
+- Assets/Artworks/Textures/BT08/BT08-054.png
+- Assets/Artworks/Textures/BT08/BT08-077Sign.png
+- Assets/Artworks/Textures/BT08/BT08-006.png
+- Assets/Artworks/Textures/BT08/BT08-061Sign.png
+- Assets/Artworks/Textures/BT08/BT08-035Ex.png
+- Assets/Artworks/Textures/BT08/BT08-010.png
+- Assets/Artworks/Textures/BT08/BT08-068.png
+- Assets/Artworks/Textures/BT08/BT08-035Sign.png
+- Assets/Artworks/Textures/BT08/BT08-046.png
+- Assets/Artworks/Textures/BT08/BT08-071.png
+- Assets/Artworks/Textures/BT08/BT08-064.png
+- Assets/Artworks/Textures/BT08/BT08-076Sign.png
+- Assets/Artworks/Textures/BT08/BT08-013.png
+- Assets/Artworks/Textures/BT08/BT08-069Sign.png
+- Assets/Artworks/Textures/BT08/BT08-003.png
+- Assets/Artworks/Textures/BT08/BT08-025.png
+- Assets/Artworks/Textures/BT08/BT08-066.png
+- Assets/Artworks/Textures/BT08/BT08-084.png
+- Assets/Artworks/Textures/BT08/BT08-060.png
+- Assets/Artworks/Textures/BT08/BT08-062.png
+- Assets/Artworks/Textures/BT08/BT08-045.png
+- Assets/Artworks/Textures/BT08/BT08-083.png
+- Assets/Artworks/Textures/BT08/BT08-029.png
+- Assets/Artworks/Textures/BT08/BT08-033.png
+- Assets/Artworks/Textures/BT08/BT08-027.png
+- Assets/Artworks/Textures/BT08/BT08-077.png
+- Assets/Artworks/Textures/BT08/BT08-007Sign.png
+- Assets/Artworks/Textures/BT08/BT08-017.png
+- Assets/Artworks/Textures/BT08/BT08-038.png
+- Assets/Artworks/Textures/BT08/BT08-047.png
+- Assets/Artworks/Textures/BT08/BT08-062Sign.png
+- Assets/Artworks/Textures/BT08/BT08-001Sign.png
+- Assets/Artworks/Textures/BT08/BT08-042Sign.png
+- Assets/Artworks/Textures/BT08/BT08-065.png
+- Assets/Artworks/Textures/BT08/BT08-001Ex.png
+- Assets/Artworks/Textures/BT08/BT08-076.png
+- Assets/Artworks/Textures/BT08/BT08-043.png
+- Assets/Artworks/Textures/BT08/BT08-075.png
+- Assets/Artworks/Textures/BT08/BT08-020.png
+- Assets/Artworks/Textures/BT08/BT08-019.png
+- Assets/Artworks/Textures/BT08/BT08-034.png
+- Assets/Artworks/Textures/BT08/BT08-048.png
+- Assets/Artworks/Textures/BT08/BT08-045Sign.png
+- Assets/Artworks/Textures/BT08/BT08-005.png
+- Assets/Artworks/Textures/BT08/BT08-014.png
+- Assets/Artworks/Textures/BT08/BT08-027Sign.png
+- Assets/Artworks/Textures/BT08/BT08-055.png
+- Assets/Artworks/Textures/BT08/BT08-026.png
+- Assets/Artworks/Textures/BT08/BT08-009.png
+- Assets/Artworks/Textures/BT08/BT08-053.png
+- Assets/Artworks/Textures/BT08/BT08-032.png
+- Assets/Artworks/Textures/BT08/BT08-080.png
+- Assets/Artworks/Textures/BT08/BT08-028Sign.png
+- Assets/Artworks/Textures/BT08/BT08-042.png
+- Assets/Artworks/Textures/BT08/BT08-031.png
+- Assets/Artworks/Textures/BT08/BT08-030.png
+- Assets/Artworks/Textures/BT08/BT08-018.png
+- Assets/Artworks/Textures/BT08/BT08-074.png
+- Assets/Artworks/Textures/BT08/BT08-063.png
+- Assets/Artworks/Textures/BT08/BT08-056.png
+- Assets/Artworks/Textures/BT08/BT08-081.png
+- Assets/Artworks/Textures/BT08/BT08-040.png
+- Assets/Artworks/Textures/BT08/BT08-015.png
+- Assets/Artworks/Textures/BT08/BT08-052.png
+- Assets/Artworks/Textures/BT08/BT08-052Sign.png
+- Assets/Artworks/Textures/BT08/BT08-004.png
+- Assets/Artworks/Textures/BT08/BT08-023.png
+- Assets/Artworks/Textures/BT08/BT08-044.png
+- Assets/Artworks/Textures/BT08/BT08-079.png
+- Assets/Artworks/Textures/BT08/BT08-028.png
+- Assets/Artworks/Textures/BT08/BT08-018Ex.png
+- Assets/Artworks/Textures/BT08/BT08-039.png
+- Assets/Artworks/Textures/BT08/BT08-061.png
+- Assets/Artworks/Textures/BT08/BT08-057.png
+- Assets/Artworks/Textures/BT08/BT08-024.png
+- Assets/Artworks/Textures/BT08/BT08-058.png
+- Assets/Artworks/Textures/BT08/BT08-070.png
+- Assets/Artworks/Textures/BT08/BT08-049.png
+- Assets/Artworks/Textures/BT08/BT08-035.png
+- Assets/Artworks/Textures/BT08/BT08-060Sign.png
+- Assets/Artworks/Textures/BT08/BT08-072.png
+- Assets/Artworks/Textures/BT08/BT08-050.png
+- Assets/Artworks/Textures/BT08/BT08-051.png
+- Assets/Artworks/Textures/BT08/BT08-002.png
+- Assets/Artworks/Textures/BT08/BT08-007.png
+- Assets/Artworks/Textures/BT08/BT08-016.png
+- Assets/Artworks/Textures/BT08/BT08-036.png
+- Assets/Artworks/Textures/BT08/BT08-040Sign.png
+- Assets/Artworks/Textures/BT08/BT08-011Sign.png
+- Assets/Artworks/Textures/BT08/BT08-021.png
+- Assets/Artworks/Textures/BT08/BT08-041.png
+- Assets/Artworks/Textures/BT08/BT08-012.png
+- Assets/Artworks/Textures/BT08/BT08-010Sign.png
+Dependencies: []

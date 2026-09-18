@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 4135879091
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5f6c2bfc26b87ae756b84c8a7c00af43
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: c9b7e1966f475ab5ff3210392c14f85c
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/ST11/ST11-016.png
+- Assets/Artworks/Textures/ST11/ST11-005.png
+- Assets/Artworks/Textures/ST11/ST11-001.png
+- Assets/Artworks/Textures/ST11/ST11-003.png
+- Assets/Artworks/Textures/ST11/ST11-009.png
+- Assets/Artworks/Textures/ST11/ST11-015.png
+- Assets/Artworks/Textures/ST11/ST11-011.png
+- Assets/Artworks/Textures/ST11/ST11-007.png
+- Assets/Artworks/Textures/ST11/ST11-013.png
+- Assets/Artworks/Textures/ST11/ST11-004.png
+- Assets/Artworks/Textures/ST11/ST11-001Sign.png
+- Assets/Artworks/Textures/ST11/ST11-014.png
+- Assets/Artworks/Textures/ST11/ST11-002.png
+- Assets/Artworks/Textures/ST11/ST11-017.png
+- Assets/Artworks/Textures/ST11/ST11-010.png
+- Assets/Artworks/Textures/ST11/ST11-012.png
+- Assets/Artworks/Textures/ST11/ST11-006.png
+- Assets/Artworks/Textures/ST11/ST11-008.png
+Dependencies: []

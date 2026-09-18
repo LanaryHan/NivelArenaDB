@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 226271621
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6b9ae45d5cb058fed86f7af814db3a9a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d3141126a394981d11453d1cad074d82
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/ST04/ST04-013.png
+- Assets/Artworks/Textures/ST04/ST04-016.png
+- Assets/Artworks/Textures/ST04/ST04-006.png
+- Assets/Artworks/Textures/ST04/ST04-007.png
+- Assets/Artworks/Textures/ST04/ST04-005.png
+- Assets/Artworks/Textures/ST04/ST04-014.png
+- Assets/Artworks/Textures/ST04/ST04-015.png
+- Assets/Artworks/Textures/ST04/ST04-010.png
+- Assets/Artworks/Textures/ST04/ST04-012.png
+- Assets/Artworks/Textures/ST04/ST04-002.png
+- Assets/Artworks/Textures/ST04/ST04-009.png
+- Assets/Artworks/Textures/ST04/ST04-011.png
+- Assets/Artworks/Textures/ST04/ST04-001.png
+- Assets/Artworks/Textures/ST04/ST04-008.png
+- Assets/Artworks/Textures/ST04/ST04-001Sign.png
+- Assets/Artworks/Textures/ST04/ST04-004.png
+- Assets/Artworks/Textures/ST04/ST04-017.png
+- Assets/Artworks/Textures/ST04/ST04-003.png
+Dependencies: []

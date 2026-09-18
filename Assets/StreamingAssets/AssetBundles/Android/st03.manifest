@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.59f2
+CRC: 2244288172
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0f9620889cfcc6aeb33704fe5542d884
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9f349c36d7a6532f767333f9299b3e74
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: c12abe33e0f0215051bfe5a6d04d9495
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Artworks/Textures/ST03/ST03-017.png
+- Assets/Artworks/Textures/ST03/ST03-011.png
+- Assets/Artworks/Textures/ST03/ST03-005.png
+- Assets/Artworks/Textures/ST03/ST03-006.png
+- Assets/Artworks/Textures/ST03/ST03-009.png
+- Assets/Artworks/Textures/ST03/ST03-012.png
+- Assets/Artworks/Textures/ST03/ST03-001.png
+- Assets/Artworks/Textures/ST03/ST03-015.png
+- Assets/Artworks/Textures/ST03/ST03-008.png
+- Assets/Artworks/Textures/ST03/ST03-016.png
+- Assets/Artworks/Textures/ST03/ST03-003.png
+- Assets/Artworks/Textures/ST03/ST03-001Sign.png
+- Assets/Artworks/Textures/ST03/ST03-002.png
+- Assets/Artworks/Textures/ST03/ST03-013.png
+- Assets/Artworks/Textures/ST03/ST03-010.png
+- Assets/Artworks/Textures/ST03/ST03-007.png
+- Assets/Artworks/Textures/ST03/ST03-014.png
+- Assets/Artworks/Textures/ST03/ST03-004.png
+Dependencies: []

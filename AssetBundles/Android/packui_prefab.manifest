@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1765478884
+CRC: 2116888259
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fd533d0bea577a42c764c10dfafa5ed4
+    Hash: 37e467367b308c00b854295d86b5983a
   TypeTreeHash:
     serializedVersion: 2
     Hash: 2e15689d143dd01151cba2f3b9eee539
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 8943e0020b4e6586418d968a2c9ed878
+    Hash: a04714eaae30b125d0f1e5e6493917e4
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -139,4 +139,4 @@ SerializeReferenceClassIdentifiers:
 Assets:
 - Assets/Artworks/UI/Common/PackUI/Dialog/PackUI.prefab
 Dependencies:
-- /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/pack_bt01_png
+- /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/packs
