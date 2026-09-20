@@ -5,7 +5,6 @@ using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
 using Runtime.Business.Manager;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Util;
@@ -119,6 +118,12 @@ namespace UI
             }
 
             return true;
+        }
+
+        public void Reset()
+        {
+            _cardId = null;
+            _cardEntry = null;
         }
     }
 }
