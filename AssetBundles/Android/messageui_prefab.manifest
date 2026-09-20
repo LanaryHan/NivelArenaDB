@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1612546172
+CRC: 3318488870
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9281190287d780ed89f097728e281812
+    Hash: 852d7375d91a194d02b69405de15b963
   TypeTreeHash:
     serializedVersion: 2
     Hash: 854ff8781052220d80ec06ff1a2fe177
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 1d3195b61b1f4fff43d16c1230571b93
+    Hash: 152330cd706ea8240f83754086429da9
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -104,4 +104,5 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.SpriteState
 Assets:
 - Assets/Artworks/UI/Pop/MessageUI/Dialog/MessageUI.prefab
-Dependencies: []
+Dependencies:
+- /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/fonts

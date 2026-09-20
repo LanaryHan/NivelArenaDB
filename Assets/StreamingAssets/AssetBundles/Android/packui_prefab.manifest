@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 2116888259
+CRC: 2207221979
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 37e467367b308c00b854295d86b5983a
+    Hash: d632a0686a64ae2d5ae8382b224273bb
   TypeTreeHash:
     serializedVersion: 2
     Hash: 2e15689d143dd01151cba2f3b9eee539
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: a04714eaae30b125d0f1e5e6493917e4
+    Hash: 5a5b2f6395b0574b612f54ff5e79ac93
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -139,4 +139,4 @@ SerializeReferenceClassIdentifiers:
 Assets:
 - Assets/Artworks/UI/Common/PackUI/Dialog/PackUI.prefab
 Dependencies:
-- /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/packs
+- /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/fonts

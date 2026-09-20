@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 2309103824
+CRC: 2723267170
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 2d6cee1e3c89945ac541325899bc8fdf
+    Hash: 00d7171c0be6c1f60b0f779ccd092240
   TypeTreeHash:
     serializedVersion: 2
     Hash: 2718a4f0daaaf08e2d37553f76f77298
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: a5508356609a63a9b66b4cbdd66d60ea
+    Hash: 1321442846a37248247ea84cc986d48a
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -124,4 +124,5 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.Toggle/ToggleEvent
 Assets:
 - Assets/Artworks/UI/Common/CardDetailUI/Dialog/CardDetailUI.prefab
-Dependencies: []
+Dependencies:
+- /Users/han.qiu/Nivel Arena DB/AssetBundles/Android/fonts

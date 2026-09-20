@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 1064909327
+CRC: 2740254497
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ce8f4b0a437f60b58bb846ec6a8a9fee
+    Hash: f8c8cea3c74b319f83ac4b642b748bf1
   TypeTreeHash:
     serializedVersion: 2
     Hash: 9f349c36d7a6532f767333f9299b3e74
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 8e6c01edce3bb556fc9a11c5d57bb316
+    Hash: 69379b75b7a83804f49e1e1e1151df09
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -19,22 +19,22 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Artworks/Textures/ST06/ST06-008.png
-- Assets/Artworks/Textures/ST06/ST06-010.png
-- Assets/Artworks/Textures/ST06/ST06-009.png
-- Assets/Artworks/Textures/ST06/ST06-011.png
-- Assets/Artworks/Textures/ST06/ST06-001Sign.png
-- Assets/Artworks/Textures/ST06/ST06-016.png
-- Assets/Artworks/Textures/ST06/ST06-017.png
-- Assets/Artworks/Textures/ST06/ST06-003.png
-- Assets/Artworks/Textures/ST06/ST06-005.png
-- Assets/Artworks/Textures/ST06/ST06-006.png
-- Assets/Artworks/Textures/ST06/ST06-007.png
-- Assets/Artworks/Textures/ST06/ST06-013.png
-- Assets/Artworks/Textures/ST06/ST06-015.png
-- Assets/Artworks/Textures/ST06/ST06-012.png
-- Assets/Artworks/Textures/ST06/ST06-014.png
-- Assets/Artworks/Textures/ST06/ST06-001.png
-- Assets/Artworks/Textures/ST06/ST06-002.png
-- Assets/Artworks/Textures/ST06/ST06-004.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-008.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-010.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-009.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-011.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-001Sign.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-016.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-017.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-003.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-005.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-006.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-007.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-013.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-015.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-012.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-014.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-001.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-002.png
+- Assets/Artworks/Textures/Cards/ST06/ST06-004.png
 Dependencies: []

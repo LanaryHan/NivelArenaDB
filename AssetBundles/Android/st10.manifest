@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.0.59f2
-CRC: 688119134
+CRC: 2565050479
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d8ddf8fd01b7f4fb7b67243a2f5b034b
+    Hash: c96a6a5919f196e3da5829501b581bfa
   TypeTreeHash:
     serializedVersion: 2
     Hash: 9f349c36d7a6532f767333f9299b3e74
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 124cb8b385c9588673fab9aa90887ab2
+    Hash: 140ad7b0ead0eebc432b53502df644f9
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -19,22 +19,22 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Artworks/Textures/ST10/ST10-012.png
-- Assets/Artworks/Textures/ST10/ST10-013.png
-- Assets/Artworks/Textures/ST10/ST10-008.png
-- Assets/Artworks/Textures/ST10/ST10-003.png
-- Assets/Artworks/Textures/ST10/ST10-010.png
-- Assets/Artworks/Textures/ST10/ST10-004.png
-- Assets/Artworks/Textures/ST10/ST10-005.png
-- Assets/Artworks/Textures/ST10/ST10-011.png
-- Assets/Artworks/Textures/ST10/ST10-001Sign.png
-- Assets/Artworks/Textures/ST10/ST10-016.png
-- Assets/Artworks/Textures/ST10/ST10-014.png
-- Assets/Artworks/Textures/ST10/ST10-015.png
-- Assets/Artworks/Textures/ST10/ST10-017.png
-- Assets/Artworks/Textures/ST10/ST10-009.png
-- Assets/Artworks/Textures/ST10/ST10-001.png
-- Assets/Artworks/Textures/ST10/ST10-002.png
-- Assets/Artworks/Textures/ST10/ST10-007.png
-- Assets/Artworks/Textures/ST10/ST10-006.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-012.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-013.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-008.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-003.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-010.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-004.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-005.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-011.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-001Sign.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-016.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-014.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-015.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-017.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-009.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-001.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-002.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-007.png
+- Assets/Artworks/Textures/Cards/ST10/ST10-006.png
 Dependencies: []
