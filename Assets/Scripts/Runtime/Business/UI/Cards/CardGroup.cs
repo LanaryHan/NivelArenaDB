@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using System.Linq;
 using EnhancedUI.EnhancedScroller;
-using GameEvents;
 using Runtime.Business.Util;
 using TMPro;
 using UnityEngine;
@@ -18,6 +16,7 @@ namespace UI
         public CardButton tempBtn;
 
         private List<CardButton> _cards;
+
         public void Init(CardsUI.CardWrapperGroup groupInfo)
         {
             _cards = new List<CardButton>();
@@ -37,17 +36,11 @@ namespace UI
 
             foreach (var cardWrapper in groupInfo.Cards)
             {
-                var cardButton = Instantiate(tempBtn,content);
+                var cardButton = Instantiate(tempBtn, content);
                 cardButton.Init(cardWrapper.CardEntry.Id);
-                cardButton.gameObject.SetActive(true);
+                cardButton.gameObject.SetActive(cardWrapper.Show);
                 _cards.Add(cardButton);
             }
-        }
-
-        public void UpdateView(UpdateCardByFilter e)
-        {
-            _cards.ForEach(card => card.gameObject.SetActive(card.UpdateView(e)));
-            gameObject.SetActive(_cards.Any(card => card.gameObject.activeSelf));
         }
 
         public void Reset()

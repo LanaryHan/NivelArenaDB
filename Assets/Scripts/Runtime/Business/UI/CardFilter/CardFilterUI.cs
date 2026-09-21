@@ -1,12 +1,8 @@
 using System;
 using System.Collections.Generic;
-using DG.Tweening;
 using QFramework;
-using Runtime.Business.Manager;
 using Runtime.Business.UI;
 using Runtime.Business.Util;
-using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI
 {

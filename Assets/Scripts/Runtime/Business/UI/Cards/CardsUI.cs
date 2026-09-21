@@ -50,6 +50,7 @@ namespace UI
         public class CardWrapper
         {
             public CardEntry CardEntry;
+            public bool Show;
         }
         public class CardWrapperGroup
         {
@@ -63,7 +64,6 @@ namespace UI
         public Button closeBtn;
         public TMP_Text title;
 
-        private List<CardGroup> _curGroups = new();
         private readonly List<CardWrapper> _cardWrappers = new();
         private readonly List<CardWrapperGroup> _cardWrapperGroups = new();
         private float _cardItemSize;
@@ -103,6 +103,7 @@ namespace UI
             foreach (var wrapper in cards.Select(card => new CardWrapper
                      {
                          CardEntry = card,
+                         Show = true,
                      }))
             {
                 _cardWrappers.Add(wrapper);
@@ -127,37 +128,100 @@ namespace UI
             {
                 return;
             }
-
-            _curGroups = new List<CardGroup>();
+            
             content.RemoveAllChildren(tempCardGroup.transform, closeBtn.transform);
             var packEntry = DataManager.Instance.GetPack(mainUIData.Pack);
             title.text = packEntry.Title;
-            /*var cards = DataManager.Instance.GetCardFromPack(mainUIData.Pack);
-            var cardGroupBy = cards.OrderBy(card => card.CardType).GroupBy(card => card.CardType);
-            using var enumerator = cardGroupBy.GetEnumerator();
-            while (enumerator.MoveNext())
-            {
-                var grouping = enumerator.Current;
-                if (grouping != null)
-                {
-                    var cardEntries = grouping.ToList();
-                    var cardGroup = Instantiate(tempCardGroup,content);
-                    cardGroup.Init(cardEntries, grouping.Key.ToChinese());
-                    cardGroup.gameObject.SetActive(true);
-                    _curGroups.Add(cardGroup);
-                }
-            }*/
         }
 
         protected override void OnClose()
         {
-            _curGroups = null;
             ExtUIManager.Instance.CloseDialog<CardFilterUI>();
         }
         
         private void OnUpdateCardByFilter(UpdateCardByFilter e)
         {
-            _curGroups.ForEach(group => group.UpdateView(e));
+            foreach (var wrapperGroup in _cardWrapperGroups)
+            {
+                foreach (var cardWrapper in wrapperGroup.Cards)
+                {
+                    var show = CheckCanShow(e, cardWrapper.CardEntry);
+                    cardWrapper.Show = show;
+                }
+            }
+
+            scroller.ReloadData();
+        }
+        
+        private bool CheckCanShow(UpdateCardByFilter e, CardEntry cardEntry)
+        {
+            if (e.CostFlags is not CostFlags.None)
+            {
+                if (cardEntry.Cost == null)
+                {
+                    return false;
+                }
+
+                if ((e.CostFlags & CostFlags.TenPlus) != 0 && cardEntry.Cost.Value >= 10)
+                {
+                    return true;
+                }
+
+                var flag = (CostFlags)(1 << cardEntry.Cost.Value);
+                if ((e.CostFlags & flag) == 0)
+                {
+                    return false;
+                }
+            }
+            
+            if (e.AttributeFlags is not AttributeFlags.None)
+            {
+                var flag = (AttributeFlags)(1 << (int)cardEntry.Attribute);
+                if ((e.AttributeFlags & flag) == 0)
+                {
+                    return false;
+                }
+            }
+
+            if (e.CardTypeFlags is not CardTypeFlags.None)
+            {
+                var flag = (CardTypeFlags)(1 << (int)cardEntry.CardType);
+                if ((e.CardTypeFlags & flag) == 0)
+                {
+                    return false;
+                }
+            }
+
+            if (e.KeywordFlags is not KeywordFlags.None)
+            {
+                if (cardEntry.Skills.Length == 0)
+                {
+                    return false;
+                }
+
+                var keys = new HashSet<KeyType>();
+                foreach (var skillId in cardEntry.Skills)
+                {
+                    var skillEntry = DataManager.Instance.GetSkill(skillId);
+                    if (skillEntry.Key1 is not KeyType.None)
+                    {
+                        keys.Add(skillEntry.Key1);
+                    }
+
+                    if (skillEntry.Key2 != null)
+                    {
+                        if (skillEntry.Key2.Value is not KeyType.None)
+                        {
+                            keys.Add(skillEntry.Key2.Value);
+                        }
+                    }
+                }
+
+                var flag = keys.Select(key => (KeywordFlags)(1 << (int)key - 1)).Aggregate(KeywordFlags.None, (current, f) => current | f);
+                return (flag & e.KeywordFlags) != 0;
+            }
+
+            return true;
         }
 
         public int GetNumberOfCells(EnhancedScroller scroller)
@@ -183,7 +247,7 @@ namespace UI
                 cellView = scroller.GetCellView(tempCardGroup);
                 if (cellView)
                 {
-                    cellView.gameObject.SetActive(true);
+                    cellView.gameObject.SetActive(groupInfo.Cards.Any(wrapper => wrapper.Show));
                     if (cellView is CardGroup cardGroup)
                     {
                         cardGroup.Init(groupInfo);
