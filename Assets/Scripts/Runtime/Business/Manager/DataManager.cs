@@ -22,8 +22,6 @@ namespace Runtime.Business.Manager
         public Dictionary<int, TriggerEntry> Triggers;
         public Dictionary<string, KeywordExtensionEntry> KeywordExts;
 
-        private readonly ResLoader _resLoader = ResLoader.Allocate();
-
         public void InitCsv()
         {
             #region Card
@@ -104,32 +102,7 @@ namespace Runtime.Business.Manager
             var cards = Cards.Values.ToList().Where(card => card.Pack == pack).ToList();
             return cards;
         }
-
-        public Sprite LoadCardSprite(string id)
-        {
-            var sprite = _resLoader.LoadSync<Sprite>(id);
-            return sprite;
-        }
-
-        public Sprite LoadSpecialCardSprite(string id)
-        {
-            var sprite = _resLoader.LoadSync<Sprite>($"{id}Sign");
-            return sprite;
-        }
-
-        public Sprite LoadExtensionCardSprite(string id)
-        {
-            var sprite = _resLoader.LoadSync<Sprite>($"{id}Ex");
-            return sprite;
-        }
-
-        public Sprite LoadPackSprite(Deck pack)
-        {
-            var packEntry = GetPack(pack);
-            var sprite = _resLoader.LoadSync<Sprite>(packEntry.BundleRes);
-            return sprite;
-        }
-
+        
         public CardEntry GetCard(string id)
         {
             return Cards.GetValueOrDefault(id);
@@ -162,13 +135,6 @@ namespace Runtime.Business.Manager
         public TriggerEntry GetTrigger(int id)
         {
             return Triggers.GetValueOrDefault(id);
-        }
-
-        public Sprite LoadSkillMaskSprite(KeyType key1, KeyType key2)
-        {
-            var bundle = $"keyType_{key1.ToString()}_{key2.ToString()}".ToLower();
-            var sprite = _resLoader.LoadSync<Sprite>(bundle);
-            return sprite;
         }
 
         public KeywordExtensionEntry GetKeywordExtension(string id)

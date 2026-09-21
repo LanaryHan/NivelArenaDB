@@ -55,7 +55,7 @@ namespace QFramework
         void Show();
 
         void Hide();
-		
-        void Close(bool destroy = true);
+
+        void Close(bool destroy = true, bool fromLoad = true);
     }
 }

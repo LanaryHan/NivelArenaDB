@@ -30,12 +30,12 @@ namespace UI
                 var logic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
                 if (logic.IsBuilding)
                 {
-                    ExtUIManager.Instance.OpenDialog<DeckEditorUI>(Dialog.Deck_Editor_UI,
+                    ExtUIManager.Instance.OpenDialog<DeckEditorUI>(Dialog.DeckEditorUI,
                         new DeckEditorData(null, true));
                 }
                 else
                 {
-                    ExtUIManager.Instance.OpenDialog<PresetDeckUI>(Dialog.Preset_Deck_UI);
+                    ExtUIManager.Instance.OpenDialog<PresetDeckUI>(Dialog.PresetDeckUI);
                 }
             });
             OnShowEdgeStart += () =>

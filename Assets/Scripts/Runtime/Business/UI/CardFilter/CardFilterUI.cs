@@ -55,14 +55,14 @@ namespace UI
             var ec = GetEventComponent();
             ec.Listen<UIEvents.OnDialogOpen>(e =>
             {
-                if (e.Dialog.dialogName is Dialog.Card_Details_UI)
+                if (e.Dialog.dialogName is Dialog.CardDetailUI)
                 {
                     this.HideSelfByExt();
                 }
             });
             ec.Listen<UIEvents.OnDialogClose>(e =>
             {
-                if (e.Dialog is Dialog.Card_Details_UI)
+                if (e.Dialog is Dialog.CardDetailUI)
                 {
                     if (UIKit.GetPanel<CardsUI>())
                     {

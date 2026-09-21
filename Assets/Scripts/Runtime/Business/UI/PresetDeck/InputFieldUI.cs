@@ -36,7 +36,7 @@ namespace UI
         public static NameInputParam Create()
         {
             var param = new NameInputParam();
-            ExtUIManager.Instance.OpenDialog<InputFieldUI>(Dialog.Preset_Deck_Name_Input_UI, param, UILevel.PopUI);
+            ExtUIManager.Instance.OpenDialog<InputFieldUI>(Dialog.PresetDeckNameInputUI, param, UILevel.PopUI);
             return param;
         }
 

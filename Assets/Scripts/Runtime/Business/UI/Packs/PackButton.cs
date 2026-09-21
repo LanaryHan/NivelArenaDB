@@ -20,7 +20,7 @@ namespace UI
             _pack = pack;
 
             var packEntry = DataManager.Instance.GetPack(pack);
-            var sprite = DataManager.Instance.LoadPackSprite(pack);
+            var sprite = ResManager.Instance.LoadPackSprite(pack);
             image.sprite = sprite;
             packName.text = packEntry.DisplayName;
             button.onClick.AddListener(OnClick);
@@ -29,8 +29,8 @@ namespace UI
 
         private void OnClick()
         {
-            ExtUIManager.Instance.OpenDialog<CardsUI>(Dialog.Cards_UI, new CardsUIData(_pack));
-            ExtUIManager.Instance.OpenDialog<CardFilterUI>(Dialog.Card_Filter_UI, new CardFilterData(), UILevel.PopUI);
+            ExtUIManager.Instance.OpenDialog<CardsUI>(Dialog.CardsUI, new CardsUIData(_pack));
+            ExtUIManager.Instance.OpenDialog<CardFilterUI>(Dialog.CardFilterUI, new CardFilterData(), UILevel.PopUI);
         }
     }
 }

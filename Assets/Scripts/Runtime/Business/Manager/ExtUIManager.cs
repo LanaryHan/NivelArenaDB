@@ -153,23 +153,49 @@ namespace Runtime.Business.Manager
         }
 
         #region UI
-        
-        public void OpenDialog<T>(Dialog dialogName, UILevel uiLevel = UILevel.Common) where T : UIPanel
+
+        private string GetDialogAddress(Dialog dialog)
         {
-            var openPanel = UIKit.OpenPanel<T>(uiLevel);
-            openPanel.dialogName = dialogName;
-            _uiDic[uiLevel].Add(openPanel);
+            return $"{dialog}/Dialog/{dialog}.prefab";
+        }
+        public T OpenDialog<T>(Dialog dialogName, UILevel uiLevel = UILevel.Common) where T : UIPanel
+        {
+            var path = GetDialogAddress(dialogName);
+            var panelObj = ResManager.Instance.LoadPrefabAndInstantiate<GameObject>(path);
+            var uiPanel = panelObj.GetComponent<UIPanel>();
+            UIKit.Root.SetLevelOfPanel(uiLevel, uiPanel);
+            UIKit.Config.SetDefaultSizeOfPanel(uiPanel);
+            panelObj.name = dialogName.ToString();
+            uiPanel.dialogName = dialogName;
+            uiPanel.Info = PanelInfo.Allocate(dialogName.ToString(), uiLevel, null, typeof(T), null);
+            UIKit.Table.Add(uiPanel);
+            uiPanel.Init();
+            uiPanel.Open();
+            uiPanel.Show();
+            _uiDic[uiLevel].Add(uiPanel);
             _uiLevelMap.TryAdd(typeof(T), uiLevel);
-            GetEventComponent().Send(UIEvents.OnDialogOpen.Create(openPanel));
+            GetEventComponent().Send(UIEvents.OnDialogOpen.Create(uiPanel));
+            return uiPanel as T;
         }
         
-        public void OpenDialog<T>(Dialog dialog, IUIData uiData, UILevel uiLevel = UILevel.Common) where T : UIPanel
+        public T OpenDialog<T>(Dialog dialog, IUIData uiData, UILevel uiLevel = UILevel.Common) where T : UIPanel
         {
-            var openPanel = UIKit.OpenPanel<T>(uiLevel, uiData);
-            openPanel.dialogName = dialog;
-            _uiDic[uiLevel].Add(openPanel);
+            var path = GetDialogAddress(dialog);
+            var panelObj = ResManager.Instance.LoadPrefabAndInstantiate<GameObject>(path);
+            var uiPanel = panelObj.GetComponent<UIPanel>();
+            UIKit.Root.SetLevelOfPanel(uiLevel, uiPanel);
+            UIKit.Config.SetDefaultSizeOfPanel(uiPanel);
+            panelObj.name = dialog.ToString();
+            uiPanel.dialogName = dialog;
+            uiPanel.Info = PanelInfo.Allocate(dialog.ToString(), uiLevel, uiData, typeof(T), null);
+            UIKit.Table.Add(uiPanel);
+            uiPanel.Init(uiData);
+            uiPanel.Open(uiData);
+            uiPanel.Show();
+            _uiDic[uiLevel].Add(uiPanel);
             _uiLevelMap.TryAdd(typeof(T), uiLevel);
-            GetEventComponent().Send(UIEvents.OnDialogOpen.Create(openPanel));
+            GetEventComponent().Send(UIEvents.OnDialogOpen.Create(uiPanel));
+            return uiPanel as T;
         }
         
         public void CloseDialog<T>() where T : UIPanel
@@ -177,7 +203,19 @@ namespace Runtime.Business.Manager
             var uiLevel = _uiLevelMap[typeof(T)];
             var dialog = _uiDic[uiLevel].Find(ui => ui is T);
             var dialogName = dialog.dialogName;
-            UIKit.ClosePanel(dialog);
+            var searchKey = PanelSearchKeys.Allocate();
+            searchKey.PanelType = typeof(T);
+            searchKey.Level = uiLevel;
+            var iPanel = UIKit.Table.GetPanelsByPanelSearchKeys(searchKey).LastOrDefault();
+            if (iPanel is UIPanel)
+            {
+                iPanel.Close(fromLoad: false);
+                UIKit.Table.Remove(iPanel);
+                iPanel.Info.Recycle2Cache();
+                iPanel.Info = null;
+                searchKey.Recycle2Cache();
+            }
+
             _uiDic[uiLevel].Remove(dialog);
             GetEventComponent().Send(UIEvents.OnDialogClose.Create(dialogName));
         }
@@ -186,7 +224,19 @@ namespace Runtime.Business.Manager
         {
             var uiLevel = _uiLevelMap[dialog.GetType()];
             var dialogName = dialog.dialogName;
-            UIKit.ClosePanel(dialog);
+            var searchKey = PanelSearchKeys.Allocate();
+            searchKey.PanelType = typeof(T);
+            searchKey.Level = uiLevel;
+            var iPanel = UIKit.Table.GetPanelsByPanelSearchKeys(searchKey).LastOrDefault();
+            if (iPanel is UIPanel)
+            {
+                iPanel.Close(fromLoad: false);
+                UIKit.Table.Remove(iPanel);
+                iPanel.Info.Recycle2Cache();
+                iPanel.Info = null;
+                searchKey.Recycle2Cache();
+            }
+
             _uiDic[uiLevel].Remove(dialog);
             GetEventComponent().Send(UIEvents.OnDialogClose.Create(dialogName));
         }
@@ -263,19 +313,19 @@ namespace Runtime.Business.Manager
         {
             var cardId = evt.CardId;
             var cardEntry = DataManager.Instance.GetCard(cardId);
-            var normalSprite = DataManager.Instance.LoadCardSprite(cardId);
+            var normalSprite = ResManager.Instance.LoadCardSprite(cardId);
             normalCard.sprite = normalSprite;
             if (cardEntry.HasSpecial)
             {
                 Sprite reverseSprite; 
                 if (evt.ShowExtension)
                 {
-                    reverseSprite = DataManager.Instance.LoadExtensionCardSprite(cardId);
+                    reverseSprite = ResManager.Instance.LoadExtensionCardSprite(cardId);
                     specialCard.overrideSprite = reverseSprite;
                 }
                 else
                 {
-                    reverseSprite = DataManager.Instance.LoadSpecialCardSprite(cardId);
+                    reverseSprite = ResManager.Instance.LoadSpecialCardSprite(cardId);
                     specialCard.sprite = reverseSprite;
                     specialCard.overrideSprite = null;
                 }

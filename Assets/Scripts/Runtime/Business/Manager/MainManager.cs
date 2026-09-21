@@ -6,18 +6,15 @@ namespace Runtime.Business.Manager
 {
     public class MainManager : EventMonoBehaviour
     {
-        private ResLoader _resLoader;
         private void Awake()
         {
-            ResKit.Init();
             DataManager.Instance.InitCsv();
         }
 
         private void Start()
         {
-            _resLoader = ResLoader.Allocate();
-            ExtUIManager.Instance.OpenDialog<PackUI>(Dialog.Pack_UI);
-            ExtUIManager.Instance.OpenDialog<MenuUI>(Dialog.Menu_UI, UILevel.PopUI);
+            ExtUIManager.Instance.OpenDialog<PackUI>(Dialog.PackUI);
+            ExtUIManager.Instance.OpenDialog<MenuUI>(Dialog.MenuUI, UILevel.PopUI);
         }
 
         private void Update()

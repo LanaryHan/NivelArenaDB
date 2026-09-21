@@ -24,14 +24,14 @@ namespace Runtime.Business.Handler
             });
             ec.Listen<UIEvents.OnDialogOpen>(e =>
             {
-                if (e.Dialog.dialogName is Dialog.Message_UI)
+                if (e.Dialog.dialogName is Dialog.MessageUI)
                 {
                     _enable = false;
                 }
             });
             ec.Listen<UIEvents.OnDialogClose>(e =>
             {
-                if (e.Dialog is Dialog.Message_UI)
+                if (e.Dialog is Dialog.MessageUI)
                 {
                     _enable = true;
                 }

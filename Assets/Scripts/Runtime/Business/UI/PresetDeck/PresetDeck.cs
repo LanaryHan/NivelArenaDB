@@ -19,7 +19,7 @@ namespace UI
         {
             _name = pdName;
             nameText.text = pdName;
-            var sprite = DataManager.Instance.LoadCardSprite(leaderId);
+            var sprite = ResManager.Instance.LoadCardSprite(leaderId);
             cardImage.sprite = sprite;
             deleteBtn.gameObject.SetActive(!isPreset);
             editBtn.gameObject.SetActive(!isPreset);
@@ -40,7 +40,7 @@ namespace UI
 
             button.onClick.AddListener(() =>
             {
-                ExtUIManager.Instance.OpenDialog<DeckEditorUI>(Dialog.Deck_Editor_UI,
+                ExtUIManager.Instance.OpenDialog<DeckEditorUI>(Dialog.DeckEditorUI,
                     new DeckEditorData(pdName, !isPreset));
             });
         }

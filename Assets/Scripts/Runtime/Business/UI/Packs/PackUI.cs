@@ -63,14 +63,14 @@ namespace UI
             if (id.Length != 7)
             {
                 messageParam.SetMessage("卡牌id应该为7位数字字母组合，例如ST01001。");
-                ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.Message_UI, messageParam, UILevel.PopUI);
+                ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.MessageUI, messageParam, UILevel.PopUI);
                 return;
             }
             
             if (!id.StartsWith("ST") && !id.StartsWith("BT") && !id.StartsWith("SB"))
             {
                 messageParam.SetMessage("卡包错误!");
-                ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.Message_UI, messageParam, UILevel.PopUI);
+                ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.MessageUI, messageParam, UILevel.PopUI);
                 return;
             }
 
@@ -79,11 +79,11 @@ namespace UI
             if (cardEntry == null)
             {
                 messageParam.SetMessage("卡牌id不存在！");
-                ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.Message_UI, messageParam, UILevel.PopUI);
+                ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.MessageUI, messageParam, UILevel.PopUI);
                 return;
             }
 
-            ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.Card_Details_UI, new CardDetailData(cardEntry.Id));
+            ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.CardDetailUI, new CardDetailData(cardEntry.Id));
         }
     }
 }

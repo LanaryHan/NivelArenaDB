@@ -109,7 +109,6 @@ namespace UI
 
         private static string _imagePath;
         private static Vector2 _imageSize;
-        private ResLoader _resLoader;
         public override bool CanCloseByBackKey => false;
 
         public static MessageParam Create()
@@ -117,7 +116,7 @@ namespace UI
             var param = new MessageParam();
             _imagePath = null;
             _imageSize = Vector2.zero;
-            ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.Message_UI, param, UILevel.PopUI);
+            ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.MessageUI, param, UILevel.PopUI);
             return param;
         }
 
@@ -126,16 +125,10 @@ namespace UI
             var param = new MessageParam();
             _imagePath = imageBundleName;
             _imageSize = new Vector2(size.x, size.y);
-            ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.Message_UI, param, UILevel.PopUI);
+            ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.MessageUI, param, UILevel.PopUI);
             return param;
         }
-
-        protected override void OnInit(IUIData uiData = null)
-        {
-            base.OnInit(uiData);
-            _resLoader = ResLoader.Allocate();
-        }
-
+        
         private void Start()
         {
             if (mUIData is MessageParam messageParam)
@@ -154,7 +147,7 @@ namespace UI
                 return;
             }
 
-            var sprite = _resLoader.LoadSync<Sprite>(_imagePath);
+            var sprite = ResManager.Instance.Load<Sprite>(_imagePath);
             image.gameObject.SetActive(sprite);
             image.overrideSprite = sprite;
             if (_imageSize.x > ((RectTransform)transform).sizeDelta.x)
@@ -233,7 +226,6 @@ namespace UI
             messageParam?.CloseCallback?.Invoke();
             _imagePath = null;
             _imageSize = Vector2.zero;
-            _resLoader.Dispose();
         }
     }
 }

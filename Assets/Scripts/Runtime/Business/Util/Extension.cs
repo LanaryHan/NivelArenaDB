@@ -11,7 +11,7 @@ namespace Runtime.Business.Util
 {
     public static class Extension
     {
-        public static void CloseSelfByExt(this UIPanel panel)
+        public static void CloseSelfByExt<T>(this T panel) where T : UIPanel
         {
             ExtUIManager.Instance.CloseDialog(panel);
         }

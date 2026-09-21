@@ -90,7 +90,7 @@ namespace QFramework
 		/// <summary>
 		/// 关闭,不允许子类调用
 		/// </summary>
-		void IPanel.Close(bool destroyed)
+		void IPanel.Close(bool destroyed, bool fromLoad)
 		{
 			Info.UIData = mUIData;
 			mOnClosed?.Invoke();
@@ -104,10 +104,13 @@ namespace QFramework
 				Destroy(gameObject);
 			}
 
-			var panelInterface = this as IPanel;
-			panelInterface.Loader.Unload();
-			UIKit.Config.PanelLoaderPool.RecycleLoader(panelInterface.Loader);
-			panelInterface.Loader = null;
+			if (fromLoad)
+			{
+				var panelInterface = this as IPanel;
+				panelInterface.Loader.Unload();
+				UIKit.Config.PanelLoaderPool.RecycleLoader(panelInterface.Loader);
+				panelInterface.Loader = null;
+			}
 
 			mUIData = null;
 		}

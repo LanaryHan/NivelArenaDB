@@ -25,7 +25,7 @@ namespace UI
             _cardId = cardId;
             
             var cardEntry = DataManager.Instance.GetCard(cardId);
-            var sprite = DataManager.Instance.LoadCardSprite(cardId);
+            var sprite = ResManager.Instance.LoadCardSprite(cardId);
             image.sprite = sprite;
             UpdateFrame(cardEntry.Attribute);
             button.onClick.AddListener(OnClick);
@@ -34,7 +34,7 @@ namespace UI
 
         private void OnClick()
         {
-            ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.Card_Details_UI, new CardDetailData(_cardId));
+            ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.CardDetailUI, new CardDetailData(_cardId));
         }
         private void UpdateFrame(ElementAttribute attribute)
         {

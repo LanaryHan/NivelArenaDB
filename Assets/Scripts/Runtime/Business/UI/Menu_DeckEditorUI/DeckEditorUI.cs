@@ -53,7 +53,7 @@ namespace UI
             var ec = GetEventComponent();
             ec.Listen<OnDialogClose>(evt =>
             {
-                if (evt.Dialog is Dialog.Card_Details_UI)
+                if (evt.Dialog is Dialog.CardDetailUI)
                 {
                     var logic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
                     if (logic.IsBuilding)
@@ -159,7 +159,7 @@ namespace UI
             var leaderCard = cardEntries.FirstOrDefault(card => card.CardType is CardType.Leader);
             if (leaderCard != null)
             {
-                var sprite = DataManager.Instance.LoadCardSprite(leaderCard.Id);
+                var sprite = ResManager.Instance.LoadCardSprite(leaderCard.Id);
                 leaderImage.overrideSprite = sprite;
                 cardEntries.Remove(leaderCard);
             }
@@ -172,12 +172,12 @@ namespace UI
             {
                 var cardEntry = cardEntries[i];
                 var btn = Instantiate(tempCard, i < 4 ? content1 : content2);
-                var cardSprite = DataManager.Instance.LoadCardSprite(cardEntry.Id);
+                var cardSprite = ResManager.Instance.LoadCardSprite(cardEntry.Id);
                 btn.image.sprite = cardSprite;
                 btn.gameObject.SetActive(true);
                 btn.onClick.AddListener(() =>
                 {
-                    ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.Card_Details_UI, new CardDetailData(cardEntry.Id));
+                    ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.CardDetailUI, new CardDetailData(cardEntry.Id));
                 });
             }
         }
@@ -196,7 +196,7 @@ namespace UI
                 return;
             }
 
-            ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.Card_Details_UI, new CardDetailData(_leaderId));
+            ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.CardDetailUI, new CardDetailData(_leaderId));
         }
         protected override void OnClose()
         {
