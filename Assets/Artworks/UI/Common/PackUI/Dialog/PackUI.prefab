@@ -1925,6 +1925,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608cfd61f5684a869ae587a2d37f19fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AutoDestroy: 0
+  Parent: {fileID: 0}
+  Children: []
   tempBtn: {fileID: 8644623187871310389}
   contents:
   - {fileID: 8261438013244079751}

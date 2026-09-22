@@ -1,15 +1,21 @@
+using System;
+using System.Collections.Generic;
 using System.IO;
-using QFramework;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using Runtime.Business.Data;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using ZEvent;
+using Object = UnityEngine.Object;
 
 namespace Runtime.Business.Manager
 {
     public class ResManager : Singleton<ResManager>
     {
-        protected ResManager(){ }
+        private static readonly Dictionary<string, AsyncOperationHandle> _handles = new();
+        public ResManager(){ }
 
         #region Common
 
@@ -22,6 +28,7 @@ namespace Runtime.Business.Manager
 
             var handle = Addressables.LoadAssetAsync<TObject>(key);
             handle.WaitForCompletion();
+            _handles[key] = handle;
             TObject result = default;
             var isOk = handle.IsDone && handle.Status is AsyncOperationStatus.Succeeded;
             if (isOk)
@@ -61,6 +68,44 @@ namespace Runtime.Business.Manager
             }
 
             return Object.Instantiate(obj, parent);
+        }
+
+        private async UniTask AsyncHandle<TObject>(AsyncOperationHandle<TObject> handle, CancellationToken cancellationToken = default)
+        {
+            while (!handle.IsDone)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                await handle.ToUniTask(cancellationToken: cancellationToken);
+            }
+
+            if (handle.Status is not AsyncOperationStatus.Succeeded)
+            {
+                Addressables.Release(handle);
+                throw handle.OperationException;
+            }
+        }
+        
+        private string GetDialogAddress(Type type)
+        {
+            return $"{type.Name}/Dialog/{type.Name}.prefab";
+        }
+
+        public async UniTask<TObject> LoadAsync<TObject>(Type type)
+        {
+            var key = GetDialogAddress(type);
+            var handle = Addressables.LoadAssetAsync<TObject>(key);
+            _handles[key] = handle;
+            await AsyncHandle(handle);
+            return handle.Result;
+        }
+
+        public void Release(Type type)
+        {
+            var key = GetDialogAddress(type);
+            if (_handles.TryGetValue(key, out var handle))
+            {
+                Addressables.Release(handle);
+            }
         }
 
         #endregion

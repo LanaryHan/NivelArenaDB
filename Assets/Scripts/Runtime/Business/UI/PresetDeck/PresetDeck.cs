@@ -1,7 +1,8 @@
-using QFramework;
 using Runtime.Business.Manager;
 using TMPro;
+using UIFramework;
 using UnityEngine.UI;
+using ZEvent;
 
 namespace UI
 {
@@ -40,8 +41,7 @@ namespace UI
 
             button.onClick.AddListener(() =>
             {
-                ExtUIManager.Instance.OpenDialog<DeckEditorUI>(Dialog.DeckEditorUI,
-                    new DeckEditorData(pdName, !isPreset));
+                UIFrame.Show<DeckEditorUI>(new DeckEditorData(pdName, !isPreset));
             });
         }
     }

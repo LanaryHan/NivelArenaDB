@@ -319,6 +319,27 @@ namespace UIFramework
             uiLayers.TryGetValue(layer, out var result);
             return result;
         }
+        
+        /// <summary>
+        /// 获得UI层RectTransform
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static RectTransform GetLayerTransform<T>() where T : UILayer
+        {
+            var enumerator = uiLayers.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                var current = enumerator.Current;
+                if (current.Key.GetType() == typeof(T))
+                {
+                    return current.Value;
+                }
+            }
+
+            return null;
+        }
+        
         #endregion
 
         #region 刷新

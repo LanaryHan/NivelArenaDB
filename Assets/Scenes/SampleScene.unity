@@ -862,7 +862,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224145040205201487}
-  - component: {fileID: 114293993447378873}
   - component: {fileID: 224145040205201488}
   m_Layer: 5
   m_Name: UI Manager
@@ -983,18 +982,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
---- !u!114 &114293993447378873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541209061761197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc84f25d84334e168bf64050b91e1fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!124 &124000013775077825
 Behaviour:
   m_ObjectHideFlags: 0

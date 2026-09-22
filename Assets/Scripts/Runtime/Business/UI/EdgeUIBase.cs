@@ -1,13 +1,14 @@
 using System;
 using Common;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using QFramework;
+using UIFramework;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Runtime.Business.UI
 {
-    public class EdgeUIBase : UIPanel
+    public class EdgeUIBase : UIBase
     {
         public GameObject bg;
         public GameObject mask;
@@ -22,21 +23,21 @@ namespace Runtime.Business.UI
         protected Action OnShowEdgeComplete { get; set; }
         protected Action OnHideEdgeStart { get; set; }
         protected Action OnHideEdgeComplete { get; set; }
-        public override bool CanCloseByBackKey => false;
+        // public override bool CanCloseByBackKey => false;
 
-        protected override void OnInit(IUIData uiData = null)
+        protected override UniTask OnCreate()
         {
-            base.OnInit(uiData);
             _hideValue = root.anchoredPosition.x;
             _showMap = new LinearMap(-_hideValue, 0f, _hideValue, 0.75f);
             _hideMap = new LinearMap(_hideValue, 0f, -_hideValue, 0.75f);
             button.onClick.AddListener(OnClick);
             bgButton.onClick.AddListener(OnClick);
+            return base.OnCreate();
         }
 
-        protected override void OnOpen(IUIData uiData = null)
+        protected override void OnShow()
         {
-            base.OnOpen(uiData);
+            base.OnShow();
             bg.SetActive(false);
             mask.SetActive(true);
         }
@@ -96,11 +97,6 @@ namespace Runtime.Business.UI
                 bg.SetActive(false);
                 mask.SetActive(true);
             }
-        }
-
-        protected override void OnClose()
-        {
-            
         }
     }
 }

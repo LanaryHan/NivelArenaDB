@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using QFramework;
+using Common;
 using UnityEngine;
 
 namespace Logic

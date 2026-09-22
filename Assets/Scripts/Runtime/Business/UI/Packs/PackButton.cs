@@ -1,7 +1,7 @@
-using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Manager;
 using TMPro;
+using UIFramework;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,8 +29,8 @@ namespace UI
 
         private void OnClick()
         {
-            ExtUIManager.Instance.OpenDialog<CardsUI>(Dialog.CardsUI, new CardsUIData(_pack));
-            ExtUIManager.Instance.OpenDialog<CardFilterUI>(Dialog.CardFilterUI, new CardFilterData(), UILevel.PopUI);
+            UIFrame.Show<CardsUI>(new CardsUIData(_pack));
+            UIFrame.Show<CardFilterUI>(new CardFilterData());
         }
     }
 }

@@ -1,6 +1,7 @@
-using QFramework;
 using UI;
+using UIFramework;
 using UnityEngine.InputSystem;
+using ZEvent;
 
 namespace Runtime.Business.Manager
 {
@@ -13,8 +14,8 @@ namespace Runtime.Business.Manager
 
         private void Start()
         {
-            ExtUIManager.Instance.OpenDialog<PackUI>(Dialog.PackUI);
-            ExtUIManager.Instance.OpenDialog<MenuUI>(Dialog.MenuUI, UILevel.PopUI);
+            UIFrame.Show<PackUI>();
+            UIFrame.Show<MenuUI>();
         }
 
         private void Update()

@@ -1,10 +1,10 @@
-using QFramework;
 using Runtime.Business.Data;
-using Runtime.Business.Data.Entry;
 using Runtime.Business.Manager;
+using UIFramework;
 using UnityEngine;
 using UnityEngine.UI;
 using Util;
+using ZEvent;
 
 namespace UI
 {
@@ -15,7 +15,6 @@ namespace UI
         public Image frame;
 
         private string _cardId;
-        private CardEntry _cardEntry;
         public void Init(string cardId)
         {
             button.onClick.RemoveAllListeners();
@@ -26,12 +25,11 @@ namespace UI
             image.sprite = sprite;
             UpdateFrame(cardEntry.Attribute);
             button.onClick.AddListener(OnClick);
-            _cardEntry = cardEntry;
         }
 
         private void OnClick()
         {
-            ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.CardDetailUI, new CardDetailData(_cardId));
+            UIFrame.Show<CardDetailUI>(new CardDetailData(_cardId));
         }
         private void UpdateFrame(ElementAttribute attribute)
         {
@@ -51,7 +49,6 @@ namespace UI
         public void Reset()
         {
             _cardId = null;
-            _cardEntry = null;
         }
     }
 }

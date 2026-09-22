@@ -1,7 +1,8 @@
-using QFramework;
+using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
+using ZEvent;
 
 namespace Runtime.Business.Handler
 {
@@ -24,14 +25,14 @@ namespace Runtime.Business.Handler
             });
             ec.Listen<UIEvents.OnDialogOpen>(e =>
             {
-                if (e.Dialog.dialogName is Dialog.MessageUI)
+                if (e.Dialog is MessageUI)
                 {
                     _enable = false;
                 }
             });
             ec.Listen<UIEvents.OnDialogClose>(e =>
             {
-                if (e.Dialog is Dialog.MessageUI)
+                if (e.Dialog is MessageUI)
                 {
                     _enable = true;
                 }

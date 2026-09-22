@@ -1159,6 +1159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f15b4fb8cad41ab8587e2c7afdf0357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AutoDestroy: 1
+  Parent: {fileID: 0}
+  Children: []
   nameInputField: {fileID: 2141170499303966764}
   titleText: {fileID: 8070511443238209230}
   closeBtn: {fileID: 6244197576503347330}

@@ -1528,6 +1528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06e2d7c2fff4f2aab2e69fec60117b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AutoDestroy: 1
+  Parent: {fileID: 0}
+  Children: []
   personalContent: {fileID: 2616434223433152913}
   presetContent: {fileID: 2709389639898760517}
   tmpDeck: {fileID: 7379322142954405926}

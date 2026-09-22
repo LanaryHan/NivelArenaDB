@@ -1,8 +1,8 @@
 using System;
-using QFramework;
 using Runtime.Business.Util;
 using TMPro;
 using UnityEngine.UI;
+using ZEvent;
 
 namespace UI
 {

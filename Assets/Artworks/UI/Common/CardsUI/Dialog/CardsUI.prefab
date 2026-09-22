@@ -690,9 +690,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9863bb5543394bea9668d38ac3c4e8dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AutoDestroy: 0
+  Parent: {fileID: 0}
+  Children: []
   tempCardGroup: {fileID: 9033804079493603385}
   scroller: {fileID: 433137282523919506}
-  content: {fileID: 7765880647290093638}
   closeBtn: {fileID: 6135243201476555034}
   title: {fileID: 94744643841549786}
 --- !u!1 &6523845464890733600

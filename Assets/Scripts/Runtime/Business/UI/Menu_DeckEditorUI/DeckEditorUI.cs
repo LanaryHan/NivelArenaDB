@@ -1,19 +1,21 @@
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using Logic;
-using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
 using Runtime.Business.Manager;
 using Runtime.Business.Util;
 using TMPro;
 using UIEvents;
+using UIFramework;
 using UnityEngine;
 using UnityEngine.UI;
+using ZEvent;
 
 namespace UI
 {
-    public class DeckEditorData : UIPanelData
+    public class DeckEditorData : UIData
     {
         public string DeckName;
         public bool CanEdit;
@@ -24,7 +26,9 @@ namespace UI
             CanEdit = canEdit;
         }
     }
-    public class DeckEditorUI : UIPanel
+    
+    [PanelLayer]
+    public class DeckEditorUI : UIComponent<DeckEditorData>
     {
         public Button closeBtn;
         public Button leaderCard;
@@ -38,22 +42,43 @@ namespace UI
         public Button editBtn;
 
         private string _deckName;
-        public override bool CanCloseByBackKey => true;
+        // public override bool CanCloseByBackKey => true;
         private string _leaderId;
 
-        protected override void OnInit(IUIData uiData = null)
+        protected override UniTask OnCreate()
         {
-            base.OnInit(uiData);
-            if (mUIData is not DeckEditorData deckEditorData)
+            tempCard.gameObject.SetActive(false);
+            saveBtn.gameObject.SetActive(Data.CanEdit);
+            editBtn.gameObject.SetActive(Data.CanEdit);
+            cancelBtn.gameObject.SetActive(Data.CanEdit);
+            return base.OnCreate();
+        }
+
+        protected override void OnShow()
+        {
+            var logic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
+            if (logic.IsBuilding)
             {
-                return;
+                UpdateViewBuilding();
+            }
+            else
+            {
+                UpdateView(logic.GetDeckEntry(Data.DeckName));
             }
 
-            tempCard.gameObject.SetActive(false);
+            if (Data.CanEdit)
+            {
+                UpdateButtons(logic.IsBuilding);
+            }
+            base.OnShow();
+        }
+
+        protected override void OnBind()
+        {
             var ec = GetEventComponent();
             ec.Listen<OnDialogClose>(evt =>
             {
-                if (evt.Dialog is Dialog.CardDetailUI)
+                if (evt.Dialog is CardDetailUI)
                 {
                     var logic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
                     if (logic.IsBuilding)
@@ -64,11 +89,8 @@ namespace UI
                     }
                 }
             });
-            closeBtn.onClick.AddListener(this.CloseSelfByExt);
-            saveBtn.gameObject.SetActive(deckEditorData.CanEdit);
-            editBtn.gameObject.SetActive(deckEditorData.CanEdit);
-            cancelBtn.gameObject.SetActive(deckEditorData.CanEdit);
-            if (deckEditorData.CanEdit)
+            closeBtn.onClick.AddListener(CloseSelf);
+            if (Data.CanEdit)
             {
                 saveBtn.onClick.AddListener(() =>
                 {
@@ -81,33 +103,21 @@ namespace UI
                     UpdateButtons(true);
                 });
             }
-
             cancelBtn.onClick.AddListener(OnClickCancel);
             leaderCard.onClick.AddListener(OnClickLeaderCard);
+            base.OnBind();
         }
-        
-        protected override void OnOpen(IUIData uiData = null)
+
+        protected override void OnUnbind()
         {
-            base.OnOpen(uiData);
-            if (mUIData is not DeckEditorData deckEditorData)
-            {
-                return;
-            }
-
-            var logic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
-            if (logic.IsBuilding)
-            {
-                UpdateViewBuilding();
-            }
-            else
-            {
-                UpdateView(logic.GetDeckEntry(deckEditorData.DeckName));
-            }
-
-            if (deckEditorData.CanEdit)
-            {
-                UpdateButtons(logic.IsBuilding);
-            }
+            var ec = GetEventComponent();
+            ec.ClearListeners();
+            closeBtn.onClick.RemoveAllListeners();
+            saveBtn.onClick.RemoveAllListeners();
+            editBtn.onClick.RemoveAllListeners();
+            cancelBtn.onClick.RemoveAllListeners();
+            leaderCard.onClick.RemoveAllListeners();
+            base.OnUnbind();
         }
         
         private void OnClickCancel()
@@ -122,10 +132,10 @@ namespace UI
                     {
                         if (b is MessageUI.ButtonType.NegativeBtn)
                         {
-                            EventManager.Instance.Send(GameEvents.SetBuildingState.Create(false, this.CloseSelfByExt));
+                            EventManager.Instance.Send(GameEvents.SetBuildingState.Create(false, CloseSelf));
                         }
 
-                        u.CloseSelfByExt();
+                        UIFrame.Hide(u);
                     });
             }
             else
@@ -177,7 +187,7 @@ namespace UI
                 btn.gameObject.SetActive(true);
                 btn.onClick.AddListener(() =>
                 {
-                    ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.CardDetailUI, new CardDetailData(cardEntry.Id));
+                    UIFrame.Show<CardDetailUI>(new CardDetailData(cardEntry.Id));
                 });
             }
         }
@@ -196,10 +206,7 @@ namespace UI
                 return;
             }
 
-            ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.CardDetailUI, new CardDetailData(_leaderId));
-        }
-        protected override void OnClose()
-        {
+            UIFrame.Show<CardDetailUI>(new CardDetailData(_leaderId));
         }
     }
 }

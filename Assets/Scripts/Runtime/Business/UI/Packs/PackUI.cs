@@ -1,13 +1,15 @@
-using QFramework;
+using Cysharp.Threading.Tasks;
 using Runtime.Business.Manager;
 using Runtime.Business.Util;
 using TMPro;
+using UIFramework;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
 {
-    public class PackUI : UIPanel
+    [PanelLayer]
+    public class PackUI : UIBase
     {
         [Header("Pack")]
         public PackButton tempBtn;
@@ -18,18 +20,20 @@ namespace UI
         public Button clearBtn;
         
 
-        public override bool CanCloseByBackKey => false;
-
-        protected override void OnInit(IUIData uiData = null)
+        // public override bool CanCloseByBackKey => false;
+        
+        protected override UniTask OnCreate()
         {
-            base.OnInit(uiData);
             tempBtn.gameObject.SetActive(false);
+            return base.OnCreate();
         }
 
-        protected override void OnOpen(IUIData uiData = null)
+        protected override void OnShow()
         {
-            base.OnOpen(uiData);
-            contents.ForEach(content => content.RemoveAllChildren());
+            foreach (var content in contents)
+            {
+                content.RemoveAllChildren();
+            }
 
             foreach (var (deck, entry) in DataManager.Instance.Packs)
             {
@@ -39,11 +43,6 @@ namespace UI
             
             searchBtn.onClick.AddListener(OnClickSearch);
             clearBtn.onClick.AddListener(OnClickClear);
-        }
-
-        protected override void OnClose()
-        {
-            
         }
         
         private void OnClickClear()
@@ -58,19 +57,19 @@ namespace UI
             var messageParam = new MessageParam().SetTitle("Warning").PositiveButton("OK").CloseButton().SetOnClick(
                 (_, ui) =>
                 {
-                    ExtUIManager.Instance.CloseDialog(ui);
+                    UIFrame.Hide(ui);
                 });
             if (id.Length != 7)
             {
                 messageParam.SetMessage("卡牌id应该为7位数字字母组合，例如ST01001。");
-                ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.MessageUI, messageParam, UILevel.PopUI);
+                UIFrame.Show<MessageUI>(messageParam);
                 return;
             }
             
             if (!id.StartsWith("ST") && !id.StartsWith("BT") && !id.StartsWith("SB"))
             {
                 messageParam.SetMessage("卡包错误!");
-                ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.MessageUI, messageParam, UILevel.PopUI);
+                UIFrame.Show<MessageUI>(messageParam);
                 return;
             }
 
@@ -79,11 +78,11 @@ namespace UI
             if (cardEntry == null)
             {
                 messageParam.SetMessage("卡牌id不存在！");
-                ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.MessageUI, messageParam, UILevel.PopUI);
+                UIFrame.Show<MessageUI>(messageParam);
                 return;
             }
 
-            ExtUIManager.Instance.OpenDialog<CardDetailUI>(Dialog.CardDetailUI, new CardDetailData(cardEntry.Id));
+            UIFrame.Show<CardDetailUI>(new CardDetailData(cardEntry.Id));
         }
     }
 }
