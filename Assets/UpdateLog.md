@@ -1,5 +1,18 @@
 # Nivel Arena Database 更新日志
 
+## [v1.9.2] 2026-09-22
+
+### Added
+- 添加Enhanced Scroller;
+- 添加Build Report Tool;
+
+### Changed
+- 修改资源管理工具为Addressable;
+- 修改UI框架为UIFrame;
+
+### Deprecated
+- 从项目中移除QFramework
+
 ## [v1.8.0] 2026-08-21
 
 ### Added
