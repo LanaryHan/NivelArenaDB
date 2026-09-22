@@ -1,16 +1,18 @@
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using EnhancedUI.EnhancedScroller;
 using GameEvents;
-using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
 using Runtime.Business.Manager;
 using Runtime.Business.Util;
 using TMPro;
 using UI;
+using UIFramework;
 using UnityEngine;
 using UnityEngine.UI;
+using ZEvent;
 
 namespace GameEvents
 {
@@ -35,7 +37,7 @@ namespace GameEvents
 
 namespace UI
 {
-    public class CardsUIData : UIPanelData
+    public class CardsUIData : UIData
     {
         public Deck Pack;
 
@@ -45,7 +47,8 @@ namespace UI
         }
     }
 
-    public class CardsUI : UIPanel, IEnhancedScrollerDelegate
+    [PanelLayer]
+    public class CardsUI : UIComponent<CardsUIData>, IEnhancedScrollerDelegate
     {
         public class CardWrapper
         {
@@ -60,28 +63,25 @@ namespace UI
         
         public CardGroup tempCardGroup;
         public EnhancedScroller scroller;
-        public Transform content;
         public Button closeBtn;
         public TMP_Text title;
 
         private readonly List<CardWrapper> _cardWrappers = new();
         private readonly List<CardWrapperGroup> _cardWrapperGroups = new();
         private float _cardItemSize;
-        public override bool CanCloseByBackKey => true;
+        // public override bool CanCloseByBackKey => true;
 
-        protected override void OnInit(IUIData uiData = null)
+        protected override UniTask OnCreate()
         {
-            base.OnInit(uiData);
-            if (uiData is not CardsUIData data)
-            {
-                return;
-            }
-
             _cardItemSize = tempCardGroup.layoutGroup.cellSize.y;
             tempCardGroup.gameObject.SetActive(false);
-            closeBtn.onClick.AddListener(this.CloseSelfByExt);
+            return base.OnCreate();
+        }
 
-            InitData(data.Pack);
+        protected override void OnShow()
+        {
+            base.OnShow();
+            InitData(Data.Pack);
             scroller.Delegate = this;
             scroller.cellViewWillRecycle += cell =>
             {
@@ -91,8 +91,30 @@ namespace UI
             scroller.ClearAll();
             scroller.ReloadData();
             
+            var packEntry = DataManager.Instance.GetPack(Data.Pack);
+            title.text = packEntry.Title;
+        }
+
+        protected override void OnBind()
+        {
+            closeBtn.onClick.AddListener(HideSelf);
             var ec = GetEventComponent();
             ec.Listen<UpdateCardByFilter>(OnUpdateCardByFilter);
+            base.OnBind();
+        }
+
+        protected override void OnUnbind()
+        {
+            closeBtn.onClick.RemoveAllListeners();
+            var ec = GetEventComponent();
+            ec.ClearListeners();
+            base.OnUnbind();
+        }
+
+        protected override void OnHide()
+        {
+            UIFrame.Hide<CardFilterUI>();
+            base.OnHide();
         }
 
         private void InitData(Deck pack)
@@ -120,23 +142,6 @@ namespace UI
                 };
                 _cardWrapperGroups.Add(cardWrapperGroup);
             }
-        }
-        protected override void OnOpen(IUIData uiData = null)
-        {
-            base.OnOpen(uiData);
-            if (uiData is not CardsUIData mainUIData)
-            {
-                return;
-            }
-            
-            content.RemoveAllChildren(tempCardGroup.transform, closeBtn.transform);
-            var packEntry = DataManager.Instance.GetPack(mainUIData.Pack);
-            title.text = packEntry.Title;
-        }
-
-        protected override void OnClose()
-        {
-            ExtUIManager.Instance.CloseDialog<CardFilterUI>();
         }
         
         private void OnUpdateCardByFilter(UpdateCardByFilter e)
@@ -234,7 +239,7 @@ namespace UI
             var cardWrapperGroup = _cardWrapperGroups[dataIndex];
             var rawCount = Mathf.CeilToInt(cardWrapperGroup.Cards.Count / 3f);
             var size = _cardItemSize * rawCount + tempCardGroup.layoutGroup.spacing.y * (rawCount - 1);
-            size += cardWrapperGroup.TypeName.IsNullOrEmpty() ? 50 : 150;   //标题 + 空位
+            size += string.IsNullOrEmpty(cardWrapperGroup.TypeName) ? 50 : 150;   //标题 + 空位
             return size;
         }
 

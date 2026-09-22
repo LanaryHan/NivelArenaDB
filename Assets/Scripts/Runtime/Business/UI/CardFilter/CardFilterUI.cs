@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-using QFramework;
+using Cysharp.Threading.Tasks;
 using Runtime.Business.UI;
-using Runtime.Business.Util;
+using UIFramework;
 
 namespace UI
 {
-    public class CardFilterData : UIPanelData
+    public class CardFilterData : UIData
     {
         public AttributeFlags AttributeFlags;
         public CardTypeFlags CardTypeFlags;
@@ -24,20 +24,17 @@ namespace UI
             KeywordFlags = keywordFlags;
         }
     }
-    public class CardFilterUI : EdgeUIBase
+    
+    [WindowLayer]
+    public class CardFilterUI : EdgeUIBase, IUIBaseData<CardFilterData>
     {
         public FilterFlagGroup[] filterFlagGroups;
-        public override bool CanCloseByBackKey => false;
+        // public override bool CanCloseByBackKey => false;
         
         private Dictionary<string, Action<Enum,bool>> _callbacks = new();
-        protected override void OnInit(IUIData uiData = null)
+
+        protected override UniTask OnCreate()
         {
-            base.OnInit(uiData);
-            if (uiData is not CardFilterData)
-            {
-                return;
-            }
-            
             foreach (var filterFlagGroup in filterFlagGroups)
             {
                 filterFlagGroup.Init(this);
@@ -47,119 +44,98 @@ namespace UI
             _callbacks.Add("CardTypeFlags", UpdateCardType);
             _callbacks.Add("CostFlags", UpdateCost);
             _callbacks.Add("KeywordFlags", UpdateKeyword);
-
+            
             var ec = GetEventComponent();
-            ec.Listen<UIEvents.OnDialogOpen>(e =>
+            ec.Listen<UIEvents.OnDialogShow>(e =>
             {
-                if (e.Dialog.dialogName is Dialog.CardDetailUI)
+                if (e.Dialog is CardDetailUI)
                 {
-                    this.HideSelfByExt();
+                    HideSelf();
                 }
             });
-            ec.Listen<UIEvents.OnDialogClose>(e =>
+            ec.Listen<UIEvents.OnDialogHide>(e =>
             {
-                if (e.Dialog is Dialog.CardDetailUI)
+                if (e.Dialog is CardDetailUI)
                 {
-                    if (UIKit.GetPanel<CardsUI>())
+                    if (UIFrame.Get<CardsUI>())
                     {
-                        this.ShowSelfByExt();
+                        UIFrame.Show(this);
                     }
                 }
             });
-            
+
             OnShowEdgeStart += () =>
             {
                 transform.SetAsLastSibling();
             };
+            return base.OnCreate();
         }
-        
+
         private void UpdateAttribute(Enum attributeFlags,bool value)
         {
-            if (mUIData is not CardFilterData data)
-            {
-                return;
-            }
-
             var flag = (AttributeFlags)attributeFlags;
             if (value)
             {
-                data.AttributeFlags |= flag;
+                Data.AttributeFlags |= flag;
             }
             else
             {
-                data.AttributeFlags &= ~flag;
+                Data.AttributeFlags &= ~flag;
             }
 
-            GetEventComponent().Send(GameEvents.UpdateCardByFilter.Create(mUIData as CardFilterData));
+            GetEventComponent().Send(GameEvents.UpdateCardByFilter.Create(Data));
         }
 
         private void UpdateCost(Enum costFlag, bool value)
         {
-            if (mUIData is not CardFilterData data)
-            {
-                return;
-            }
-
+            
             var flag = (CostFlags)costFlag;
             if (value)
             {
-                data.CostFlags |= flag;
+                Data.CostFlags |= flag;
             }
             else
             {
-                data.CostFlags &= ~flag;
+                Data.CostFlags &= ~flag;
             }
             
-            GetEventComponent().Send(GameEvents.UpdateCardByFilter.Create(mUIData as CardFilterData));
+            GetEventComponent().Send(GameEvents.UpdateCardByFilter.Create(Data));
         }
 
         private void UpdateCardType(Enum cardTypeFlags, bool value)
         {
-            if (mUIData is not CardFilterData data)
-            {
-                return;
-            }
-            
             var flag = (CardTypeFlags)cardTypeFlags;
             if (value)
             {
-                data.CardTypeFlags |= flag;
+                Data.CardTypeFlags |= flag;
             }
             else
             {
-                data.CardTypeFlags &= ~flag;
+                Data.CardTypeFlags &= ~flag;
             }
             
-            GetEventComponent().Send(GameEvents.UpdateCardByFilter.Create(mUIData as CardFilterData));
+            GetEventComponent().Send(GameEvents.UpdateCardByFilter.Create(Data));
         }
 
         private void UpdateKeyword(Enum keywordFlags, bool value)
         {
-            if (mUIData is not CardFilterData data)
-            {
-                return;
-            }
-            
             var flag = (KeywordFlags)keywordFlags;
             if (value)
             {
-                data.KeywordFlags |= flag;
+                Data.KeywordFlags |= flag;
             }
             else
             {
-                data.KeywordFlags &= ~flag;
+                Data.KeywordFlags &= ~flag;
             }
             
-            GetEventComponent().Send(GameEvents.UpdateCardByFilter.Create(mUIData as CardFilterData));
+            GetEventComponent().Send(GameEvents.UpdateCardByFilter.Create(Data));
         }
         public void UpdateFlags(string type, Enum flag, bool value)
         {
             _callbacks[type]?.Invoke(flag, value);
         }
-
-        protected override void OnClose()
-        {
-            
-        }
+        
+        public CardFilterData Data { get; set; }
     }
 }

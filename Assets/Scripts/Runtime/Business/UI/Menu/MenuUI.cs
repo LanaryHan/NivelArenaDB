@@ -1,63 +1,72 @@
+using Cysharp.Threading.Tasks;
 using Logic;
-using QFramework;
-using Runtime.Business.Manager;
 using Runtime.Business.UI;
-using Runtime.Business.Util;
+using UIFramework;
 using UnityEngine.UI;
 
 namespace UI
 {
+    [LoadingLayer]
     public class MenuUI : EdgeUIBase
     {
         public Button buildDeckBtn;
-        public override bool CanCloseByBackKey => false;
+        // public override bool CanCloseByBackKey => false;
 
-        protected override void OnInit(IUIData uiData = null)
+        protected override UniTask OnCreate()
         {
-            base.OnInit(uiData);
+            OnShowEdgeStart += () =>
+            {
+                transform.SetAsLastSibling(); 
+            };
+            
             var ec = GetEventComponent();
-            ec.Listen<UIEvents.OnDialogOpen>(_ =>
+            ec.Listen<UIEvents.OnDialogShow>(e =>
             {
                 UpdateView();
             });
-            ec.Listen<UIEvents.OnDialogClose>(_ =>
+            ec.Listen<UIEvents.OnDialogHide>(e =>
             {
                 UpdateView();
             });
+            
+            return base.OnCreate();
+        }
+
+
+        protected override void OnBind()
+        {
             buildDeckBtn.onClick.AddListener(() =>
             {
                 DOQuick(false);
                 var logic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
                 if (logic.IsBuilding)
                 {
-                    ExtUIManager.Instance.OpenDialog<DeckEditorUI>(Dialog.DeckEditorUI,
-                        new DeckEditorData(null, true));
+                    UIFrame.Show<DeckEditorUI>(new DeckEditorData(null, true));
                 }
                 else
                 {
-                    ExtUIManager.Instance.OpenDialog<PresetDeckUI>(Dialog.PresetDeckUI);
+                    UIFrame.Show<PresetDeckUI>();
                 }
             });
-            OnShowEdgeStart += () =>
-            {
-                transform.SetAsLastSibling(); 
-            };
+            base.OnBind();
         }
 
+        protected override void OnUnbind()
+        {
+            buildDeckBtn.onClick.RemoveAllListeners();
+            base.OnUnbind();
+        }
+        
         private void UpdateView()
         {
-            if (ExtUIManager.Instance.UIDic[UILevel.Common].Count == 1)
+            if (UIFrame.GetLayerTransform<PanelLayer>().childCount == 1)
             {
-                this.ShowSelfByExt();
+                UIFrame.Show(this);
             }
             else
             {
-                this.HideSelfByExt();
+                HideSelf();
             }
-        }
-        protected override void OnClose()
-        {
-            
         }
     }
 }

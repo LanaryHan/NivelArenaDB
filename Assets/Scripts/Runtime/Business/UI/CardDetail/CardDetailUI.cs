@@ -1,18 +1,20 @@
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using Logic;
-using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
 using Runtime.Business.Manager;
 using Runtime.Business.Util;
 using TMPro;
+using UIFramework;
 using UnityEngine;
 using UnityEngine.UI;
+using ZEvent;
 
 namespace UI
 {
-    public class CardDetailData : UIPanelData
+    public class CardDetailData : UIData
     {
         public string CardId;
 
@@ -21,7 +23,9 @@ namespace UI
             CardId = cardId;
         }
     }
-    public class CardDetailUI : UIPanel
+    
+    [PanelLayer]
+    public class CardDetailUI : UIComponent<CardDetailData>
     {
         [Header("Top")]
         public TMP_Text cardNameTxt;
@@ -51,13 +55,18 @@ namespace UI
         public Button removeBtn;
         
         private CardEntry _cardEntry;
-        public override bool CanCloseByBackKey => true;
+        // public override bool CanCloseByBackKey => true;
 
-        protected override void OnInit(IUIData uiData = null)
+        protected override UniTask OnCreate()
         {
-            base.OnInit(uiData);
             tempSkillGroup.gameObject.SetActive(false);
-            closeBtn.onClick.AddListener(this.CloseSelfByExt);
+            
+            return base.OnCreate();
+        }
+
+        protected override void OnBind()
+        {
+            closeBtn.onClick.AddListener(HideSelf);
             addBtn.onClick.AddListener(() =>
             {
                 GetEventComponent().Send(GameEvents.AddCardToDeck.Create(_cardEntry.Id));
@@ -66,22 +75,27 @@ namespace UI
             {
                 GetEventComponent().Send(GameEvents.RemoveCardFromDeck.Create(_cardEntry.Id));
             });
+            base.OnBind();
         }
 
-        protected override void OnOpen(IUIData uiData = null)
+        protected override void OnUnbind()
         {
-            base.OnOpen(uiData);
+            closeBtn.onClick.RemoveAllListeners();
+            addBtn.onClick.RemoveAllListeners();
+            removeBtn.onClick.RemoveAllListeners();
+            base.OnUnbind();
+        }
+
+        protected override void OnShow()
+        {
+            base.OnShow();
             skillContent.RemoveAllChildren(tempSkillGroup.transform, skillBg);
             var buildDeckLogic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
             addBtn.gameObject.SetActive(buildDeckLogic.IsBuilding);
             removeBtn.gameObject.SetActive(buildDeckLogic.IsBuilding);
-            if (uiData is not CardDetailData cardData)
-            {
-                return;
-            }
             
             var ec = GetEventComponent();
-            var cardId = cardData.CardId;
+            var cardId = Data.CardId;
             _cardEntry = DataManager.Instance.GetCard(cardId);
             cardNameTxt.text = _cardEntry.Name;
             cardIdTxt.text = _cardEntry.ShowId;
@@ -102,7 +116,7 @@ namespace UI
             ec.Send(GameEvents.CardFollowReady.Create(cardTarget));
             ec.Send(GameEvents.ShowCard.Create(cardId, false));
         }
-
+        
         private void UpdateSkills()
         {
             var skillIds = _cardEntry.Skills;
@@ -164,10 +178,11 @@ namespace UI
             var triggerEntry = DataManager.Instance.GetTrigger(triggerId);
             triggerTxt.text = $"\t\t{triggerEntry.Description.ToDescription(_cardEntry.TriggerParam)}";
         }
-        
-        protected override void OnClose()
+
+        protected override void OnHide()
         {
             EventManager.Instance.Send(GameEvents.HideCard.Create());
+            base.OnHide();
         }
     }
 }

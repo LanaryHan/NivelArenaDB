@@ -4,13 +4,13 @@ using System.IO;
 using System.Linq;
 using GameEvents;
 using Newtonsoft.Json;
-using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
 using Runtime.Business.Manager;
-using Runtime.Business.Util;
 using UI;
+using UIFramework;
 using UnityEngine;
+using ZEvent;
 
 namespace GameEvents
 {
@@ -359,7 +359,7 @@ namespace Logic
         {
             MessageUI.Create().PositiveButton("OK").SetMessage(tips).SetOnClick((_, ui) =>
             {
-                ui.CloseSelfByExt();
+                UIFrame.Hide(ui);
             });
         }
 
@@ -376,7 +376,7 @@ namespace Logic
                     negative?.Invoke();
                 }
 
-                ui.CloseSelfByExt();
+                UIFrame.Hide(ui);
             });
         }
     }

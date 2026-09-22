@@ -1,44 +1,60 @@
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using Logic;
 using Newtonsoft.Json;
-using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
 using Runtime.Business.Manager;
 using Runtime.Business.Util;
+using UIFramework;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
 {
-    public class PresetDeckUI : UIPanel
+    
+    [PanelLayer]
+    public class PresetDeckUI : UIBase
     {
         public Transform personalContent;
         public Transform presetContent;
         public PresetDeck tmpDeck;
         public Button closeBtn;
         public Button addBtn;
-        public override bool CanCloseByBackKey => true;
+        // public override bool CanCloseByBackKey => true;
 
-        protected override void OnInit(IUIData uiData = null)
+        protected override UniTask OnCreate()
         {
-            base.OnInit(uiData);
+            
             tmpDeck.gameObject.SetActive(false);
-            closeBtn.onClick.AddListener(this.CloseSelfByExt);
-            addBtn.onClick.AddListener(() =>
-            {
-                GetEventComponent().Send(GameEvents.SetBuildingState.Create(true, null));
-                this.CloseSelfByExt();
-            });
+            return base.OnCreate();
         }
 
-        protected override void OnOpen(IUIData uiData = null)
+        protected override void OnShow()
         {
-            base.OnOpen(uiData);
+            base.OnShow();
             personalContent.RemoveAllChildren(addBtn.transform.parent);
             presetContent.RemoveAllChildren();
             UpdateView();
+        }
+
+        protected override void OnBind()
+        {
+            base.OnBind();
+            closeBtn.onClick.AddListener(CloseSelf);
+            addBtn.onClick.AddListener(() =>
+            {
+                GetEventComponent().Send(GameEvents.SetBuildingState.Create(true, null));
+                CloseSelf();
+            });
+        }
+
+        protected override void OnUnbind()
+        {
+            closeBtn.onClick.RemoveAllListeners();
+            addBtn.onClick.RemoveAllListeners();
+            base.OnUnbind();
         }
 
         private void UpdateView()
@@ -74,11 +90,6 @@ namespace UI
             }
 
             #endregion
-        }
-
-        protected override void OnClose()
-        {
-            
         }
     }
 }

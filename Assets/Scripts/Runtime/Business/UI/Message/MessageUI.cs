@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using QFramework;
 using Runtime.Business.Manager;
 using TMPro;
+using UIFramework;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
 {
-    public class MessageParam : UIPanelData
+    public class MessageParam : UIData
     {
         public Action<MessageUI.ButtonType, MessageUI> Callback { get; private set; }
         public string Title { get; private set; } = string.Empty;
@@ -70,7 +70,8 @@ namespace UI
         }
     }
     
-    public class MessageUI : UIPanel
+    [WindowLayer]
+    public class MessageUI : UIComponent<MessageParam>
     {
         [Serializable]
         public class MessageButton
@@ -109,14 +110,14 @@ namespace UI
 
         private static string _imagePath;
         private static Vector2 _imageSize;
-        public override bool CanCloseByBackKey => false;
+        // public override bool CanCloseByBackKey => false;
 
         public static MessageParam Create()
         {
             var param = new MessageParam();
             _imagePath = null;
             _imageSize = Vector2.zero;
-            ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.MessageUI, param, UILevel.PopUI);
+            UIFrame.Show<MessageUI>(param);
             return param;
         }
 
@@ -125,18 +126,21 @@ namespace UI
             var param = new MessageParam();
             _imagePath = imageBundleName;
             _imageSize = new Vector2(size.x, size.y);
-            ExtUIManager.Instance.OpenDialog<MessageUI>(Dialog.MessageUI, param, UILevel.PopUI);
+            UIFrame.Show<MessageUI>(param);
             return param;
         }
-        
+
+        protected override void OnShow()
+        {
+            Data.StartCallback?.Invoke(this);
+            base.OnShow();
+        }
+
         private void Start()
         {
-            if (mUIData is MessageParam messageParam)
-            {
-                InitImage();
-                InitButtons(messageParam);
-                InitContent(messageParam);
-            }
+            InitImage();
+            InitButtons();
+            InitContent();
         }
 
         private void InitImage()
@@ -158,7 +162,7 @@ namespace UI
             image.rectTransform.sizeDelta = _imageSize;
         }
 
-        private void InitButtons(MessageParam param)
+        private void InitButtons()
         {
             positiveBtn.btn.gameObject.SetActive(false);
             negativeBtn.btn.gameObject.SetActive(false);
@@ -166,15 +170,15 @@ namespace UI
             onlyNegativeBtn.btn.gameObject.SetActive(false);
             closeBtn.gameObject.SetActive(false);
 
-            if (param.Buttons == null)
+            if (Data.Buttons == null)
             {
                 return;
             }
 
-            var useSingle = param.Buttons.Count(btn => btn.Type is ButtonType.NegativeBtn or ButtonType.PositiveBtn) == 1;
+            var useSingle = Data.Buttons.Count(btn => btn.Type is ButtonType.NegativeBtn or ButtonType.PositiveBtn) == 1;
             var usePositive = useSingle ? onlyPositiveBtn : positiveBtn;
             var useNegative = useSingle ? onlyNegativeBtn : negativeBtn;
-            foreach (var button in param.Buttons)
+            foreach (var button in Data.Buttons)
             {
                 if (button.Type is ButtonType.NegativeBtn)
                 {
@@ -196,36 +200,35 @@ namespace UI
             }
         }
 
-        private void InitContent(MessageParam param)
+        private void InitContent()
         {
-            if (!string.IsNullOrEmpty(param!.Title))
+            if (!string.IsNullOrEmpty(Data.Title))
             {
                 titleTxt.enabled = true;
-                titleTxt.text = param.Title;
+                titleTxt.text = Data.Title;
             }
             else
             {
                 titleTxt.enabled = false;
             }
 
-            if (!string.IsNullOrEmpty(param.Message))
+            if (!string.IsNullOrEmpty(Data.Message))
             {
-                messageTxt.text = param.Message;
+                messageTxt.text = Data.Message;
             }
         }
 
         private void OnButton(ButtonType buttonType)
         {
-            var param = mUIData as MessageParam;
-            param!.Callback?.Invoke(buttonType, this);
+            Data.Callback?.Invoke(buttonType, this);
         }
-
-        protected override void OnClose()
+        
+        protected override void OnDied()
         {
-            var messageParam = mUIData as MessageParam;
-            messageParam?.CloseCallback?.Invoke();
+            Data.CloseCallback?.Invoke();
             _imagePath = null;
             _imageSize = Vector2.zero;
+            base.OnDied();
         }
     }
 }

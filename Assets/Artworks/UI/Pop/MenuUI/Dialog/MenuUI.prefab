@@ -182,6 +182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327773f5014b4c78bb9d0e8d1b876d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AutoDestroy: 0
+  Parent: {fileID: 0}
+  Children: []
   bg: {fileID: 5155123072607026152}
   mask: {fileID: 6528246292253722425}
   root: {fileID: 4593137499880373279}

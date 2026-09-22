@@ -1,13 +1,11 @@
 using System;
-using QFramework;
-using Runtime.Business.Manager;
-using Runtime.Business.Util;
 using TMPro;
+using UIFramework;
 using UnityEngine.UI;
 
 namespace UI
 {
-    public class NameInputParam : UIPanelData
+    public class NameInputParam : UIData
     {
         public string Title { get; private set; }
         public Action<string> Callback { get;private set; }
@@ -25,43 +23,37 @@ namespace UI
             return this;
         }
     }
-    public class InputFieldUI : UIPanel
+    
+    [WindowLayer]
+    public class InputFieldUI : UIComponent<NameInputParam>
     {
         public TMP_InputField nameInputField;
         public TMP_Text titleText;
         public Button closeBtn;
         public Button saveBtn;
-        public override bool CanCloseByBackKey => false;
+        // public override bool CanCloseByBackKey => false;
 
         public static NameInputParam Create()
         {
             var param = new NameInputParam();
-            ExtUIManager.Instance.OpenDialog<InputFieldUI>(Dialog.PresetDeckNameInputUI, param, UILevel.PopUI);
+            UIFrame.Show<InputFieldUI>(param);
             return param;
         }
 
         private void Start()
         {
-            if (mUIData is NameInputParam param)
+            titleText.text = Data.Title;
+            closeBtn.onClick.AddListener(CloseSelf);
+            saveBtn.onClick.AddListener(() =>
             {
-                titleText.text = param.Title;
-                closeBtn.onClick.AddListener(this.CloseSelfByExt);
-                saveBtn.onClick.AddListener(() =>
+                if (string.IsNullOrEmpty(nameInputField.text))
                 {
-                    if (string.IsNullOrEmpty(nameInputField.text))
-                    {
-                        return;
-                    }
+                    return;
+                }
 
-                    param.Callback?.Invoke(nameInputField.text);
-                    this.CloseSelfByExt();
-                });
-            }
-        }
-
-        protected override void OnClose()
-        {
-            
+                Data.Callback?.Invoke(nameInputField.text);
+                CloseSelf();
+            });
         }
     }
 }

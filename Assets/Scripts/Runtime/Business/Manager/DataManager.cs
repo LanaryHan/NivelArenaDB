@@ -4,17 +4,17 @@ using System.IO;
 using System.Linq;
 using CsvHelper;
 using EnumsNET;
-using QFramework;
 using Runtime.Business.Data;
 using Runtime.Business.Data.Entry;
 using Runtime.Business.Data.Map;
 using UnityEngine;
+using ZEvent;
 
 namespace Runtime.Business.Manager
 {
     public class DataManager : Singleton<DataManager>
     {
-        protected DataManager() { }
+        public DataManager() { }
         
         public Dictionary<string, CardEntry> Cards;
         public Dictionary<Deck, PackEntry> Packs;

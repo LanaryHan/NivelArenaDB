@@ -3770,6 +3770,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8915630df16649b9b166c0c2a88c49ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AutoDestroy: 0
+  Parent: {fileID: 0}
+  Children: []
   bg: {fileID: 5522442853431136369}
   mask: {fileID: 7319592112496093089}
   root: {fileID: 7135789248539459517}

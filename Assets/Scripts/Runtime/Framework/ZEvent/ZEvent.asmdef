@@ -1,0 +1,16 @@
+{
+    "name": "ZEvent",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8e329a1b455ce4de883ffed5bd99b326"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
