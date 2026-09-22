@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace QFramework
+namespace ZEvent
 {
     public class GameEventComponent : MonoBehaviour
     {

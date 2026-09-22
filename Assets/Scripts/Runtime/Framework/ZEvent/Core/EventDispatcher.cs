@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace QFramework
+namespace ZEvent
 {
     public abstract class EventDispatcher
     {

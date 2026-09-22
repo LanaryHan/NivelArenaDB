@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
-namespace QFramework
+
+namespace ZEvent
 {
     public class EventObjectPool : Singleton<EventObjectPool>
     {
-        protected EventObjectPool(){ }
+        public EventObjectPool(){ }
         private Dictionary<Type, GameEvent> _pool = new();
 
         public T GetNew<T>() where T : GameEvent, new()

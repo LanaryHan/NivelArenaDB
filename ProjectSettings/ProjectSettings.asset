@@ -848,7 +848,7 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 0
   scriptingDefineSymbols:
-    Android: DOTWEEN
+    Android: DOTWEEN;USING_UNITASK
     EmbeddedLinux: DOTWEEN
     GameCoreScarlett: DOTWEEN
     GameCoreXboxOne: DOTWEEN
@@ -866,7 +866,8 @@ PlayerSettings:
     XboxOne: DOTWEEN
     iPhone: DOTWEEN
     tvOS: DOTWEEN
-  additionalCompilerArguments: {}
+  additionalCompilerArguments:
+    Android: []
   platformArchitecture: {}
   scriptingBackend:
     Android: 1

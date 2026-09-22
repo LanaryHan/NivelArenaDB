@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace QFramework
+namespace ZEvent
 {
     public class EventManager : MonoSingleton<EventManager>
     {

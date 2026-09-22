@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace QFramework
+namespace ZEvent
 {
     public class EventMonoBehaviour : MonoBehaviour
     {

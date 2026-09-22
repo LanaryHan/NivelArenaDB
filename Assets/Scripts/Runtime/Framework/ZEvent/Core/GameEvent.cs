@@ -1,4 +1,4 @@
-namespace QFramework
+namespace ZEvent
 {
     public class GameEvent
     {

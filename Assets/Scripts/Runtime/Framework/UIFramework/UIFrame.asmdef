@@ -1,0 +1,17 @@
+{
+    "name": "UIFrame",
+    "rootNamespace": "",
+    "references": [
+        "UniTask",
+        "ZEvent"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

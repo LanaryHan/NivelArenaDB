@@ -24,9 +24,8 @@ namespace QFramework
 	{
 	}
 	
-	public abstract partial class UIPanel : QMonoBehaviour, IPanel,IEvent
+	public abstract partial class UIPanel : QMonoBehaviour, IPanel
 	{
-		public Dialog dialogName { get; set; } = Dialog.NULL;
 		public Transform Transform => transform;
 
 		IPanelLoader IPanel.Loader { get; set; }
@@ -140,19 +139,6 @@ namespace QFramework
 		public void OnClosed(System.Action onPanelClosed)
 		{
 			mOnClosed = onPanelClosed;
-		}
-
-		private GameEventComponent _eventComponent;
-		GameEventComponent IEvent.EventComponent => _eventComponent;
-
-		public GameEventComponent GetEventComponent()
-		{
-			if (!_eventComponent)
-			{
-				_eventComponent = GameEventComponent.Create(gameObject);
-			}
-			
-			return _eventComponent;
 		}
 	}
 }

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace QFramework
+namespace ZEvent
 {
     public abstract class EventListenerBase
     {
