@@ -22,10 +22,20 @@ namespace UI
             var ec = GetEventComponent();
             ec.Listen<UIEvents.OnDialogShow>(e =>
             {
+                if (e.Dialog is MenuUI)
+                {
+                    return;
+                }
+
                 UpdateView();
             });
             ec.Listen<UIEvents.OnDialogHide>(e =>
             {
+                if (e.Dialog is MenuUI)
+                {
+                    return;
+                }
+
                 UpdateView();
             });
             
