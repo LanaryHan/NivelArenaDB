@@ -28,7 +28,6 @@ namespace Runtime.Business.Manager
 
             var handle = Addressables.LoadAssetAsync<TObject>(key);
             handle.WaitForCompletion();
-            _handles[key] = handle;
             TObject result = default;
             var isOk = handle.IsDone && handle.Status is AsyncOperationStatus.Succeeded;
             if (isOk)
@@ -41,6 +40,13 @@ namespace Runtime.Business.Manager
             }
 
             return result;
+        }
+
+        public async UniTask<TObject> LoadAsync<TObject>(string key)
+        {
+            var handle = Addressables.LoadAssetAsync<TObject>(key);
+            await AsyncHandle(handle);
+            return handle.Result;
         }
 
         public TObject LoadPrefab<TObject>(string key) where TObject : Object
@@ -90,7 +96,7 @@ namespace Runtime.Business.Manager
             return $"{type.Name}/Dialog/{type.Name}.prefab";
         }
 
-        public async UniTask<TObject> LoadAsync<TObject>(Type type)
+        public async UniTask<TObject> LoadDialogAsync<TObject>(Type type)
         {
             var key = GetDialogAddress(type);
             var handle = Addressables.LoadAssetAsync<TObject>(key);
@@ -99,7 +105,7 @@ namespace Runtime.Business.Manager
             return handle.Result;
         }
 
-        public void Release(Type type)
+        public void ReleaseDialog(Type type)
         {
             var key = GetDialogAddress(type);
             if (_handles.TryGetValue(key, out var handle))
@@ -107,7 +113,7 @@ namespace Runtime.Business.Manager
                 Addressables.Release(handle);
             }
         }
-
+        
         #endregion
 
         #region Data Sprite
@@ -130,6 +136,12 @@ namespace Runtime.Business.Manager
             var path = GetCardAddress(id);
             var sprite = Load<Sprite>(path);
             return sprite;
+        }
+
+        public UniTask<Sprite> LoadCardSpriteAsync(string id)
+        {
+            var path = GetCardAddress(id);
+            return LoadAsync<Sprite>(path);
         }
 
         public Sprite LoadSpecialCardSprite(string id)

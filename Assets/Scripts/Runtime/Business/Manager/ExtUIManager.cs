@@ -137,12 +137,12 @@ namespace Runtime.Business.Manager
         
         private UniTask<GameObject> OnAssetRequest(Type type)
         {
-            return ResManager.Instance.LoadAsync<GameObject>(type);
+            return ResManager.Instance.LoadDialogAsync<GameObject>(type);
         }
 
         private void OnAssetRelease(Type type)
         {
-            ResManager.Instance.Release(type);
+            ResManager.Instance.ReleaseDialog(type);
         }
 
         private void UIInit()
