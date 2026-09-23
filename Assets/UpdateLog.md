@@ -1,6 +1,6 @@
 # Nivel Arena Database 更新日志
 
-## [v1.9.2] 2026-09-22
+## [v1.9.3] 2026-09-23
 
 ### Added
 - 添加Enhanced Scroller;
@@ -12,6 +12,9 @@
 
 ### Deprecated
 - 从项目中移除QFramework
+
+### Fixed
+- 修复了菜单界面的死锁崩溃问题；
 
 ## [v1.8.0] 2026-08-21
 
