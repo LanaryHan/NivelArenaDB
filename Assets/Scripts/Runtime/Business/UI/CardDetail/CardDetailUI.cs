@@ -122,13 +122,9 @@ namespace UI
             var skillIds = _cardEntry.Skills;
             var cardType = _cardEntry.CardType;
             var haveKeyword = true;
+            skillContent.gameObject.SetActive(!(skillIds == null || skillIds.Length == 0));
             if (skillIds == null || skillIds.Length == 0 || cardType is CardType.Skill)
             {
-                if (cardType is not CardType.Skill)
-                {
-                    skillContent.gameObject.SetActive(false);
-                }
-
                 var kwExtEntry = DataManager.Instance.GetKeywordExtension(_cardEntry.Id);
                 if (kwExtEntry == null)
                 {
@@ -173,7 +169,8 @@ namespace UI
                 triggerRoot.gameObject.SetActive(false);
                 return;
             }
-            
+
+            triggerRoot.gameObject.SetActive(true);
             var triggerId = _cardEntry.Trigger.Value;
             var triggerEntry = DataManager.Instance.GetTrigger(triggerId);
             triggerTxt.text = $"\t\t{triggerEntry.Description.ToDescription(_cardEntry.TriggerParam)}";

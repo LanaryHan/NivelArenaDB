@@ -659,9 +659,9 @@ namespace UIFramework
         private static async GameObjectTask InstantiateAsync(GameObject prefab, Transform parent, UIData data)
         {
             bool refActiveSelf = prefab.activeSelf;
-            prefab.SetActive(false);
+            // prefab.SetActive(false);
             var instance = GameObject.Instantiate(prefab, parent);
-            prefab.SetActive(refActiveSelf);
+            // prefab.SetActive(refActiveSelf);
             var uibase = instance.GetComponent<UIBase>();
             var uibases = instance.transform.BreadthTraversal()
                 .Where(item => item.GetComponent<UIBase>() != null)

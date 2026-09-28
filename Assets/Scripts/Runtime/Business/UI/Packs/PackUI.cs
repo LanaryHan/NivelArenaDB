@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 using Runtime.Business.Manager;
 using Runtime.Business.Util;
@@ -21,7 +22,12 @@ namespace UI
         
 
         // public override bool CanCloseByBackKey => false;
-        
+
+        private void Awake()
+        {
+            UnityEngine.Debug.Log("dd");
+        }
+
         protected override UniTask OnCreate()
         {
             tempBtn.gameObject.SetActive(false);

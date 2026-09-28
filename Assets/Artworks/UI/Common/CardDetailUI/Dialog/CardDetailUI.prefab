@@ -289,7 +289,6 @@ RectTransform:
   - {fileID: 15478605967576864}
   - {fileID: 3703389471591202026}
   - {fileID: 3476986134304188839}
-  - {fileID: 4153163422037899138}
   - {fileID: 3722044204099081268}
   - {fileID: 5649405742988955951}
   - {fileID: 3508665061092021906}
@@ -1721,6 +1720,7 @@ GameObject:
   - component: {fileID: 4564917981424031667}
   - component: {fileID: 8507633266909306054}
   - component: {fileID: 8070785042343599744}
+  - component: {fileID: 4361294943043549529}
   m_Layer: 5
   m_Name: closeBtn
   m_TagString: Untagged
@@ -1735,12 +1735,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4550895137529482116}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4100298841978889885}
+  m_Father: {fileID: 2108832476338922940}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1829,6 +1829,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4361294943043549529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4550895137529482116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 1
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &4561670191246165870
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,6 +2272,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4652239618002231742}
+  - {fileID: 4153163422037899138}
   m_Father: {fileID: 2925667827552759697}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3963,7 +3984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b1349ef0b244e098edd10b7b2438a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AutoDestroy: 0
+  AutoDestroy: 1
   Parent: {fileID: 0}
   Children: []
   cardNameTxt: {fileID: 8822175934301553639}

@@ -78,12 +78,6 @@ namespace UI
             _cardTitleSize = tempTitle.GetComponent<RectTransform>().rect.height;
             tempCardGroup.gameObject.SetActive(false);
             tempTitle.gameObject.SetActive(false);
-            return base.OnCreate();
-        }
-
-        protected override void OnShow()
-        {
-            base.OnShow();
             InitData(Data.Pack);
             scroller.Delegate = this;
             scroller.cellViewWillRecycle += cell =>
@@ -92,9 +86,9 @@ namespace UI
                 item?.Reset();
             };
             scroller.ReloadData();
-            
             var packEntry = DataManager.Instance.GetPack(Data.Pack);
             title.text = packEntry.Title;
+            return base.OnCreate();
         }
 
         protected override void OnBind()
