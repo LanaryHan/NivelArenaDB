@@ -25,11 +25,6 @@ namespace UI
         protected override UniTask OnCreate()
         {
             tempBtn.gameObject.SetActive(false);
-            return base.OnCreate();
-        }
-
-        protected override void OnShow()
-        {
             foreach (var content in contents)
             {
                 content.RemoveAllChildren();
@@ -43,6 +38,7 @@ namespace UI
             
             searchBtn.onClick.AddListener(OnClickSearch);
             clearBtn.onClick.AddListener(OnClickClear);
+            return base.OnCreate();
         }
         
         private void OnClickClear()

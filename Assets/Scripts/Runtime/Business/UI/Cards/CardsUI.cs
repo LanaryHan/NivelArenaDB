@@ -60,21 +60,24 @@ namespace UI
             public string TypeName;
             public List<CardWrapper> Cards = new();
         }
-        
+
+        public CardGroupTitle tempTitle;
         public CardGroup tempCardGroup;
         public EnhancedScroller scroller;
         public Button closeBtn;
         public TMP_Text title;
 
-        private readonly List<CardWrapper> _cardWrappers = new();
         private readonly List<CardWrapperGroup> _cardWrapperGroups = new();
+        private float _cardTitleSize;
         private float _cardItemSize;
         // public override bool CanCloseByBackKey => true;
 
         protected override UniTask OnCreate()
         {
-            _cardItemSize = tempCardGroup.layoutGroup.cellSize.y;
+            _cardItemSize = tempCardGroup.GetComponent<RectTransform>().rect.height;
+            _cardTitleSize = tempTitle.GetComponent<RectTransform>().rect.height;
             tempCardGroup.gameObject.SetActive(false);
+            tempTitle.gameObject.SetActive(false);
             return base.OnCreate();
         }
 
@@ -88,7 +91,6 @@ namespace UI
                 var item = cell as CardGroup;
                 item?.Reset();
             };
-            scroller.ClearAll();
             scroller.ReloadData();
             
             var packEntry = DataManager.Instance.GetPack(Data.Pack);
@@ -119,30 +121,56 @@ namespace UI
 
         private void InitData(Deck pack)
         {
-            _cardWrappers.Clear();
             _cardWrapperGroups.Clear();
             var cards = DataManager.Instance.GetCardFromPack(pack);
-            foreach (var wrapper in cards.Select(card => new CardWrapper
-                     {
-                         CardEntry = card,
-                         Show = true,
-                     }))
-            {
-                _cardWrappers.Add(wrapper);
-            }
-
-            var list = _cardWrappers.GroupBy(wrapper => wrapper.CardEntry.CardType);
+            var cardWrappers = cards.Select(card => new CardWrapper { CardEntry = card, Show = true, }).ToList();
+            var list = cardWrappers.GroupBy(wrapper => wrapper.CardEntry.CardType);
             foreach (var group in list)
             {
-                var cardWrappers = group.ToList();
-                var cardWrapperGroup = new CardWrapperGroup()
+                var wrappers = group.ToList();
+                var split = GetCardSplit(wrappers);
+                var titlePack = new CardWrapperGroup
                 {
                     TypeName = group.Key.ToChinese(),
-                    Cards = cardWrappers,
+                    Cards = new List<CardWrapper>()
                 };
-                _cardWrapperGroups.Add(cardWrapperGroup);
+                _cardWrapperGroups.Add(titlePack);
+                
+                foreach (var cardWrapperGroup in split.Select(one => new CardWrapperGroup
+                         {
+                             TypeName = group.Key.ToChinese(),
+                             Cards = one,
+                         }))
+                {
+                    _cardWrapperGroups.Add(cardWrapperGroup);
+                }
             }
         }
+
+        private List<List<CardWrapper>> GetCardSplit(List<CardWrapper> cards)
+        {
+            var result = new List<List<CardWrapper>>();
+            var split = new List<CardWrapper>();
+            var count = 3;
+            for (int i = 0; i < cards.Count; i++)
+            {
+                count--;
+                split.Add(cards[i]);
+                if (count == 0)
+                {
+                    result.Add(split);
+                    split = new List<CardWrapper>();
+                    count = 3;
+                }
+            }
+
+            if (count > 0 && count != 3)
+            {
+                result.Add(split);
+            }
+
+            return result;
+        } 
         
         private void OnUpdateCardByFilter(UpdateCardByFilter e)
         {
@@ -237,9 +265,7 @@ namespace UI
         public float GetCellViewSize(EnhancedScroller scroller, int dataIndex)
         {
             var cardWrapperGroup = _cardWrapperGroups[dataIndex];
-            var rawCount = Mathf.CeilToInt(cardWrapperGroup.Cards.Count / 3f);
-            var size = _cardItemSize * rawCount + tempCardGroup.layoutGroup.spacing.y * (rawCount - 1);
-            size += string.IsNullOrEmpty(cardWrapperGroup.TypeName) ? 50 : 150;   //标题 + 空位
+            var size = cardWrapperGroup.Cards.Count > 0 ? _cardItemSize : _cardTitleSize;
             return size;
         }
 
@@ -249,13 +275,25 @@ namespace UI
             if (dataIndex >= 0 && dataIndex < _cardWrapperGroups.Count)
             {
                 var groupInfo = _cardWrapperGroups[dataIndex];
-                cellView = scroller.GetCellView(tempCardGroup);
-                if (cellView)
-                {
-                    cellView.gameObject.SetActive(groupInfo.Cards.Any(wrapper => wrapper.Show));
-                    if (cellView is CardGroup cardGroup)
+                if (groupInfo.Cards.Count > 0)
+                {   //内容行
+                    cellView = scroller.GetCellView(tempCardGroup);
+                    if (cellView)
                     {
-                        cardGroup.Init(groupInfo);
+                        cellView.gameObject.SetActive(groupInfo.Cards.Any(wrapper => wrapper.Show));
+                        if (cellView is CardGroup cardGroup)
+                        {
+                            cardGroup.Init(groupInfo);
+                        }
+                    }
+                }
+                else
+                {   //标题行
+                    //todo 需要处理filter导致的卡牌全部隐藏
+                    cellView = scroller.GetCellView(tempTitle);
+                    if (cellView && cellView is CardGroupTitle cardGroupTitle)
+                    {
+                        cardGroupTitle.Init(groupInfo.TypeName);
                     }
                 }
             }

@@ -1,17 +1,12 @@
 using System.Collections.Generic;
 using EnhancedUI.EnhancedScroller;
 using Runtime.Business.Util;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI
 {
     public class CardGroup : EnhancedScrollerCellView
     {
-        public GridLayoutGroup layoutGroup;
-        public GameObject line;
-        public TMP_Text lineText;
         public Transform content;
         public CardButton tempBtn;
 
@@ -21,18 +16,7 @@ namespace UI
         {
             _cards = new List<CardButton>();
             tempBtn.gameObject.SetActive(false);
-            content.RemoveAllChildren(tempBtn.transform, line.transform);
-            if (string.IsNullOrEmpty(groupInfo.TypeName))
-            {
-                line.gameObject.SetActive(false);
-                layoutGroup.padding.top = 50;
-            }
-            else
-            {
-                lineText.text = groupInfo.TypeName;
-                layoutGroup.padding.top = 150;
-                line.gameObject.SetActive(true);
-            }
+            content.RemoveAllChildren(tempBtn.transform);
 
             foreach (var cardWrapper in groupInfo.Cards)
             {
