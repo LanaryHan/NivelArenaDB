@@ -24,7 +24,7 @@ namespace UI
         }
     }
     
-    [PanelLayer]
+    [SubPanelLayer]
     public class CardDetailUI : UIComponent<CardDetailData>
     {
         [Header("Top")]

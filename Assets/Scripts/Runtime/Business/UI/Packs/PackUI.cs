@@ -22,12 +22,7 @@ namespace UI
         
 
         // public override bool CanCloseByBackKey => false;
-
-        private void Awake()
-        {
-            UnityEngine.Debug.Log("dd");
-        }
-
+        
         protected override UniTask OnCreate()
         {
             tempBtn.gameObject.SetActive(false);
