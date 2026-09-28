@@ -1,5 +1,15 @@
 # Nivel Arena Database 更新日志
 
+[Unreleased]
+
+### Added
+- 引入MCP for Unity;
+- 添加安全区域检测；
+- 添加新的UI层级；
+
+### Fixed
+- 修复了Enhanced Scroller结构问题；
+
 ## [v1.9.3] 2026-09-23
 
 ### Added
@@ -9,6 +19,8 @@
 ### Changed
 - 修改资源管理工具为Addressable;
 - 修改UI框架为UIFrame;
+- 修改了卡牌的加载逻辑为异步加载；
+- 修改了卡牌的打包模式；
 
 ### Deprecated
 - 从项目中移除QFramework
