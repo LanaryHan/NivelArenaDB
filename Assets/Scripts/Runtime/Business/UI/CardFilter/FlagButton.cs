@@ -22,8 +22,13 @@ namespace UI
             showTxt.text = _enumFlag.ToChinese();
             toggle.onValueChanged.AddListener(value =>
             {
-                parent.UpdateFlags(_key, _enumFlag, value); 
+                _cardFilterUI.UpdateFlags(_key, _enumFlag, value); 
             });
+        }
+
+        public void Clean()
+        {
+            toggle.SetIsOnWithoutNotify(false);
         }
     }
 }

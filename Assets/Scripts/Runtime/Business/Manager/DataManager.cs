@@ -97,9 +97,13 @@ namespace Runtime.Business.Manager
             #endregion
         }
 
+        public int GetCardCount(Deck pack) => Cards.Values.Count(card => card.Pack == pack);
+        public int GetCardCount(Deck pack, CardType type) => Cards.Values.Count(card => card.Pack == pack && card.CardType == type);
+        
+
         public List<CardEntry> GetCardFromPack(Deck pack)
         {
-            var cards = Cards.Values.ToList().Where(card => card.Pack == pack).ToList();
+            var cards = Cards.Values.Where(card => card.Pack == pack).ToList();
             return cards;
         }
         

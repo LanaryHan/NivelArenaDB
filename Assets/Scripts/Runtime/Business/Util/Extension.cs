@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Runtime.Business.Data;
 using UI;
@@ -273,5 +274,31 @@ namespace Runtime.Business.Util
                     throw new ArgumentOutOfRangeException(nameof(@enum), @enum, null);
             }
         }
+        
+        /// <summary>
+        /// 将集合分成满足条件和不满足条件的两个小集合
+        /// </summary>
+        /// <param name="list">原集合</param>
+        /// <param name="predicate">条件方法</param>
+        /// <returns></returns>
+        public static (List<T> TrueList, List<T> FalseList) Partition<T>(this IEnumerable<T> list, Func<T, bool> predicate)
+        {
+            var trueList = new List<T>();
+            var falseList = new List<T>();
+            foreach (var item in list)
+            {
+                if (predicate(item))
+                {
+                    trueList.Add(item);
+                }
+                else
+                {
+                    falseList.Add(item);
+                }
+            }
+        
+            return (trueList, falseList);
+        }
+
     }
 }

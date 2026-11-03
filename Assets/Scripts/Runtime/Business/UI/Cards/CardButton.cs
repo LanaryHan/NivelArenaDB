@@ -1,6 +1,7 @@
 using System;
 using Runtime.Business.Data;
 using Runtime.Business.Manager;
+using Runtime.Business.Util;
 using UIFramework;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,7 +28,6 @@ namespace UI
 
             var version = _loadVersion;
             _cardId = cardId;
-
             loading.SetActive(true);
             anim.Play();
             var cardEntry = DataManager.Instance.GetCard(cardId);

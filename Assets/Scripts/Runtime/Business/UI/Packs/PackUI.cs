@@ -12,6 +12,7 @@ namespace UI
     [PanelLayer]
     public class PackUI : UIBase
     {
+        public Button menuBtn;
         [Header("Pack")]
         public PackButton tempBtn;
         public Transform[] contents;
@@ -39,6 +40,7 @@ namespace UI
             
             searchBtn.onClick.AddListener(OnClickSearch);
             clearBtn.onClick.AddListener(OnClickClear);
+            menuBtn.onClick.AddListener(OnClickMenu);
             return base.OnCreate();
         }
         
@@ -80,6 +82,11 @@ namespace UI
             }
 
             UIFrame.Show<CardDetailUI>(new CardDetailData(cardEntry.Id));
+        }
+
+        private void OnClickMenu()
+        {
+            GetEventComponent().Send(UIEvents.ShowMenu.Create());
         }
     }
 }

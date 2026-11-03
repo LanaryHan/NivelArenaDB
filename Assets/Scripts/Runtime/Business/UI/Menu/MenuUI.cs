@@ -3,6 +3,12 @@ using Logic;
 using Runtime.Business.UI;
 using UIFramework;
 using UnityEngine.UI;
+using ZEvent;
+
+namespace UIEvents
+{
+    public class ShowMenu : GameEventBase<ShowMenu> { }
+}
 
 namespace UI
 {
@@ -18,33 +24,17 @@ namespace UI
             {
                 transform.SetAsLastSibling(); 
             };
-            
-            var ec = GetEventComponent();
-            ec.Listen<UIEvents.OnDialogShow>(e =>
-            {
-                if (e.Dialog is MenuUI)
-                {
-                    return;
-                }
-
-                UpdateView();
-            });
-            ec.Listen<UIEvents.OnDialogHide>(e =>
-            {
-                if (e.Dialog is MenuUI)
-                {
-                    return;
-                }
-
-                UpdateView();
-            });
-            
             return base.OnCreate();
         }
 
 
         protected override void OnBind()
         {
+            var ec = GetEventComponent();
+            ec.Listen<UIEvents.ShowMenu>(_ =>
+            {
+                Show();
+            });
             buildDeckBtn.onClick.AddListener(() =>
             {
                 DOQuick(false);
@@ -63,20 +53,10 @@ namespace UI
 
         protected override void OnUnbind()
         {
+            var ec = GetEventComponent();
+            ec.ClearListeners();
             buildDeckBtn.onClick.RemoveAllListeners();
             base.OnUnbind();
-        }
-        
-        private void UpdateView()
-        {
-            if (UIFrame.GetLayerTransform<PanelLayer>().childCount == 1)
-            {
-                UIFrame.Show(this);
-            }
-            else
-            {
-                HideSelf();
-            }
         }
     }
 }

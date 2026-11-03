@@ -7,9 +7,10 @@ namespace UI
     public class CardGroupTitle : EnhancedScrollerCellView
     {
         public TMP_Text lineText;
+        public TMP_Text cardCountText;
         public GameObject line;
 
-        public void Init(string typeName)
+        public void Init(string typeName, int cardCount)
         {
             if (string.IsNullOrEmpty(typeName))
             {
@@ -21,6 +22,8 @@ namespace UI
                 lineText.text = typeName;
                 line.SetActive(true);
             }
+
+            cardCountText.text = cardCount.ToString();
         }
     }
 }

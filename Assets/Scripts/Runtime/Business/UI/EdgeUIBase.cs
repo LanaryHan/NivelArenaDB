@@ -14,7 +14,7 @@ namespace Runtime.Business.UI
         public GameObject mask;
         public RectTransform root;
         public Button bgButton;
-        public Button button;
+        public Button closeBtn;
 
         private bool _isOpen;
         private float _hideValue;
@@ -30,8 +30,8 @@ namespace Runtime.Business.UI
             _hideValue = root.anchoredPosition.x;
             _showMap = new LinearMap(-_hideValue, 0f, _hideValue, 0.75f);
             _hideMap = new LinearMap(_hideValue, 0f, -_hideValue, 0.75f);
-            button.onClick.AddListener(OnClick);
             bgButton.onClick.AddListener(OnClick);
+            closeBtn.onClick.AddListener(OnClick);
             return base.OnCreate();
         }
 
@@ -42,14 +42,7 @@ namespace Runtime.Business.UI
             mask.SetActive(true);
         }
 
-        private float GetDuration()
-        {
-            return !_isOpen
-                ? _showMap.Evaluate(root.anchoredPosition.x)
-                : _hideMap.Evaluate(root.anchoredPosition.x);
-        }
-        
-        private void OnClick()
+        public void Show()
         {
             root.DOKill();
             if (!_isOpen)
@@ -79,6 +72,18 @@ namespace Runtime.Business.UI
                     OnHideEdgeComplete?.Invoke();
                 });
             }
+        }
+
+        private float GetDuration()
+        {
+            return !_isOpen
+                ? _showMap.Evaluate(root.anchoredPosition.x)
+                : _hideMap.Evaluate(root.anchoredPosition.x);
+        }
+        
+        private void OnClick()
+        {
+            Show();
         }
 
         public void DOQuick(bool open)

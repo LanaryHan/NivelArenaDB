@@ -10,6 +10,7 @@ using TMPro;
 using UIFramework;
 using UnityEngine;
 using UnityEngine.UI;
+using Util;
 using ZEvent;
 
 namespace UI
@@ -35,8 +36,9 @@ namespace UI
         public RectTransform cardTarget;
         public Button closeBtn;
         public Toggle specialToggle;
+        public Image toggleIcon;
         [Header("Skill")] 
-        public Transform skillBg;
+        public Transform[] skillBg;
         public SkillGroup tempSkillGroup;
         public Transform skillContent;
         [Header("CardInfo")] 
@@ -89,7 +91,7 @@ namespace UI
         protected override void OnShow()
         {
             base.OnShow();
-            skillContent.RemoveAllChildren(tempSkillGroup.transform, skillBg);
+            skillContent.RemoveAllChildren(new[] { tempSkillGroup.transform }.Concat(skillBg).ToArray());
             var buildDeckLogic = GameRuntimeLogic.Instance.GetLogic<BuildDeckLogic>();
             addBtn.gameObject.SetActive(buildDeckLogic.IsBuilding);
             removeBtn.gameObject.SetActive(buildDeckLogic.IsBuilding);
@@ -110,6 +112,15 @@ namespace UI
             specialToggle.onValueChanged.AddListener(value =>
             {
                 ec.Send(GameEvents.ShowCard.Create(cardId, value));
+                if (value)
+                {
+                    ColorUtility.TryParseHtmlString("#7564DB", out var color);
+                    toggleIcon.color = color;
+                }
+                else
+                {
+                    toggleIcon.color = Color.white;
+                }
             });
             UpdateSkills();
             UpdateTrigger();
@@ -173,7 +184,7 @@ namespace UI
             triggerRoot.gameObject.SetActive(true);
             var triggerId = _cardEntry.Trigger.Value;
             var triggerEntry = DataManager.Instance.GetTrigger(triggerId);
-            triggerTxt.text = $"\t\t{triggerEntry.Description.ToDescription(_cardEntry.TriggerParam)}";
+            triggerTxt.text = $"{triggerEntry.Description.ToDescription(_cardEntry.TriggerParam)}";
         }
 
         protected override void OnHide()

@@ -1,22 +1,22 @@
 Name,DisplayName,BundleRes,Group,IsActive,Title
-ST01,起始套牌ST01\n《反击》,pack_ST01,1,1,ST01:<i>Counters</i>
-ST02,起始套牌ST02\n《真善美》,pack_ST02,1,1,ST02:<i>Real Kindness</i>
-ST03,起始套牌ST03\n《异端者》,pack_ST03,1,1,ST03:<i>Heretic</i>
-ST04,起始套牌ST04\n《继承者部队》,pack_ST04,1,1,ST04:<i>Inherit</i>
-ST05,起始套牌ST05\n《专为你打造》,pack_ST05,1,1,ST05:<i>Made for You</i>
-BT01,补充包BT01\n《遇敌》,pack_BT01,1,1,BT01:<i>Encounter</i>
-BT02,补充包BT02\n《王国》,pack_BT02,1,1,BT02:<i>Kingdom</i>
-BT03,补充包BT03\n《坚不可破》,pack_BT03,1,1,BT03:<i>Unbreakable</i>
-ST06,起始套牌ST06\n《继承者》,pack_ST06,2,1,ST06:<i>Successor</i>
-ST07,起始套牌ST07\n《人造人》,pack_ST07,2,1,ST07:<i>Homunculus</i>
-BT04,补充包BT04\n《苦涩冬日》,pack_BT04,2,1,BT04:<i>Bitter Cold Days</i>
-ST08,起始套牌ST08\n《周年纪念》,pack_ST08,3,1,ST08:<i>Anniversary</i>
-ST09,起始套牌ST09\n《热带》,pack_ST09,3,1,ST09:<i>Tropical</i>
-BT05,补充包BT05\n《祭典》,pack_BT05,3,1,BT05:<i>Matsuri</i>
-SB01,2025特别补充包,pack_SB01,1,1,<i>2025 Special Booster</i>
-ST10,起始套牌ST10\n 《贝伦》,pack_ST10,4,1,ST10:<i>Beilun</i>
-ST11,起始套牌ST11\n 《科库托斯》,pack_ST11,4,1,ST11:<i>Cocytus</i>
-BT06,补充包BT06\n《黄金蛋》,pack_BT06,4,1,BT06:<i>Golden Tamago</i>
-BT07,补充包BT07\n《EVE协议》,pack_BT07,4,1,BT07:<i>EVE Protocol</i>
-SB02,2026特别补充包,pack_SB02,3,1,<i>2026 Special Booster</i>
-BT08,补充包BT08\n《向你挥手》,pack_BT08,1,1,BT08:<i>Wave to You</i>
+ST01,起始套牌·反击,pack_ST01,1,1,ST01·Counters
+ST02,起始套牌·真善美,pack_ST02,1,1,ST02·Real Kindness
+ST03,起始套牌·异端者,pack_ST03,1,1,ST03·Heretic
+ST04,起始套牌·继承者部队,pack_ST04,1,1,ST04·Inherit
+ST05,起始套牌·专为你打造,pack_ST05,1,1,ST05·Made for You
+BT01,补充包·遇敌,pack_BT01,1,1,BT01·Encounter
+BT02,补充包·王国,pack_BT02,1,1,BT02·Kingdom
+BT03,补充包·坚不可破,pack_BT03,1,1,BT03·Unbreakable
+ST06,起始套牌·继承者,pack_ST06,2,1,ST06·Successor
+ST07,起始套牌·人造人,pack_ST07,2,1,ST07·Homunculus
+BT04,补充包·苦涩冬日,pack_BT04,2,1,BT04·Bitter Cold Days
+ST08,起始套牌·周年纪念,pack_ST08,3,1,ST08·Anniversary
+ST09,起始套牌·热带,pack_ST09,3,1,ST09·Tropical
+BT05,补充包·祭典,pack_BT05,3,1,BT05·Matsuri
+SB01,2025特别补充包,pack_SB01,1,1,2025 Special Booster
+ST10,起始套牌·贝伦,pack_ST10,4,1,ST10·Beilun
+ST11,起始套牌·科库托斯,pack_ST11,4,1,ST11·Cocytus
+BT06,补充包·黄金蛋,pack_BT06,4,1,BT06·Golden Tamago
+BT07,补充包·EVE协议,pack_BT07,4,1,BT07·EVE Protocol
+SB02,2026特别补充包,pack_SB02,3,1,2026 Special Booster
+BT08,补充包·向你挥手,pack_BT08,1,1,BT08·Wave to You

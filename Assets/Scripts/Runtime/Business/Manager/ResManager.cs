@@ -22,7 +22,11 @@ namespace Runtime.Business.Manager
 
         private static readonly Dictionary<string, AsyncOperationHandle> _dialogHandles = new();
         private static readonly Dictionary<string, SpriteCacheEntry> _spriteCache = new();
-        public ResManager(){ }
+
+        public ResManager()
+        {
+            
+        }
 
         #region Common
 

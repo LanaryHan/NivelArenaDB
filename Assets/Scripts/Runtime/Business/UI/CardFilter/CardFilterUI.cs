@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Runtime.Business.UI;
 using UIFramework;
+using ZEvent;
+
+namespace UIEvents
+{
+    public class ShowCardFilter : GameEventBase<ShowCardFilter> { }
+}
 
 namespace UI
 {
@@ -50,25 +56,41 @@ namespace UI
             {
                 if (e.Dialog is CardDetailUI)
                 {
-                    HideSelf();
+                    CleanFilterData();
                 }
             });
-            ec.Listen<UIEvents.OnDialogHide>(e =>
-            {
-                if (e.Dialog is CardDetailUI)
-                {
-                    if (UIFrame.Get<CardsUI>())
-                    {
-                        UIFrame.Show(this);
-                    }
-                }
-            });
-
+            
             OnShowEdgeStart += () =>
             {
                 transform.SetAsLastSibling();
             };
             return base.OnCreate();
+        }
+
+        protected override void OnBind()
+        {
+            base.OnBind();
+            var ec = GetEventComponent();
+            ec.Listen<UIEvents.ShowCardFilter>(_ =>
+            {
+                Show();
+            });
+        }
+
+        protected override void OnUnbind()
+        {
+            base.OnUnbind();
+            var ec = GetEventComponent();
+            ec.ClearListeners();
+        }
+
+        private void CleanFilterData()
+        {
+            Data = new CardFilterData();
+            foreach (var group in filterFlagGroups)
+            {
+                group.CleanAll();
+            }
         }
 
         private void UpdateAttribute(Enum attributeFlags,bool value)

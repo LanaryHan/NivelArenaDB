@@ -57,7 +57,7 @@ namespace UI
         }
         public class CardWrapperGroup
         {
-            public string TypeName;
+            public CardType CardType;
             public List<CardWrapper> Cards = new();
         }
 
@@ -65,9 +65,12 @@ namespace UI
         public CardGroup tempCardGroup;
         public EnhancedScroller scroller;
         public Button closeBtn;
-        public TMP_Text title;
+        public TMP_Text englishTitleText;
+        public TMP_Text chineseTitleText;
+        public Button filterBtn;
 
         private readonly List<CardWrapperGroup> _cardWrapperGroups = new();
+        private List<CardWrapperGroup> _organizedCardGroups = new();
         private float _cardTitleSize;
         private float _cardItemSize;
         // public override bool CanCloseByBackKey => true;
@@ -87,7 +90,9 @@ namespace UI
             };
             scroller.ReloadData();
             var packEntry = DataManager.Instance.GetPack(Data.Pack);
-            title.text = packEntry.Title;
+            englishTitleText.text = packEntry.Title;
+            chineseTitleText.text = packEntry.DisplayName;
+            chineseTitleText.fontSize = englishTitleText.fontSize - 10;
             return base.OnCreate();
         }
 
@@ -96,6 +101,7 @@ namespace UI
             closeBtn.onClick.AddListener(HideSelf);
             var ec = GetEventComponent();
             ec.Listen<UpdateCardByFilter>(OnUpdateCardByFilter);
+            filterBtn.onClick.AddListener(OnClickFilter);
             base.OnBind();
         }
 
@@ -125,20 +131,22 @@ namespace UI
                 var split = GetCardSplit(wrappers);
                 var titlePack = new CardWrapperGroup
                 {
-                    TypeName = group.Key.ToChinese(),
+                    CardType = group.Key,
                     Cards = new List<CardWrapper>()
                 };
                 _cardWrapperGroups.Add(titlePack);
                 
                 foreach (var cardWrapperGroup in split.Select(one => new CardWrapperGroup
                          {
-                             TypeName = group.Key.ToChinese(),
+                             CardType = group.Key,
                              Cards = one,
                          }))
                 {
                     _cardWrapperGroups.Add(cardWrapperGroup);
                 }
             }
+
+            _organizedCardGroups = OrganizeList();
         }
 
         private List<List<CardWrapper>> GetCardSplit(List<CardWrapper> cards)
@@ -177,6 +185,8 @@ namespace UI
                 }
             }
 
+            _organizedCardGroups = OrganizeList();
+            scroller.ClearAll();
             scroller.ReloadData();
         }
         
@@ -251,14 +261,42 @@ namespace UI
             return true;
         }
 
+        private void OnClickFilter()
+        {
+            GetEventComponent().Send(UIEvents.ShowCardFilter.Create());
+        }
+
+        private List<CardWrapperGroup> OrganizeList(bool init = false)
+        {
+            if (init)
+            {
+                return _cardWrapperGroups;
+            }
+
+            var result = new List<CardWrapperGroup>();
+            var (titleList, cardsList) = _cardWrapperGroups.Partition(group => group.Cards == null || group.Cards.Count == 0);
+            foreach (var title in titleList)
+            {
+                var title1 = title;
+                var typeList = cardsList.Where(group => group.CardType == title1.CardType).ToList();
+                if (typeList.Any(group => group.Cards.Any(card => card.Show)))
+                {
+                    result.Add(title);
+                    result.AddRange(typeList.Where(group => group.Cards.Any(card => card.Show)));
+                }
+            }
+
+            return result;
+        }
+
         public int GetNumberOfCells(EnhancedScroller scroller)
         {
-            return _cardWrapperGroups.Count;
+            return _organizedCardGroups.Count;
         }
 
         public float GetCellViewSize(EnhancedScroller scroller, int dataIndex)
         {
-            var cardWrapperGroup = _cardWrapperGroups[dataIndex];
+            var cardWrapperGroup = _organizedCardGroups[dataIndex];
             var size = cardWrapperGroup.Cards.Count > 0 ? _cardItemSize : _cardTitleSize;
             return size;
         }
@@ -266,9 +304,9 @@ namespace UI
         public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
         {
             EnhancedScrollerCellView cellView = null;
-            if (dataIndex >= 0 && dataIndex < _cardWrapperGroups.Count)
+            if (dataIndex >= 0 && dataIndex < _organizedCardGroups.Count)
             {
-                var groupInfo = _cardWrapperGroups[dataIndex];
+                var groupInfo = _organizedCardGroups[dataIndex];
                 if (groupInfo.Cards.Count > 0)
                 {   //内容行
                     cellView = scroller.GetCellView(tempCardGroup);
@@ -287,7 +325,7 @@ namespace UI
                     cellView = scroller.GetCellView(tempTitle);
                     if (cellView && cellView is CardGroupTitle cardGroupTitle)
                     {
-                        cardGroupTitle.Init(groupInfo.TypeName);
+                        cardGroupTitle.Init(groupInfo.CardType.ToChinese(), DataManager.Instance.GetCardCount(Data.Pack, groupInfo.CardType));
                     }
                 }
             }
