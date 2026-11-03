@@ -17,6 +17,9 @@ SB01,2025特别补充包,pack_SB01,1,1,2025 Special Booster
 ST10,起始套牌·贝伦,pack_ST10,4,1,ST10·Beilun
 ST11,起始套牌·科库托斯,pack_ST11,4,1,ST11·Cocytus
 BT06,补充包·黄金蛋,pack_BT06,4,1,BT06·Golden Tamago
-BT07,补充包·EVE协议,pack_BT07,4,1,BT07·EVE Protocol
+BT07,补充包·EVE协议,pack_BT07,5,1,BT07·EVE Protocol
 SB02,2026特别补充包,pack_SB02,3,1,2026 Special Booster
 BT08,补充包·向你挥手,pack_BT08,1,1,BT08·Wave to You
+ST12,起始套牌·若藻,pack_ST12,6,0,ST12·Wakamo
+ST13,起始套牌·研讨会,pack_ST13,6,0,ST13·Seminar
+ST14,起始套牌·修女会,pack_ST14,6,0,ST14·Sisterhood
