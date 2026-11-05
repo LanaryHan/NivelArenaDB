@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Cards
   m_GUID: 9f14274fd58754a7f98920f3b55f9791
   m_SerializeEntries:
+  - m_GUID: 052d70277377b45418a99f62c6f62c75
+    m_Address: ST12
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 183506d56f82b4ddabf98c15a7463fd7
     m_Address: ST10
     m_ReadOnly: 0
@@ -37,6 +42,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 27ac9b0f2e92e4e4ca10ab371df903ad
     m_Address: BT01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 367e1d55391ec48baa32d02a6e9002ee
+    m_Address: ST14
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -82,6 +92,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 981b2dec3318a4b23bd31bfee5c664be
     m_Address: BT06
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a295abc9ca4694ae18295638439a135b
+    m_Address: ST13
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
