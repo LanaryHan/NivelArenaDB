@@ -1,0 +1,7 @@
+interface:
+  display_name: "Nivel Arena 卡牌录入"
+  short_description: "根据卡图填写卡牌、触发技能与云端技能表，校验双阵营和描述参数"
+  default_prompt: "使用 $nivel-card-entry，按本项目约定将提供的卡牌图片录入配置，技能只维护云端表。"
+
+policy:
+  allow_implicit_invocation: true
