@@ -58,6 +58,11 @@ MonoBehaviour:
     m_GlyphIndex: 3
     m_Scale: 1
     m_Name: credit
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 4
+    m_Scale: 1
+    m_Name: ex
   m_GlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -123,6 +128,22 @@ MonoBehaviour:
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
     sprite: {fileID: -234853124, guid: cb9efcfa98d3042b9aef7464445e1311, type: 3}
+  - m_Index: 4
+    m_Metrics:
+      m_Width: 182.272
+      m_Height: 136.48
+      m_HorizontalBearingX: 2.7
+      m_HorizontalBearingY: 98.47
+      m_HorizontalAdvance: 182.272
+    m_GlyphRect:
+      m_X: 1313
+      m_Y: 24
+      m_Width: 267
+      m_Height: 200
+    m_Scale: 1.8
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 1760311004, guid: cb9efcfa98d3042b9aef7464445e1311, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []
 --- !u!21 &7997392060076078619

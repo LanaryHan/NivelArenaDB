@@ -53,6 +53,41 @@ MonoBehaviour:
     m_GlyphIndex: 2
     m_Scale: 1
     m_Name: position_side
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 3
+    m_Scale: 1
+    m_Name: ex_1
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 4
+    m_Scale: 1
+    m_Name: ex_2
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 5
+    m_Scale: 1
+    m_Name: ex_3
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 6
+    m_Scale: 1
+    m_Name: connect
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 7
+    m_Scale: 1
+    m_Name: support
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 8
+    m_Scale: 1
+    m_Name: ex_4
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 9
+    m_Scale: 1
+    m_Name: ex_5
   m_GlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -102,6 +137,118 @@ MonoBehaviour:
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
     sprite: {fileID: 1197214773, guid: 76a58f68d77fb4bab8cabe85b64f2e25, type: 3}
+  - m_Index: 3
+    m_Metrics:
+      m_Width: 199.33865
+      m_Height: 136.48
+      m_HorizontalBearingX: 2.7
+      m_HorizontalBearingY: 98.47
+      m_HorizontalAdvance: 199.33865
+    m_GlyphRect:
+      m_X: 22
+      m_Y: 274
+      m_Width: 292
+      m_Height: 200
+    m_Scale: 1.8
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 1760311001, guid: 76a58f68d77fb4bab8cabe85b64f2e25, type: 3}
+  - m_Index: 4
+    m_Metrics:
+      m_Width: 199.33865
+      m_Height: 136.48
+      m_HorizontalBearingX: 2.7
+      m_HorizontalBearingY: 98.47
+      m_HorizontalAdvance: 199.33865
+    m_GlyphRect:
+      m_X: 398
+      m_Y: 274
+      m_Width: 292
+      m_Height: 200
+    m_Scale: 1.8
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 1760311002, guid: 76a58f68d77fb4bab8cabe85b64f2e25, type: 3}
+  - m_Index: 5
+    m_Metrics:
+      m_Width: 199.33865
+      m_Height: 136.48
+      m_HorizontalBearingX: 2.7
+      m_HorizontalBearingY: 98.47
+      m_HorizontalAdvance: 199.33865
+    m_GlyphRect:
+      m_X: 774
+      m_Y: 274
+      m_Width: 292
+      m_Height: 200
+    m_Scale: 1.8
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 1760311003, guid: 76a58f68d77fb4bab8cabe85b64f2e25, type: 3}
+  - m_Index: 6
+    m_Metrics:
+      m_Width: 182.272
+      m_Height: 136.48
+      m_HorizontalBearingX: 2.7
+      m_HorizontalBearingY: 98.47
+      m_HorizontalAdvance: 182.272
+    m_GlyphRect:
+      m_X: 1082
+      m_Y: 274
+      m_Width: 267
+      m_Height: 200
+    m_Scale: 1.8
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 1760311005, guid: 76a58f68d77fb4bab8cabe85b64f2e25, type: 3}
+  - m_Index: 7
+    m_Metrics:
+      m_Width: 182.272
+      m_Height: 136.48
+      m_HorizontalBearingX: 2.7
+      m_HorizontalBearingY: 98.47
+      m_HorizontalAdvance: 182.272
+    m_GlyphRect:
+      m_X: 1365
+      m_Y: 274
+      m_Width: 267
+      m_Height: 200
+    m_Scale: 1.8
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 1760311006, guid: 76a58f68d77fb4bab8cabe85b64f2e25, type: 3}
+  - m_Index: 8
+    m_Metrics:
+      m_Width: 199.33865
+      m_Height: 136.48
+      m_HorizontalBearingX: 2.7
+      m_HorizontalBearingY: 98.47
+      m_HorizontalAdvance: 199.33865
+    m_GlyphRect:
+      m_X: 22
+      m_Y: 524
+      m_Width: 292
+      m_Height: 200
+    m_Scale: 1.8
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 1760311007, guid: 76a58f68d77fb4bab8cabe85b64f2e25, type: 3}
+  - m_Index: 9
+    m_Metrics:
+      m_Width: 199.33865
+      m_Height: 136.48
+      m_HorizontalBearingX: 2.7
+      m_HorizontalBearingY: 98.47
+      m_HorizontalAdvance: 199.33865
+    m_GlyphRect:
+      m_X: 398
+      m_Y: 524
+      m_Width: 292
+      m_Height: 200
+    m_Scale: 1.8
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+    sprite: {fileID: 1760311008, guid: 76a58f68d77fb4bab8cabe85b64f2e25, type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []
 --- !u!21 &8671671676195608103

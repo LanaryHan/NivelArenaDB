@@ -131,7 +131,7 @@ TextureImporter:
         width: 267
         height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,7 +175,7 @@ TextureImporter:
         width: 473
         height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -186,6 +186,160 @@ TextureImporter:
       internalID: 1197214773
       vertices: []
       indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 274
+        width: 292
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeea9b0e613a5e478c3747b991878d89
+      internalID: 1760311001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_2
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 274
+        width: 292
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cf0af47207570bb407c67b35767582
+      internalID: 1760311002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_3
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 274
+        width: 292
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8844107a3f35ea1a29a4d8bd1aebda0
+      internalID: 1760311003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: connect
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 274
+        width: 267
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05e56a312b6590eb23432b33ddb4305
+      internalID: 1760311005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: support
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 274
+        width: 267
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9250adcc4150979b27c19764c6de8d
+      internalID: 1760311006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_4
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 524
+        width: 292
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba83e51f98de559eaf0cada0f1b79c12
+      internalID: 1760311007
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_5
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 524
+        width: 292
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01910cb169555a6b99298c92947e2cb4
+      internalID: 1760311008
+      vertices: []
+      indices:
       edges: []
       weights: []
     outline: []
@@ -202,8 +356,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      ex_4: 1760311007
+      ex_5: 1760311008
+      connect: 1760311005
+      ex_1: 1760311001
+      ex_2: 1760311002
+      ex_3: 1760311003
       position_center: -1484003714
       position_side: 1197214773
+      support: 1760311006
       switch: 1346107761
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

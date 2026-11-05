@@ -21,6 +21,9 @@ namespace Runtime.Business.Data
         ArmedCondition,     //武装条件
         Position,           //站位
         Switch,             //切换
+        EX,
+        Connect,            //连结
+        Support,            //辅助
         
         Oath,               //誓约
         Awakening,          //觉醒
