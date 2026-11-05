@@ -114,5 +114,6 @@ namespace Runtime.Business.Data
         Shanhaijing,
         Highlander,
         Millennium,
+        Trinity,
     }
 }

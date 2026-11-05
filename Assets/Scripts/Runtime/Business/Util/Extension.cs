@@ -166,6 +166,14 @@ namespace Runtime.Business.Util
                 Affiliation.Colony => "殖民地",
                 Affiliation.Native => "孽奇拔",
                 Affiliation.Xion => "曦安",
+                Affiliation.Hyakkiyako => "百鬼夜行",
+                Affiliation.Striker => "STRIKER",
+                Affiliation.Special => "SPECIAL",
+                Affiliation.Arius => "奥利斯",
+                Affiliation.Shanhaijing => "山海经",
+                Affiliation.Highlander => "海兰德",
+                Affiliation.Millennium => "千禧年",
+                Affiliation.Trinity => "三一",
                 _ => throw new ArgumentOutOfRangeException(nameof(affiliation), affiliation, null)
             };
         }
@@ -193,6 +201,9 @@ namespace Runtime.Business.Util
                 KeyType.Chain => "连锁",
                 KeyType.Position => "站位",
                 KeyType.Switch => "切换",
+                KeyType.EX => "EX",
+                KeyType.Connect => "连结",
+                KeyType.Support => "辅助",
                 KeyType.Oath => "誓约",
                 KeyType.Awakening => "觉醒",
                 _ => throw new ArgumentOutOfRangeException(nameof(keyType), keyType, null)
