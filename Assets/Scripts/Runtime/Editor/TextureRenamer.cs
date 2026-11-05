@@ -34,7 +34,7 @@ namespace Runtime.Editor
         private void RenameTextures()
         {
             
-            var path = Path.Combine(Application.dataPath, "Artworks/Textures", searchPath);
+            var path = Path.Combine(Application.dataPath, "Artworks/Textures/Cards", searchPath);
             if (!Directory.Exists(path))
             {
                 EditorUtility.DisplayDialog("错误", "路径不存在", "确定");
