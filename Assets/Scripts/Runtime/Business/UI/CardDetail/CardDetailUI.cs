@@ -113,7 +113,7 @@ namespace UI
             }
             else
             {
-                affiliationTxt.text = $"{_cardEntry.Affiliation.ToChinese()}/{_cardEntry.Affiliation2.Value.ToChinese()}";
+                affiliationTxt.text = $"{_cardEntry.Affiliation.ToChinese()}\n{_cardEntry.Affiliation2.Value.ToChinese()}";
             }
             specialToggle.gameObject.SetActive(_cardEntry.HasExtension);
             specialToggle.onValueChanged.AddListener(value =>
