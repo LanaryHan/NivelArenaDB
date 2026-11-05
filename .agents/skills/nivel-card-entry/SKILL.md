@@ -1,6 +1,6 @@
 ---
 name: nivel-card-entry
-description: 根据卡牌图片或文字，在 Nivel Arena DB 项目中录入、修改或核对卡牌、技能和触发配置。适用于 cards.csv、triggers.csv、云端技能表及必要的枚举和中文映射维护；技能仅写云端，skills.csv 由用户统一生成。
+description: 根据卡牌图片、文字或官网/wiki 资料，在 Nivel Arena DB 项目中录入、修改或核对卡牌、技能和触发配置。适用于 cards.csv、triggers.csv、云端技能表及必要的枚举和中文映射维护；技能仅写云端，skills.csv 由用户统一生成。
 ---
 
 # Nivel Arena 卡牌配置
@@ -10,6 +10,8 @@ description: 根据卡牌图片或文字，在 Nivel Arena DB 项目中录入、
 ## 数据来源与写入范围
 
 以下路径相对项目根目录；开始时确认当前工作区含 `Assets/Resources/cards.csv`，读取最新文件，保留用户已有改动。
+
+从官网和 wiki 浏览取材，尤其整包批量录入时，先读 [浏览器资料与批量录入](references/browser-sources.md)。官网用于确认原文规则与基础数据；指定 wiki 用于中文名、所属译名及中文效果对照，用户给定的译名和明确修正优先。
 
 - **技能主表**：[Nivel Arena DB Skills](https://docs.google.com/spreadsheets/d/1A3aUkqP0SpAdcMjqN6A7gt95ChEFB96DX1s_wCUdFFs/edit)。使用当前可用的 Google Drive / Google Sheets 工具，遵循对应技能的读写规则。先读页签元数据，再读精确范围。
 - **卡牌**：`Assets/Resources/cards.csv`，直接维护本地文件。
@@ -25,6 +27,8 @@ description: 根据卡牌图片或文字，在 Nivel Arena DB 项目中录入、
 - `Assets/Scripts/Runtime/Business/UI/CardDetail/SkillGroup.cs`、`CardDetailUI.cs`：图标参数与详情显示。
 
 ## 录入流程
+
+用户明确要求批量录入一个卡包时，该授权覆盖此范围内必要的配置更新，无需逐卡再审批。先提取完整卡号清单及每卡资料，再统一匹配模板、写入和校验；仅对仍会影响录入结果的冲突或缺失信息询问。
 
 1. 从图和用户说明提取官方卡号、中文名、类型、稀有度、属性、基础数值、阵营、签名情况、技能标签/阶段、效果正文及 Trigger。同一卡的基本面与觉醒面合并成一条记录。遇到影响规则含义的缺失信息再询问，不用机器翻译猜角色名或效果。
 2. 读取最新 CSV 表头、目标卡包已有编号和相关枚举。根据记录主键识别新增还是更新；发现已存在的卡牌时核对内容，避免重复追加。
@@ -54,7 +58,7 @@ description: 根据卡牌图片或文字，在 Nivel Arena DB 项目中录入、
 - `Number`：卡包内部顺延 +1 的编号，保留现有三位格式，如 `001`。`Pack` 取 `Deck` 枚举。**记录唯一性由 Pack 与 Number 的组合确定**，代码 `CardEntry.Id` 当前格式为 `Pack-Number`。
 - `Id2`：官方/卡面展示编号的覆盖值，不是关联旧记录的外键。若与记录编号不同就填写，否则留空；常见于 SB 卡包，但不限于旧卡重印。不得用它覆盖记录主键或直接定位另一条记录。
 - `Rarity`、`CardType`、`Attribute` 必须使用枚举的实际拼写。地属性 / Land 对应 `Earth`；属性图标参数使用小写 `earth`。
-- `Name` 使用用户确认的中文名。
+- `Name` 优先使用用户明确给定或确认的中文名；用户未指定时，优先沿用项目已有的同角色译名，项目无既有译名再采用本次指定 wiki 的繁体中文名转为简体。新所属的显示名也沿用该中文来源，保留专名和语义，不从韩文机器翻译另造名称。
 - Leader：`Cost/Power/Hit` 全留空。Unit：填写三项。Skill、Item：填 `Cost`，`Power/Hit` 留空。空值用空单元格，不填 `-`。
 - `Skill1–4`、`SkillParam1–4`、`IconTextParam1–4` 是四个对应组。从第 1 组开始连续填写，不跳组；无技能的组整组留空。读取器会压缩空技能 ID，却不压缩参数数组，跳组会导致错配。
 - Leader 的誓约放第 1 组，觉醒随后，再填觉醒面的技能。当前组牌逻辑依赖第一技能；不能把它们当成任意展示顺序。
