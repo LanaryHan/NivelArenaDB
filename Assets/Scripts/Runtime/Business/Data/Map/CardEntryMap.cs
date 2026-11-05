@@ -58,6 +58,7 @@ namespace Runtime.Business.Data.Map
             Map(m => m.Trigger).Index(21);
             Map(m => m.TriggerParam).Index(22);
             Map(m => m.Affiliation).Index(23);
+            Map(m => m.Affiliation2).Index(24);
             Map(m => m.HasSpecial).Convert(row =>
             {
                 var text = row.Row.GetField("HasSpecial");
@@ -68,7 +69,7 @@ namespace Runtime.Business.Data.Map
                 var text = row.Row.GetField("HasExtension");
                 return !string.IsNullOrEmpty(text) && int.Parse(text) == 1;
             });
-            Map(m => m.Id2).Index(26);
+            Map(m => m.Id2).Index(27);
         }
     }
 }

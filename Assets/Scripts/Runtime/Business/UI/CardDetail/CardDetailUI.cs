@@ -107,7 +107,14 @@ namespace UI
             rareTxt.text = _cardEntry.Rarity.ToString();
             powerTxt.text = _cardEntry.Power == null ? "——" : _cardEntry.Power.Value.ToString();
             hitTxt.text = _cardEntry.Hit == null ? "——" : _cardEntry.Hit.Value.ToString();
-            affiliationTxt.text = _cardEntry.Affiliation.ToChinese();
+            if (_cardEntry.Affiliation2 == null)
+            {
+                affiliationTxt.text = _cardEntry.Affiliation.ToChinese();
+            }
+            else
+            {
+                affiliationTxt.text = $"{_cardEntry.Affiliation.ToChinese()}/{_cardEntry.Affiliation2.Value.ToChinese()}";
+            }
             specialToggle.gameObject.SetActive(_cardEntry.HasExtension);
             specialToggle.onValueChanged.AddListener(value =>
             {

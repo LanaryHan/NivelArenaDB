@@ -78,6 +78,7 @@ namespace Runtime.Business.Data.Entry
         /// 所属部队
         /// </summary>
         public Affiliation Affiliation { get; set; }
+        public Affiliation? Affiliation2 { get; set; }
         
         /// <summary>
         /// 是否有签名卡

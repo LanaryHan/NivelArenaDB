@@ -106,5 +106,13 @@ namespace Runtime.Business.Data
         Colony,
         Native,
         Xion,
+
+        Hyakkiyako,
+        Striker,
+        Special,
+        Arius,
+        Shanhaijing,
+        Highlander,
+        Millennium,
     }
 }
